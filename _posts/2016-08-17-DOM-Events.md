@@ -1,12 +1,9 @@
-layout: post  
-title:   
-description:     
-headline: 
-categories: HTML/JS  
-tags: 
-  -   
-comments: ture  
-published: true  
+---
+layout: post
+title: HTML/JS DOM Events
+categories: [blog ]
+tags: [study,html,js, ]
+description: 
 ---  
 #HTML/JS making webpages interactive
 ##DOM Events
