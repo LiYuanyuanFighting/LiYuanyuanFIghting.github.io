@@ -5,9 +5,11 @@ categories: [blog ]
 tags: [study,html,js, ]
 description: 
 ---  
+
 #HTML/JS making webpages interactive
 ##DOM Events
 ###Using event properties
+
 ```
 <!DOCTYPE html>
 <html>
@@ -104,11 +106,13 @@ description:
 </html>
 
 ```
+
 //when trying to insert the image into an input(which you can't cause its an empty //element). Just insert the image into the li.
 
 //li.innerHTML = "<img src=\"" + imageReveal + "\">";
 
 ####example 2
+
 ```
 <!DOCTYPE html>
 <html>
@@ -190,6 +194,7 @@ description:
 ###Adding event listeners
 
 To make sure that the browser calls a particular function when an event happens on an element, you must use document.addEventListener:
+
 ```
 var buttonEl = document.getElementById("clicker");
 var onButtonClick = function() {
@@ -215,6 +220,7 @@ If you are overriding click behavior on a link or submit behavior on a form, you
 If you no longer need a particular event listener, you can remove it using removeEventListener:
 
 ```
+
 var faceEl = document.getElementById("face");
 var onFaceClick = function(e) {
     console.log("You clicked " + e.clientX + " , " + e.clientY);
@@ -222,4 +228,5 @@ var onFaceClick = function(e) {
 faceEl.addEventListener("click", onFaceClick);
 // later...
 faceEl.removeEventListener("click", onFaceClick);
+
 ```
