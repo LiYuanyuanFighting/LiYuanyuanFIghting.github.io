@@ -8,35 +8,37 @@ description:
 
 #HTML/JS making webpages interactive
 ##The window object
-```
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>The window object</title>
-    </head>
-    <body>
 
-        <h1>I'm all about that window...</h1>
-        
-        <div id="info"></div>
-        
-        <script>
-        var infoDiv = document.getElementById("info");
-        console.log(window);
-        console.log(window.location);
-        infoDiv.textContent += "The URL of this page is " + window.location.href;
-        
-        infoDiv.textContent += "The user agent is " + window.navigator.userAgent;
-        
-        infoDiv.textContent += " This webpage is " + outerWidth + " by " + outerHeight;
-        // KA_
-        
-        
-        </script>
-    </body>
-</html>
-```
+
+    
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>The window object</title>
+        </head>
+        <body>
+    
+            <h1>I'm all about that window...</h1>
+            
+            <div id="info"></div>
+            
+            <script>
+            var infoDiv = document.getElementById("info");
+            console.log(window);
+            console.log(window.location);
+            infoDiv.textContent += "The URL of this page is " + window.location.href;
+            
+            infoDiv.textContent += "The user agent is " + window.navigator.userAgent;
+            
+            infoDiv.textContent += " This webpage is " + outerWidth + " by " + outerHeight;
+            // KA_
+            
+            
+            </script>
+        </body>
+    </html>
+    
 
 ##Animating DOM with setInterval
 ```
