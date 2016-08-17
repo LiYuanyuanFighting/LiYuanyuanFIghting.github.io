@@ -1,3 +1,12 @@
+---
+layout: post
+title: Using JS library in your webpage
+categories: [blog ]
+tags: [study,html,js, ]
+description: 
+---  
+
+#HTML/JS making webpages interactive
 ##Using JS libraries in your webpage
 There are a billion webpages, and many of them are interactive in some way - in fact, many of them are interactive in the same ways.
 
