@@ -6,8 +6,8 @@ tags: [study,html,js, ]
 description: 
 ---  
 
-#HTML/JS making webpages interactive
-##The window object
+# HTML/JS making webpages interactive
+## The window object
 
 
     
@@ -134,7 +134,7 @@ description:
         </body>
     </html>
 
-##Animating styles with CSS animations
+## Animating styles with CSS animations
 
 
 
@@ -227,7 +227,7 @@ description:
         </body>
     </html>
 
-##What DOM animation technique should you use?
+## What DOM animation technique should you use?
 You've now seen three techniques that let you animate parts of your webpage: window.setInterval/setTimeout, window.requestAnimationFrame, and CSS animations/transitions.
 
 When you're considering what technique to use, you should consider these questions:
