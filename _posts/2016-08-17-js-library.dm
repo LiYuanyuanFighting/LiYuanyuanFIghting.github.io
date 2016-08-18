@@ -6,8 +6,8 @@ tags: [study,html,js, ]
 description: 
 ---  
 
-#HTML/JS making webpages interactive
-##Using JS libraries in your webpage
+# HTML/JS making webpages interactive
+## Using JS libraries in your webpage
 There are a billion webpages, and many of them are interactive in some way - in  
 fact, many of them are interactive in the same ways.
 
@@ -32,7 +32,7 @@ effort to come up with great documentation and examples. Perhaps one day you
 will decide to create a library of some functionality that you find really useful and  
 share it with the world.
 
-##Using a JS Library: Slideshow libraryUsing a JS Library: Slideshow library
+## Using a JS Library: Slideshow libraryUsing a JS Library: Slideshow library
 
 
 
@@ -58,7 +58,7 @@ share it with the world.
         </script>
         </body>
     </html>
-###in the script source link:
+### in the script source link:
 
 
     /**
@@ -91,7 +91,7 @@ share it with the world.
         nextSlide.call(this);
     };
 
-##The world of JS libraries  
+## The world of JS libraries  
 
 [original webpage](https://www.khanacademy.org/computing/computer-programming/html-css-js/using-js-libraries-in-your-webpage/a/the-world-of-js-libraries "original webpage")
 There are thousands of JavaScript libraries that you could bring into your webpage,  
