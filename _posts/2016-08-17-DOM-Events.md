@@ -6,9 +6,9 @@ tags: [study,html,js, ]
 description: 
 ---  
 
-#HTML/JS making webpages interactive
-##DOM Events
-###Using event properties
+# HTML/JS making webpages interactive
+## DOM Events
+### Using event properties
 
 ```
 <!DOCTYPE html>
@@ -111,7 +111,7 @@ description:
 
 //li.innerHTML = "<img src=\"" + imageReveal + "\">";
 
-####example 2
+#### example 2
 
 ```
 <!DOCTYPE html>
@@ -157,7 +157,7 @@ description:
 
 ```
 
-##Preventing Default Behavior of Events
+## Preventing Default Behavior of Events
 
 ```
 <!DOCTYPE html>
@@ -190,8 +190,8 @@ description:
 </html>
 ```
 
-##Summary DOM Events
-###Adding event listeners
+## Summary DOM Events
+### Adding event listeners
 
 To make sure that the browser calls a particular function when an event happens on an element, you must use document.addEventListener:
 
