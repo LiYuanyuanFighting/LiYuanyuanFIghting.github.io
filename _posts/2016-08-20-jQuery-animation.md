@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Form processing with jQuery
+title: Animating with jQuery
 categories: [blog ]
 tags: [study,html,js,jquery ]
 description: 
