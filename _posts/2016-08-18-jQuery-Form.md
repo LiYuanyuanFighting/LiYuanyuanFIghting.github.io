@@ -138,3 +138,66 @@ Inside the callback function, you can reference the form element using the this 
        var age = $(this).find('[name=age]').val();
     });  
 [(See a full example here)](https://www.khanacademy.org/computer-programming/jquery-example-submit/4745335285612544 "(See a full example here)")  
+
+## Project: Word game
+###### We've started a webpage with a classic word game - the player sees a scrambled word, inputs what they think it is, and wins if they get it right. In this project, your goal is to add the jQuery needed for that game logic. Once you've got that working, add more words, style the win/lose message, and do anything else you think the game needs.  
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Project: Word game </title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                }
+                form {
+                    font-size: 1.5em;
+                }
+                .scrambled, input, button {
+                    font-family: monospace;
+                    font-size: 2em;
+                }
+                
+            </style>
+        </head>
+        <body>
+        
+        <h1>Word game!</h1>
+        <form id="joke-form">
+            <label>
+                Unscramble these letters to form a word:<Br>
+                <span class="scrambled">REYJUQ</span>
+                <br>
+                <input type="text" size="10">
+            </label>
+            <button type="submit">Check</button>
+        </form>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+            // when the user submits the form,
+            //   check that their answer is correct
+            //   and show them appropriate message
+            $("#joke-form").on("submit",function(event) {
+                event.preventDefault();
+                var $joke = $(this).find('input');
+                var joke = $joke.val();
+                console.log(joke);
+                //create elements
+                var p = $("<p>");
+               
+               
+                if (joke === "jquery" || (joke.toLowerCase() === "jquery") ) {
+                    p.text("You input: "+ joke + " is right!"); 
+                }
+                else {
+                     p.text("You input: "+ joke + " is wrong!"); 
+                } 
+                p.addClass("scrambled");
+                $("body").append(p);
+            })
+        </script>
+        </body>
+    </html>
+
+ 
