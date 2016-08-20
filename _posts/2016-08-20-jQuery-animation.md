@@ -2,7 +2,7 @@
 layout: post
 title: Animating with jQuery
 categories: [blog ]
-tags: [study,html,js,jquery ]
+tags: [study,html,js,jquery,animate, ]
 description: 
 ---  
 
