@@ -68,3 +68,73 @@ of HTML forms first, go through [these slides](http://www.teaching-materials.org
         </body>
     </html>
     
+## More form processing with jQuery
+#### Learn more techniques for processing forms with jQuery, like scoping attribute selectors.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>More form processing with jQuery</title>
+        </head>
+        <body>
+    
+        <h1>Crocodile order form</h1>
+        
+        <form id="croc-form">
+            <label>
+                Species?
+                <select name="species">
+                    <option value="freshwater">Freshwater crocodile</option>
+                    <option value="saltwater">Saltwater crocodile</option>
+                    <option value="american">American crocodile</option>
+                </select>
+            </label>
+            <button type="submit">Order</button>
+        </form>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+        // Maps croc species to image URLs
+        var crocImages = {
+            "american": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Crocodylus_acutus_mexico_02-edit1.jpg",
+            "saltwater": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Crocodylus_porosus_4.jpg",
+            "freshwater": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Australia_Cairns_18.jpg"
+        };
+        
+        // When the user submits the form,
+        //   Check what species they ordered
+        //   and display an image of it
+        
+        $("#croc-form").on("submit", function(event) {
+            event.preventDefault();
+            var $crocSpecies = $(this).find("[name=species]"); // scoped
+            var crocSpecies = $crocSpecies.val();
+            var $img = $("<img>");
+            $img.width(100);
+            $img.attr("src", crocImages[crocSpecies]); 
+            $img.appendTo("body");
+            
+        });
+        </script>
+        </body>
+    </html>
+    
+
+## Review: Processing forms with jQuery
+To process a form with jQuery, you should add an event listener to the form element for the 'submit' event:  
+    $("form").on("submit", function() {
+       // process form
+    });
+If you are processing the form entirely in jQuery, then you should call preventDefault() to prevent the page reloading:  
+    $("form").on("submit", function(event) {
+       event.preventDefault();
+       // process form
+    });
+When you want to know what a user filled out for an input in a form, you typically use val():  
+`var answer = $("#answer").val();`  
+Inside the callback function, you can reference the form element using the this keyword. A common pattern is to call find() on the form element, to find only inputs inside the form element:  
+    $("form").on("submit", function() {
+      // store the value of the input with name='age' 
+       var age = $(this).find('[name=age]').val();
+    });  
+[(See a full example here)](https://www.khanacademy.org/computer-programming/jquery-example-submit/4745335285612544 "(See a full example here)")  
