@@ -23,3 +23,4 @@ if($_POST["action"] == "paypal") {
 else if($_POST["action"] == "other") {
     header('Location: https://www.someotherwebsite.com/pay');
 }
+--------but it doesn't work in firefox so I changed it in myOrder.php
