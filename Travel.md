@@ -7,5 +7,5 @@ header-img: "img/plane2.jpg"
 
 
 
-My [travel](#) //:write sitename here
+My [travel](#) /*:write sitename here*/
 is under construction...
