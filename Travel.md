@@ -1,10 +1,11 @@
 ---
 layout: page
 title: "Travel"
-description: "路与风景"
+description: "On the road(:"
 header-img: "img/plane2.jpg"
 ---
 
 
 
-我的 [蝉游记](http://chanyouji.com/users/448398)
+My [travel](#) //:write sitename here
+is under construction...
