@@ -1,3 +1,11 @@
+---
+layout: post
+title:  Different Programming Types
+categories: [blog ]
+tags: [study,programing,declarative,type ]
+description: 
+---  
+
 ### Different Programming Types
 
 - Declarative
