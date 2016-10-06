@@ -2,7 +2,7 @@
 layout: post
 title:  what is RPC
 categories: [blog ]
-tags: [study,programing,RPC,socket ]
+tags: [study,programing,RPC,socket,xdr ]
 description: 
 --- 
 
@@ -41,3 +41,6 @@ OK，现在可以定义RPC框架的概念了。简单点讲，RPC框架就是可
 （我们学生主要是Java方向的，有不少人毕业后从事游戏开发）。据说互联网公司用的也比较多。这两行业都有高并发量的、长连接、
 分布式、异步通讯、大数据量等特点。Netty这种RPC框架封装和优化了Java NIO和异步网络编程的一些繁琐的细节，一方面可以让开
 发者专注于业务逻辑的实现，一方面只需要调用Netty封装的API就可以很快编写出高性能的服务器。
+
+I also found a good article talking both about RPC and XDR:
+http://www.cprogramming.com/tutorial/rpc/remote_procedure_call_start.html
