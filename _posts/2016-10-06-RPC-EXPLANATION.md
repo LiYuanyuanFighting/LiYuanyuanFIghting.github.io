@@ -1,4 +1,12 @@
- ### Different Programming Types
+---
+layout: post
+title:  what is RPC
+categories: [blog ]
+tags: [study,programing,RPC,socket ]
+description: 
+--- 
+
+ ### RPC explanation
  
  in wiki, it is defined as follows:
  In [distributed computing] a remote procedure call (RPC) is when a computer program causes a procedure 
