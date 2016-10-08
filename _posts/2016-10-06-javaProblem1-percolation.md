@@ -61,3 +61,5 @@ Then I got arrayIndexOutOfBound error,I guess it's due to the memory allocation 
     site = new int[n+1][n+1];
     //initialize the array
     }
+- Write clear code:
+reference [[2]][1]
