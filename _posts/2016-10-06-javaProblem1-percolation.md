@@ -29,3 +29,7 @@ Note that every element will be initialized to the default value for int, 0, so 
   { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
   { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
 };`；
+
+- how to use the command prompt:
+java-algs4 edu.princeton.cs.algs4.StdDraw[[1]][1]
+(if don't add -algs4, will have this error:Exception in thread "main" java.lang.NoClassDefFoundError: edu/princeton/cs/algs4/In)
