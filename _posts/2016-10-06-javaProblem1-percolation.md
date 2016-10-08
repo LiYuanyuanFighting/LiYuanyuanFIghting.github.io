@@ -66,3 +66,7 @@ reference [[2]][1]
 
 - Instance variable
 In object-oriented programming with classes, an instance variable is a variable defined in a class (i.e. a member variable), for which each instantiated object of the class has a separate copy, or instance. An instance variable is similar to a class variable
+
+- xyto1D.java
+transform (x,y) to 1D , which can save memory, cz don't need to initialize
+a large array to store x,y
