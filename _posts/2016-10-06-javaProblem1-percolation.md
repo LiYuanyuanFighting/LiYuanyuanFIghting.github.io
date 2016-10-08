@@ -63,3 +63,6 @@ Then I got arrayIndexOutOfBound error,I guess it's due to the memory allocation 
     }
 - Write clear code:
 reference [[2]][1]
+
+- Instance variable
+In object-oriented programming with classes, an instance variable is a variable defined in a class (i.e. a member variable), for which each instantiated object of the class has a separate copy, or instance. An instance variable is similar to a class variable
