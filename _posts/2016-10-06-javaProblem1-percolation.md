@@ -5,7 +5,32 @@ categories: [blog ]
 tags: [study,java,percolate, ]
 description: 
 ---  
-### Percolation
+## Percolation
+System percolates iff top and bottom are connected by open sites.
+Q. How to check whether an N-by-N system percolates?
+・Create an object for each site and name them 0 to N 2 – 1.
+・Sites are in same component if connected by open sites.
+・Percolates iff any site on bottom row is connected to site on top row.
+But it needs N^2 calls to connected() 
+so use a trick: 
+Introduce 2 virtual sites (and connections to top and bottom).
+・Percolates iff virtual top site is connected to virtual bottom site.
+which is efficient algorithm: only 1 call to connected()
+
+But it can cause a backwash problem because as long as one open block exists 
+in the last row, then it is connected to the bottom node, which means, to check
+percolate through top and bottom virtual nodes, it will be always percolate
+(like in the following picture)
+[![backwash ](http://3.bp.blogspot.com/-qt_McvcY4J0/UiKAIULvSTI/AAAAAAAAALM/C_0LHfFC4Yw/s320/percolation-backwash.png "backwash ")](http://3.bp.blogspot.com/-qt_McvcY4J0/UiKAIULvSTI/AAAAAAAAALM/C_0LHfFC4Yw/s320/percolation-backwash.png "backwash ")
+
+### Avoid backwash issue
+
+1. use 2  WQUUF, One(use 1 virtual top and 1 virtual bottom node) is for isFull().
+the other(only use 1 virtual top node) is for percolate().
+But it stores same information in 2 structures.
+
+2. use 1 QQUUF, with additional information to keep track of each connected componet
+[reference](reference http://www.sigmainfy.com/blog/avoid-backwash-in-percolation.html "reference")
 
 - definition of API[[3]][1]
 - define 2d array:
