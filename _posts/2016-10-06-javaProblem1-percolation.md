@@ -47,12 +47,14 @@ is a method used to find the length of a String named value(not an array)
 - array memory allocation:
 in my program I put it outside the structure, 
 use in this way:
+    ...
     public int n;
     public int[][] site=new int[n+1][n+1];
     ...
     public Percolation(int n){
-    //initialize array site using for loop
+    // initialize array site using for loop
     ...
+    
 Then I got arrayIndexOutOfBound error,I guess it's due to the memory allocation problem, when it is outside the constructor, n is still uninitialized, so site doesn't get the ideal memory allocated. So I solved the problem like this:
     public int n;
     public int[][] site;
