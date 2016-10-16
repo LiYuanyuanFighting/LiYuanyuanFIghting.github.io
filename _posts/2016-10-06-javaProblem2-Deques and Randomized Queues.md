@@ -1,3 +1,11 @@
+---
+layout: post
+title: Java Problem1---Percolation
+categories: [blog ]
+tags: [study,java,percolate, ]
+description: 
+--- 
+
 ### Deques and Randomized Queues
 
 ***learning about generics and iterators*
