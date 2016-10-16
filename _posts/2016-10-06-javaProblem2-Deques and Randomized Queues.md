@@ -2,7 +2,7 @@
 layout: post
 title: Java Problem1---Percolation
 categories: [blog ]
-tags: [study,java,percolate, ]
+tags: [study,java,queue,linkedlist,iterator ]
 description: 
 --- 
 
