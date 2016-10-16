@@ -1,0 +1,202 @@
+ /*16/10/2016
+     * a generic data type for a dequeue
+     * goal: to implement elementary data structure using arrays and linked lists
+     * keypoint : use linkedlist to achieve which needs to take care about null cases and link information
+     */
+    import java.util.*;
+    import edu.princeton.cs.algs4.In;
+    
+    public class Deque<Item> implements Iterable<Item> {
+       private Node first, last;
+       private int size;
+       private class Node
+       {
+           Item item;
+           Node next;
+           Node(Item item1) {
+               item = item1;
+               next = this;
+           }
+       }
+       public Deque(Item item)                           // construct an empty deque
+       {
+           this.first = new Node(item);
+           // this.first = null;
+           size = 0;
+       }
+       public boolean isEmpty()                 // is the deque empty?
+       {
+           return size == 0;
+       }
+       public int size()                        // return the number of items on the deque
+       {
+           return size;
+       }
+       public void addFirst(Item item)          // add the item to the front
+       {
+           validate(item);
+           if (size == 0) {
+              // first.item = item;
+              this.first = new Node(item);
+              this.last = new Node(item);
+             // last.item = item; java.lang.NullPointerException
+              this.first.next = null;
+              this.last.next = null;
+           } else { 
+           Node oldFirst = this.first;
+          this. first = new Node(item);
+           this.first.item = item;
+           this.first.next = oldFirst;
+           }
+           size++;
+       }
+       public void addLast(Item item)           // add the item to the end
+       {
+           validate(item);
+           
+              Node oldLast = last;
+              last = new Node(item);
+              last.next = null;
+              if (isEmpty()) { first = last; }
+              else    {       oldLast.next = last;
+              }
+           size++;
+       }
+       public Item removeFirst()                // remove and return the item from the front
+       {
+           if (isEmpty())
+               throw new UnsupportedOperationException();
+           Item firstItem = first.item;
+           System.out.println("Now the item of first is " + first.item);
+           first = first.next;
+           size--;
+           if (isEmpty()) { last = null; }
+           System.out.println("Now the next item of first is " + first.next.item);
+           return firstItem;
+       }
+       public Item removeLast()                 // remove and return the item from the end
+       {
+           if (isEmpty())
+               throw new UnsupportedOperationException();
+           Item lastItem = last.item;
+           Node temp = null;
+           Node tempFirst = first;
+           while (first.next != null)
+           {
+               temp = first;
+               first = first.next;
+           }
+           temp.next = null; //without this, can't really remove last item
+           first = tempFirst;
+           size--;
+           if (isEmpty()) { first = null; }
+           return lastItem;
+       }
+       public Iterator<Item> iterator()         // return an iterator over items in order from front to end
+       {
+          /* List<Item> list = new LinkedList<Item>();;
+           ListIterator<Item> i = list.listIterator();
+           Node temp = new Node(first.item);
+           int ii = 0;
+           while (ii<size) {
+           // while (!isEmpty()) {
+         //  i.add(first.item); // no add method in iterator, so can only use listIterator
+               System.out.print(first.item + " ");
+               i.add(first.item);
+               first = first.next;
+               ii++;
+           }
+           first = temp;
+           return i;
+           */
+           return new DequeIterator();
+       }
+       private void validate(Item item) 
+       {
+           if (item == null) 
+               throw new NoSuchElementException("item is null!");
+       }
+       private Item getFirst() {
+           return first.item;
+       }
+       private class DequeIterator implements Iterator<Item> {
+           private Node current = first;
+           
+           public boolean hasNext() {  return current != null; }
+           public void remove() { throw new UnsupportedOperationException(); }
+           public Item next() {
+               if (!hasNext()) { throw new NoSuchElementException(); }
+              // System.out.println("current item is " + current.item);
+               Item item = current.item;
+               current = current.next;
+               return item;
+           }
+       }
+       
+     public static void main(String[] args)   // unit testing
+       {
+           if (args.length != 1) {
+               System.out.println("Parameter error!");
+               return;
+           }
+           In in = new In(args[0]); // input file
+           String n;
+           Deque<String> deque = new Deque<String>(null); // new LinkedList or Deque?
+           
+           
+           
+           Iterator<String> i;
+         //  read numbers in to the deque(using 2 different methods)
+           while (!in.isEmpty()) {
+               n = in.readLine();
+               deque.addLast(n); //check addFirst()
+           }
+           i = deque.iterator(); // every time needs to re-initialized
+           System.out.println("the full deque is:");
+           while (i.hasNext()) {
+               System.out.print(i.next() + " ");
+           }
+           
+           System.out.println();
+           System.out.println("the full deque size is:" + deque.size());
+           /* for (Iterator<Item> iter = deque.iterator(); iter.hasNext(); ) {
+               Item item = iter.next();
+               System.out.print(item + " ");
+           } */
+           System.out.println();
+           System.out.println("remove first " + deque.removeFirst());
+           System.out.println();
+           System.out.println(" the full deque now is:");
+           i = deque.iterator(); // every time needs to re-initialized
+           while (i.hasNext()) {
+               System.out.print(i.next() + " ");
+           }
+           
+           System.out.println();
+           System.out.println("the full deque size is:" + deque.size());
+           /* for (Iterator<Item> iter = deque.iterator(); iter.hasNext(); ) {
+               Item item = iter.next();
+               System.out.print(item + " ");
+           } */
+           System.out.println();
+           System.out.println("remove last " + deque.removeLast());
+           System.out.println();
+           
+        i = deque.iterator(); // every time needs to re-initialized
+           System.out.println("the full deque is:");
+           while (i.hasNext()) {
+               System.out.print(i.next() + " ");
+           }
+           
+           System.out.println("the full deque size is:" + deque.size());
+         
+           //check addLast
+           deque.addLast("ha");
+            i = deque.iterator(); // every time needs to re-initialized
+           System.out.println("the newly full deque is:");
+           while (i.hasNext()) {
+               System.out.print(i.next() + " ");
+           }
+       } 
+    
+    }
