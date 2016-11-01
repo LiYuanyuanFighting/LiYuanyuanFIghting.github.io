@@ -1,10 +1,17 @@
+---
+layout: post
+title: Algorithm---Sorting
+categories: [blog ]
+tags: [study,java,sort, ]
+description: Good algorithm is much more efficienet than spending more money and time
+---  
+
+
 **What is the difference between Θ(n) and O(n)?**
 O(n) represents upper bound. Θ(n) means tight bound. Ω(n) represents lower bound.
 
 f(x) = Θ(g(x)) iff f(x) = O(g(x)) and f(x) = Ω(g(x))
 
-
-down vote
 There's a simple way (a trick, I guess) to remember which notation means what.
 
 All of the Big-O notations can be considered to have a bar.
@@ -16,7 +23,7 @@ An algorithm is said to be constant time (also written as O(1) time) ..
  Why should I write O(2342.4534675767) when it can be easier expressed with O(1), which communicates
  the facts of the case unambiguously.
  
-Given an int array which might contain duplicates, find the largest subset of it which form a sequence. 
+**Given an int array which might contain duplicates, find the largest subset of it which form a sequence. **
 Eg. {1,6,10,4,7,9,5} 
 then ans is 4,5,6,7 
 
