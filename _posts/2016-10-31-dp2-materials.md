@@ -16,3 +16,6 @@ mechanism is one way, but converting the object into an XML or JSON representati
 
 **Unmarshalling** is just the reverse/other side of this process; taking a representation of
 the object created by marshalling, and using it to reconstitute an object instance within the JVM.
+
+[Talking xml schema key and uniqueness](http://www.xml.com/pub/a/2000/12/13/schemas/part2.html?page=2 "Talking xml schema key and uniqueness")
+
