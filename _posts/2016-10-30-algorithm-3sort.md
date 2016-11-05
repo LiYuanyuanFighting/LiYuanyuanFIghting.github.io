@@ -35,3 +35,5 @@ A three partition Quick Sort would pick two values to partition on and split the
 It is just a slight variation on the regular quick sort.
 
 You continue partitioning each partition until the array is sorted. The runtime is technically nlog3(n) which varies ever so slightly from regular quicksort's nlog2(n).
+
+[Function Pointers in C](http://www.cprogramming.com/tutorial/function-pointers.html "Function Pointers in C")
