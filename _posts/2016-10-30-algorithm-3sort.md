@@ -37,3 +37,7 @@ It is just a slight variation on the regular quick sort.
 You continue partitioning each partition until the array is sorted. The runtime is technically nlog3(n) which varies ever so slightly from regular quicksort's nlog2(n).
 
 [Function Pointers in C](http://www.cprogramming.com/tutorial/function-pointers.html "Function Pointers in C")
+
+**linearithmic**
+
+(computer science, of a procedure) Taking up to time proportional to n log(n) to run on inputs of size n.
