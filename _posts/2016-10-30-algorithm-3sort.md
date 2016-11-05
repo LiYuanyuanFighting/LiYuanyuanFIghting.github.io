@@ -44,3 +44,7 @@ You continue partitioning each partition until the array is sorted. The runtime 
 
 **logarithm**
 In mathematics, the logarithm is the inverse operation to exponentiation. That means the logarithm of a number is the exponent to which another fixed number, the base, must be raised to produce that number. In simple cases the logarithm counts repeated multiplication. For example, the base 10 logarithm of 1000 is 3, as 10 to the power 3 is 1000 (1000 = 10 × 10 × 10 = 103);
+
+
+**Shuffling a linkedlist** 
+[reference](http://stackoverflow.com/questions/12167630/algorithm-for-shuffling-a-linked-list-in-n-log-n-time "reference")
