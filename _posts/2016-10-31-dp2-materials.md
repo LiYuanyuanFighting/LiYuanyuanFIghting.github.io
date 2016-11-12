@@ -19,3 +19,5 @@ the object created by marshalling, and using it to reconstitute an object instan
 
 [Talking xml schema key and uniqueness](http://www.xml.com/pub/a/2000/12/13/schemas/part2.html?page=2 "Talking xml schema key and uniqueness")
 
+**RPC**
+[at most once and at least once](http://stackoverflow.com/questions/13330067/rpc-semantics-what-exactly-is-the-purpose)
