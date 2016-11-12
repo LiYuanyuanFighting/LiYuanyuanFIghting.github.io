@@ -27,3 +27,4 @@ the object created by marshalling, and using it to reconstitute an object instan
 
 **Eclipse error**
 [Eclipse: Ant createprocess error=2](http://www.darintanaka.com/blog/archives/2012/08)
+[警告：编码 UTF8 的不可映射字符](http://qiang106.iteye.com/blog/526326)
