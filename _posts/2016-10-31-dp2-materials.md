@@ -21,3 +21,6 @@ the object created by marshalling, and using it to reconstitute an object instan
 
 **RPC**
 [at most once and at least once](http://stackoverflow.com/questions/13330067/rpc-semantics-what-exactly-is-the-purpose)
+
+**Restful WebServices**
+[reference](http://www.drdobbs.com/web-development/restful-web-services-a-tutorial/240169069)
