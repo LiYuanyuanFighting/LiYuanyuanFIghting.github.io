@@ -12,4 +12,4 @@ Error(4,26): PLS-00103: Encountered the symbol "‘" when expecting one of the f
 execute forall merge time timestamp interval date <a string literal with character set specification> <a number> <a single-quoted SQL 
 string> pipe <an alternatively-quoted string literal with character set specification> <an alternati
 analysis: in this case, should see which is the symbol has errors, here we can see it is "‘", then should realize it could be due to 
-Chinese character and English character
+Chinese character and English character(For invalid characters it can also be due to this)
