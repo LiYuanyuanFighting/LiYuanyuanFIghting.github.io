@@ -1,8 +1,9 @@
- ---
+
+---
 layout: post
 title: Java Problem3---Pattern Recognition
 categories: [blog ]
-tags: [study,java,sort ]
+tags: [study,java,sort,]
 description: 
 --- 
 
@@ -24,3 +25,6 @@ java.util.List is a raw type. References to generic type java.util.List<E> shoul
 
 **raw type**
 [reference](http://stackoverflow.com/questions/2770321/what-is-a-raw-type-and-why-shouldnt-we-use-it)
+
+**dynamic array**
+To create dynamic array, should use ArrayList (or other array object who can handle any number of objects). A java array always has a fixed length since some memory will be reserved for the array.
