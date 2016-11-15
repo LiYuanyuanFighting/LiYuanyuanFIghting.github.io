@@ -21,3 +21,6 @@ type is generally the default choice. As mentioned above, this data type should 
 such as currency
 
 java.util.List is a raw type. References to generic type java.util.List<E> should be parameterized
+
+**raw type**
+[reference](http://stackoverflow.com/questions/2770321/what-is-a-raw-type-and-why-shouldnt-we-use-it)
