@@ -28,3 +28,8 @@ java.util.List is a raw type. References to generic type java.util.List<E> shoul
 
 **dynamic array**
 To create dynamic array, should use ArrayList (or other array object who can handle any number of objects). A java array always has a fixed length since some memory will be reserved for the array.
+
+**array length**
+if I create an array like this: 
+Object[] array = new Object[100];
+then if I use array.length, the length will be 100 no matter the elements of the array are null or not...
