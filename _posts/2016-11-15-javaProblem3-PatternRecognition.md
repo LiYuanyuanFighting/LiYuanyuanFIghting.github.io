@@ -58,3 +58,6 @@ After:
 	public double div(int a, int b){
 		return a / (double)b;
 	}
+
+**Dead Code**
+In computer programming, dead code is a section in the source code of a program which is executed but whose result is never used in any other computation.
