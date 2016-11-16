@@ -33,3 +33,28 @@ To create dynamic array, should use ArrayList (or other array object who can han
 if I create an array like this: 
 Object[] array = new Object[100];
 then if I use array.length, the length will be 100 no matter the elements of the array are null or not...
+
+**ICAST_IDIV_CAST_TO_DOUBLE**
+
+Description
+
+ICAST: integral division result cast to double or float 
+This code casts the result of an integral division (e.g., int or long division) operation to double or float. Doing division on integers truncates the result to the integer value closest to zero. The fact that the result was cast to double suggests that this precision should have been retained. What was probably meant was to cast one or both of the operands to double before performing the division. 
+兩個整數相除會使得結果先為整數再為double。以2/5而言，結果會變為0，5/2會為2。
+
+Solution
+
+將分母轉型為double或float。
+
+Example
+
+Before:
+
+	public double div(int a, int b){
+		return a / b;
+	}
+After:
+
+	public double div(int a, int b){
+		return a / (double)b;
+	}
