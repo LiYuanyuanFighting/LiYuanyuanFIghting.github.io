@@ -19,8 +19,6 @@ description:
   content, but hides it, then solved!
   
   in php:
-  echo "<tr id='visible'><th>quantity_to_buy</th><th>price_for_buying</th></tr>";
+  `echo "<tr id='visible'><th>quantity_to_buy</th><th>price_for_buying</th></tr>";`
   in css:
-  #visible {
-    visibility: hidden;
-}
+ ` #visible {visibility: hidden;}`
