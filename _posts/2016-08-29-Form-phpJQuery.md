@@ -1,3 +1,10 @@
+---
+layout: post
+title: PHP Form
+categories: [blog ]
+tags: [study,php,form ]
+description: 
+--- 
 
 # Trigger form action via php wihout clicking submit
 
