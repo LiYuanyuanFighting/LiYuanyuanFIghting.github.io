@@ -1,9 +1,8 @@
-
 ---
 layout: post
 title: Java Problem3---Pattern Recognition
 categories: [blog ]
-tags: [study,java,sort,]
+tags: [study,java,sort]
 description: 
 --- 
 
