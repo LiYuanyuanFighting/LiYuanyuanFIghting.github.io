@@ -13,7 +13,7 @@ Mmmmm, let me think...
 
 I am Li Yuanyuan. You can just call me Li, which is quite easy to remeber, right?. I like reading, traveling and eating(but lazy to cook!!!). 
 The great happiness for me are just 2 things: all my loving families are good and my improvements in many different things!
-
+(Before I used [51cto blog](http://11259454.blog.51cto.com/ "51cto blog") and [Blogger](http://git1234567890.blogspot.it/2016/08/git-learning.html))
 现在的愿望呢， 变成技术宅还有胆子大些！
 
 Let's fight life together!
