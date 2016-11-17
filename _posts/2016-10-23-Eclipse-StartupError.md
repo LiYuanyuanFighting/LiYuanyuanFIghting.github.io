@@ -1,3 +1,11 @@
+---
+layout: post
+title: Eclipse Startup Error
+categories: [blog ]
+tags: [study,eclipse,software ]
+description: 
+--- 
+
 ## Eclipse - no Java (JRE) / (JDK) … no virtual machine
 
 Because I installed 3 different eclipse versions which contains both 32 bit and 64 bit,
