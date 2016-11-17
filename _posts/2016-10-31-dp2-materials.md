@@ -6,8 +6,9 @@ tags: [study,dp2,xml,ant,marshalling,java ]
 description: 
 ---  
 
-### [ANT](http://www.cnblogs.com/wufengxyz/archive/2011/11/24/2261797.html "ANT")
+**ANT** [reference](http://www.cnblogs.com/wufengxyz/archive/2011/11/24/2261797.html "ANT")
 
+**Marshalling and unmarshalling**
 To **marshall** an object is to convert it into a form suitable for serialised storage or
 transmission; that is, to convert it from its native form within the JVM's memory, into
 a form that could be sent down a wire, inserted into a file/database, etc. The specifics
