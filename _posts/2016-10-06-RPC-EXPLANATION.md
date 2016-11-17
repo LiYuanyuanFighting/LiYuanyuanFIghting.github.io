@@ -6,7 +6,7 @@ tags: [study,programing,RPC,socket,xdr ]
 description: 
 --- 
 
- ### RPC explanation
+## RPC explanation
  
  in wiki, it is defined as follows:
  In [distributed computing] a remote procedure call (RPC) is when a computer program causes a procedure 
