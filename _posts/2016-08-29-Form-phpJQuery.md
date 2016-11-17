@@ -23,7 +23,7 @@ Use a hidden input.
     }
  </script>
 
-```php
+```
 <form action="myphp.php" name="form1" method="POST" />
    <input type="hidden" name="action" />
    <input onclick="setHidden(this)" type="button" value="paypal" />
