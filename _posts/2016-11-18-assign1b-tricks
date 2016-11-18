@@ -1,0 +1,14 @@
+**Convert java.util.Date to XMLGregorianCalendar**
+
+GregorianCalendar c = new GregorianCalendar();
+c.setTime(yourDate);
+XMLGregorianCalendar date2 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c);   
+
+I do like this:
+
+Calendar verifyTime = pr.getResult().getVerificationTime();
+			GregorianCalendar temp = new GregorianCalendar();
+			temp.setTime(verifyTime.getTime());
+			XMLGregorianCalendar date1 = DatatypeFactory.newInstance().newXMLGregorianCalendar(temp);
+			Message message = createMessage(pr.getResult().getVerificationResultMsg(), 
+					date1);
