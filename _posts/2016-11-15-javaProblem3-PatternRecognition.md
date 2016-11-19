@@ -60,3 +60,11 @@ After:
 
 **Dead Code**
 In computer programming, dead code is a section in the source code of a program which is executed but whose result is never used in any other computation.
+
+**Compare 2 Double Numbers**
+ Wrong code:  
+ ``if (slopes[k] == slopes[k+1]) {``  
+ Right:   
+ ``if(Math.abs(sectionID - currentSectionID) < epsilon)``  
+where epsilon is a very small number like 0.00000001, depending on the desired precision.  
+Reason:  
