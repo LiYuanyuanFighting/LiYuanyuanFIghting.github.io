@@ -23,7 +23,8 @@ such as currency
 java.util.List is a raw type. References to generic type java.util.List<E> should be parameterized
 
 **raw type**
-[reference](http://stackoverflow.com/questions/2770321/what-is-a-raw-type-and-why-shouldnt-we-use-it)
+[reference1](http://stackoverflow.com/questions/2770321/what-is-a-raw-type-and-why-shouldnt-we-use-it)  
+[reference2](http://www.herongyang.com/Java/Generic-Class-Raw-Generic-Parameterized-Type.html)    
 
 **dynamic array**
 To create dynamic array, should use ArrayList (or other array object who can handle any number of objects). A java array always has a fixed length since some memory will be reserved for the array.
