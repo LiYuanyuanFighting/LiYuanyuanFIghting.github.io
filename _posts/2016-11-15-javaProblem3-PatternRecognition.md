@@ -68,3 +68,11 @@ In computer programming, dead code is a section in the source code of a program 
  ``if(Math.abs(sectionID - currentSectionID) < epsilon)``  
 where epsilon is a very small number like 0.00000001, depending on the desired precision.  
 Reason:  
+There are two reasons to compare floating-point objects:  
+
+I am doing math, so I want to compare their numerical values. Numerically, –0 equals +0, and a NaN is not equal to anything, not even   itself, because “equal” is a property that only numbers have, and NaN is not a number.
+I am working with objects in a computer, so I need to distinguish different objects and place them in order. This is necessary for   sorting objects in a tree or other container, for example.
+The == operator provides mathematical comparisons. It returns false for NaN == NaN and true for -0.f == +0.f  
+
+The compare and compareTo routines provide object comparisons. When comparing a NaN to itself, they indicate that it is the same (by   returning zero). When comparing -0.f to +0.f, they indicate they are different (by returning non-zero).  
+reference: http://stackoverflow.com/questions/17898266/why-cant-we-use-to-compare-two-float-or-double-numbers  
