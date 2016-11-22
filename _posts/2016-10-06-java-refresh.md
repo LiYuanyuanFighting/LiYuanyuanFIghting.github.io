@@ -207,3 +207,11 @@ The names of the files must be read from the command line.
     	}
     }
   
+**Terms**
+
+-Interface cannot be instantiated but implement  
+-Abstract classes cannot be instantiated directly. Declaring a class as abstract means that you do not want it  
+to be instantiated and that the class can only be inherited.
+It is meant to be used as the base class from which other classes are derived. The derived class is expected to  
+provide implementations for the methods that are not implemented in the base class. A derived class that implement  
+s all the missing functionality is called a concrete class
