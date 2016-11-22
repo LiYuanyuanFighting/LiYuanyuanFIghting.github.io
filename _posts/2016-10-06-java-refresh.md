@@ -215,3 +215,7 @@ to be instantiated and that the class can only be inherited.
 It is meant to be used as the base class from which other classes are derived. The derived class is expected to  
 provide implementations for the methods that are not implemented in the base class. A derived class that implement  
 s all the missing functionality is called a concrete class
+
+**The nested type NffgVerifierFactory cannot hide an enclosing type**
+The problem is caused by the fact that I'm e naming my sketch the same thing as a class I'm using inside  
+my sketch. My sketch can't be named MotorBike if I have a MotorBike class inside that sketch.
