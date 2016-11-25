@@ -235,3 +235,8 @@ Now, here's where the static keyword starts to make sense: the word "static" is 
 why you can't override static methods is because there is no dynamic dispatching on static members - because static   
 literally means "not dynamic". If they dispatched dynamically (and thus could be overriden) the static keyword just  
 wouldn't make sense anymore.
+
+**The static field MyNffgVerifierFactory.nffgs should be accessed in a static way**
+In Java, when you declare something as static, you are saying that it is a member of the class, not the object  
+(hence why there is only one). Therefore it doesn't make sense to access it on the object, because that particular  
+data member is associated with the class.
