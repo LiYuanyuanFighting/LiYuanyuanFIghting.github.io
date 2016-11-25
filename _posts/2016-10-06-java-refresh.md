@@ -219,3 +219,19 @@ s all the missing functionality is called a concrete class
 **The nested type NffgVerifierFactory cannot hide an enclosing type**
 The problem is caused by the fact that I'm e naming my sketch the same thing as a class I'm using inside  
 my sketch. My sketch can't be named MotorBike if I have a MotorBike class inside that sketch.
+
+**Why doesn't java allow overriding of static methods**
+Method overriding is made possible by dynamic dispatching, meaning that the declared type of an object doesn't determine  
+its behavior, but rather its runtime type:
+
+Animal lassie = new Dog();
+lassie.speak(); // outputs "woof!"
+Animal kermit = new Frog();
+kermit.speak(); // outputs "ribbit!"
+Even though both lassie and kermit are declared as objects of type Animal, their behavior (method .speak()) varies  
+because dynamic dispatching will only bind the method call .speak() to an implementation at run time - not at compile time.
+
+Now, here's where the static keyword starts to make sense: the word "static" is an antonym for "dynamic". So the reason  
+why you can't override static methods is because there is no dynamic dispatching on static members - because static   
+literally means "not dynamic". If they dispatched dynamically (and thus could be overriden) the static keyword just  
+wouldn't make sense anymore.
