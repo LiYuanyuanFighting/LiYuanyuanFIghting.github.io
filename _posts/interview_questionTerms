@@ -52,3 +52,38 @@ obfuscating internal data. Malware that implement this tactic might use any numb
 
 
 $ tail -f log-file
+w - Show who is logged on and what they are doing.
+
+**he Difference Between a Computer Virus, Worm and Trojan Horse**
+A computer virus attaches itself to a program or file enabling it to spread from one computer  
+to another, leaving infections as it travels. 
+It is important to note that a virus cannot be spread without a human action, 
+A worm is similar to a virus by design and is considered to be a sub-class of a virus. Worms   
+spread from computer to computer, but unlike a virus, it has the capability to travel without  
+any human action.  
+A worm takes advantage of file or information transport features on your system, which is what  
+allows it to travel unaided.  
+ A Trojan Horse is full of as much trickery as the mythological Trojan Horse it was named after.  
+ The Trojan Horse, at first glance will appear to be useful software but will actually do damage  
+ once installed or run on your computer.  Those on the receiving end of a Trojan Horse   
+ Trojans are also known to create a backdoor on your computer that gives malicious users access  
+ to your system, possibly allowing confidential or personal  
+ information to be compromised. Unlike viruses and worms, Trojans do not reproduce by infecting  
+ other files nor do they self-replicate.
+ 
+ **IOC**
+ Indicators of Compromise (IOC) are pieces of forensic data, such as data found in system log entries or files, that identify potentially malicious  
+ activity on a system or network.
+ http://www.darkreading.com/attacks-breaches/top-15-indicators-of-compromise/d/d-id/1140647?
+ According to the experts, here are some key indicators of compromise to monitor (in no particular order):
+
+1. Unusual Outbound Network Traffic
+3. Geographical Irregularities
+6. HTML Response Sizes
+if attackers use SQL injection to extract data through a Web application, the requests issued by them will    
+usually have a larger HTML response size than a normal request.
+7. Large Numbers Of Requests For The Same File
+2. Anomalies In Privileged User Account Activity
+
+ 
+ are usually tricked into opening them because they appear to be receiving legitimate software or files from a legitimate source. 
