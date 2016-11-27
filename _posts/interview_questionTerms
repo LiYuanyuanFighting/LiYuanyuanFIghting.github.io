@@ -97,6 +97,50 @@ Method2: use prepared statement, any parameters you send when using a prepared s
 just be treated as strings.
 Method3: do some processing, to escape special characters:mysql_real_escape_string
 
+**Botnet**
+Zombie army. is a number of Internet computers that, although their owners are unaware of it,  
+have been set up to forward transmissions (including spam or viruses) to other computers on  
+the Internet. Any such computer is referred to as a zombie - in effect, a computer "robot" or  
+"bot" that serves the wishes of some master spam or virus originator.
 
+**Denial of service attack***
+To make  a machine or network resource unavailable, it is accomplished by flooding the targeted
+machine or resource with superfluous requests in an attempt to overload systems and prevent some
+or all legitimate requests from being fufilled
 
+**How would you check if a file is a known malware, without sharing the actual binary?**
+**Is it enough to rely on a "simple hash"? (Related to question 9). What else could you do   
+to be more reliable? **
+
+**Have you heard or read details about any vulnerabilities of these recent years/months?  **
+article written in 31 Jul 2016
+The latest forum to leak, Disney's Playdom, was running the vBulletin forumware already known to have leaked big back in June.
+
+On Friday, Disney announced it had taken the forum offline after discovering someone had  
+accessed usernames, passwords, e-mail addresses,  and logged IP addresses for playdomforums.  
+com accounts. Its oops-we're-so--sorry-statement includes the usual useless assurance that  
+no credit card data was held on the site.
+These recent forum hacks demonstrate how popular online platforms remain vulnerable to   
+fundamental exploits. Unfortunately, even though the look and feel of most internet   
+platforms has generally changed, managing forum software continue to be a difficult  
+challenge as these platforms are exposed to the public—meaning most databases remain  
+vulnerable to specific types of attacks.
+Upgrading forum software is generally a non-trivial task and the updates take some   
+time to be released, which is probably why most admins do not update right away.  
+In the Clash of Kings hack incident, and possibly others, the hacker took advantage of  
+an unpatched bug—reportedly because the CoK forum was using a vBulletin version that  
+dates back to 2013, and that it didn't use any encryption. In the case of the incidents  
+that affected Ubuntu and Warframe, attackers were able to exploit an SQL injection   
+vulnerability, making it an apparent favorite tool among hackers. However, minor oversights,   
+such as relying on older or outdated software, or not implementing the latest patch, magnify  
+the risks.
+
+**Have you ever use any vulnerability scanners? Which ones? What was the context?**
+OPENVAS, an open-source product, it is composed by a server to which several clients can 
+connect to require to perform vulnerability analysis. The main components: a scanner and a manage.
+eg. starts Apache, and uses openvas to discover the vulnerabilities:
+Apache provides information about the service(e.g.version, generic OS-type of the server as well
+as information about compiled-in modules. a.s.o)
+
+At the time of writing, the site remained offline. Disney hasn't stated how many accounts were leaked in the attack, nor has it explained why passwords were held in an accessible format.
 
