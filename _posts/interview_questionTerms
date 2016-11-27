@@ -5,3 +5,26 @@ programming languages use a simpler processor called an assembler— and the res
 It deals with a computer's hardware components and constraints.  
  Generally this refers to either machine code or assembly language. The word "low" refers to the small or nonexistent  
  amount of abstraction between the language and machine language;
+
+**What is the difference between DROP and REJECT rules on a firewall? **   
+When a packet reaches the firewall, it is run against a set of rules. These rules may rely on existing state (eg. to match existing or related connections) or be stateless (eg. to match destination port 80). The rules determine an action to take for the packet, which can be one of:
+
+ALLOW (aka ACCEPT)
+Pemit a packet to traverse the firewall. This would be the behaviour if the firewall was not present.
+REJECT
+Prohibit a packet from passing. Send an ICMP destination-unreachable back to the source host [unless the icmp would not normally be permitted, eg. if it is to/from the broadcast address].
+DROP (aka DENY, BLACKHOLE)
+Prohibit a packet from passing. Send no response.
+**Legitimate users**
+By REJECTing unknown packets, TCP aborts the connection andthe application gets to know that the connection has failed after just one round-trip time. This allows the application attempting the connection to notify the user straight away.
+
+DROPping the packet will just cause TCP to retry the connection until the threshold for retranmission is exceeded. This should be at least 100 seconds.
+Hostile users
+
+**hostile forces:**
+
+A common reason for using DROP rather than REJECT is to avoid giving away information about which ports are open, however, discarding packets gives away exactly as much information as the rejection.
+
+With REJECT, you do your scan and categorise the results into "connection established" and "connection rejected".
+
+With DROP, you categorise the results into "connection established" and "connection timed out"
