@@ -1,0 +1,7 @@
+**Low Level Language**
+Low-level languages can convert to machine code without a compiler or interpreter— second-generation   
+programming languages use a simpler processor called an assembler— and the resulting code runs directly on the processor.
+
+It deals with a computer's hardware components and constraints.  
+ Generally this refers to either machine code or assembly language. The word "low" refers to the small or nonexistent  
+ amount of abstraction between the language and machine language;
