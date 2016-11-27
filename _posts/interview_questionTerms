@@ -28,3 +28,27 @@ A common reason for using DROP rather than REJECT is to avoid giving away inform
 With REJECT, you do your scan and categorise the results into "connection established" and "connection rejected".
 
 With DROP, you categorise the results into "connection established" and "connection timed out"
+
+**linux command**
+http://www.thegeekstuff.com/2010/11/50-linux-commands/?utm_source=feedburner
+tail -f	如果输入文件是常规文件或如果 File 参数指定 FIFO（先进先出），那么 tail 命令不会在复制了输入文件的最后的指定单元后终止，而是继续从输入文件读取  
+和复制额外的单元（当这些单元可用时）。如果没有指定 File 参数，并且标准输入是管道，那么会忽略 -f 标志。tail -f 命令可用于监视另一个进程正在写入的文件  
+的增长。
+http://www.ibm.com/support/knowledgecenter/zh/ssw_aix_61/com.ibm.aix.cmds5/tail.htm
+View the content of the file in real time using tail -f. This is useful to view the log files, that keeps growing. The command can be   
+terminated using CTRL-C.
+
+**evasion technique**
+https://www.tripwire.com/state-of-security/security-data-protection/the-four-most-common-evasive-techniques-used-by-malware/
+four types in particular are most common: 
+1) environmental awareness, 
+allows malware samples to detect the underlying runtime environment of the system it is trying to infect.
+2) confusing automated tools, 
+confusing automated tools, allows malware to avoid detection by technologies such as signature-based antivirus software. 
+3) timing-based evasion, and 
+This type of behavior is used by malware to run at certain times or following certain actions taken by the user
+4) obfuscating internal data.
+obfuscating internal data. Malware that implement this tactic might use any number of tricks to run code that cannot be detected by the analysis system.
+
+
+$ tail -f log-file
