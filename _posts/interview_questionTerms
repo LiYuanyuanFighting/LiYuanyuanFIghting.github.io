@@ -87,3 +87,16 @@ usually have a larger HTML response size than a normal request.
 
  
  are usually tricked into opening them because they appear to be receiving legitimate software or files from a legitimate source. 
+
+
+**SQL Injection**
+input code like 105 or 1=1 or "", in select condition:select * from user_table where username=105 or 1=1, it will be always true,
+which means it will select all users. So need to avoid:
+Method1: limit the input like I only allow numbers in price box
+Method2: use prepared statement, any parameters you send when using a prepared statement will
+just be treated as strings.
+Method3: do some processing, to escape special characters:mysql_real_escape_string
+
+
+
+
