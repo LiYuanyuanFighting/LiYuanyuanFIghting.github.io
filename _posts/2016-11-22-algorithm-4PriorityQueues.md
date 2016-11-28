@@ -6,6 +6,9 @@ tags: [study,java,sort,priorityQueue ]
 description: Good algorithm is much more efficienet than spending more money and time
 ---  
 
+[reference1](http://www.cs.dartmouth.edu/~gevorg/cs10/notes.php?num=14 "reference1")
+[reference2](http://algs4.cs.princeton.edu/24pq/)
+
 **Questions**
 1. What is the expected number of array accesses and compares, respectively, to insert  
 a random key into an ordered-array implementation of a priority queue?  
@@ -18,3 +21,9 @@ structure, but where additionally each element has a "priority" associated with 
 priority queue, an element with high priority is served before an element with low priority.  
 If two elements have the same priority, they are served according to their order in the queue.  
 
+**max-heap** satisfy a **max heap property**:
+For every node i other than the root, the value in the parent of node i is greater than or equal  
+to the value in node i.
+**min-heap** satisfy a **min heap property**:
+For every node i other than the root, the value in the parent of node i is less than or equal to  
+the value in node i.
