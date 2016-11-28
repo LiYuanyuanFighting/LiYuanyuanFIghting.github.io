@@ -30,6 +30,7 @@ With REJECT, you do your scan and categorise the results into "connection establ
 With DROP, you categorise the results into "connection established" and "connection timed out"
 
 **linux command**
+http://www.tecmint.com/10-useful-interview-questions-and-answers-on-linux-commands/
 http://www.thegeekstuff.com/2010/11/50-linux-commands/?utm_source=feedburner
 tail -f	如果输入文件是常规文件或如果 File 参数指定 FIFO（先进先出），那么 tail 命令不会在复制了输入文件的最后的指定单元后终止，而是继续从输入文件读取  
 和复制额外的单元（当这些单元可用时）。如果没有指定 File 参数，并且标准输入是管道，那么会忽略 -f 标志。tail -f 命令可用于监视另一个进程正在写入的文件  
@@ -142,5 +143,6 @@ eg. starts Apache, and uses openvas to discover the vulnerabilities:
 Apache provides information about the service(e.g.version, generic OS-type of the server as well
 as information about compiled-in modules. a.s.o)
 
-At the time of writing, the site remained offline. Disney hasn't stated how many accounts were leaked in the attack, nor has it explained why passwords were held in an accessible format.
+At the time of writing, the site remained offline. Disney hasn't stated how many accounts were leaked in the attack,
+nor has it explained why passwords were held in an accessible format.
 
