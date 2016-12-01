@@ -29,19 +29,27 @@ For every node i other than the root, the value in the parent of node i is less 
 the value in node i.
 
 **Question?**
-Suppose that an array a[] is a max-heap that contains the distinct integer keys 1,2,...,N with
+1.Suppose that an array a[] is a max-heap that contains the distinct integer keys 1,2,...,N with
 N >= 7. The key N must be in a[1] and the key N-1 must be in either a[2] or a[3]. Where must be
 the key N-2 be?
 ---2,3,4,5,6 or 7
 analysis: a[1] is the root, so it's biggest, N-1 should be the children, N-2 will also be children,
 no matter the position except not a[1]
 
+2. How many compares does bottom-up(sink-based) heap construction perform in the worst  
+case when sorting an array of n keys?
+not linearithmic:Inserting n keys one-at-a-time into a binary heap would require a linearithmic  
+number of compares. The bottom-up construction has a superior worst-case running time.  
+Right answer:linear (As stated in lecture, the bottom-up version of heapsort makes ~2n compares  
+in the worst case.)  [reference](http://algs4.cs.princeton.edu/24pq/index.php#Ex2.4.20)
+
 **Heapsort**
-Heapsort is optimal for both time and space, but may not use too much due to:   
-(1)Inner loop longer than quicksort's, like mergesort, more things to do: compare
-children bigger... So there are 2 compares that get done at NlgN times, then there 
+Heapsort is optimal for both time and space, but may not use too much due to:     
+(1)Inner loop longer than quicksort's, like mergesort, more things to do: compare  
+children bigger... So there are 2 compares that get done at NlgN times, then there   
 are some array index arithmetic.
-(2)Makes poor use of cache memory. it doesn't have local memory reference, it goes down
+(2)Makes poor use of cache memory. it doesn't have local memory reference, it goes down  
 the tree.
 (3)Not stable. It does long distance exchanges that might bring items that have equal keys
 back out of order.
+
