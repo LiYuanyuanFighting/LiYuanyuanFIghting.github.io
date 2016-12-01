@@ -38,7 +38,8 @@ no matter the position except not a[1]
 
 2. How many compares does bottom-up(sink-based) heap construction perform in the worst  
 case when sorting an array of n keys?
-not linearithmic:Inserting n keys one-at-a-time into a binary heap would require a linearithmic  
+not [linearithmic](https://en.wikipedia.org/wiki/Time_complexity#Linearithmic_time):  
+Inserting n keys one-at-a-time into a binary heap would require a linearithmic  
 number of compares. The bottom-up construction has a superior worst-case running time.  
 Right answer:linear (As stated in lecture, the bottom-up version of heapsort makes ~2n compares  
 in the worst case.)  [reference](http://algs4.cs.princeton.edu/24pq/index.php#Ex2.4.20)
