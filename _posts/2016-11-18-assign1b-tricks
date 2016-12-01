@@ -12,3 +12,33 @@ Calendar verifyTime = pr.getResult().getVerificationTime();
 			XMLGregorianCalendar date1 = DatatypeFactory.newInstance().newXMLGregorianCalendar(temp);
 			Message message = createMessage(pr.getResult().getVerificationResultMsg(), 
 					date1);
+
+**Checked and unchecked exception**
+[![Exception_hierarchy in java](http://imgur.com/vyrIBcA "Exception_hierarchy in java")](http://imgur.com/vyrIBcA "Exception_hierarchy in java")
+
+    //Create your own exception class subclassing from Exception
+    class MyException extends Exception {
+        public MyException(final String message) {
+            super(message);
+        }
+    }
+    
+    public class Process {
+        public void execute() {
+            throw new RuntimeException("Runtime");
+        }  
+        public void process() throws MyException {
+            throw new MyException("Checked");
+        }
+    }
+In the above class definition of class Process, the method execute can throw a RuntimeException 
+but the method declaration need not specify that it throws RuntimeException.
+
+The method process throws a checked exception and it should declare that it will throw a checked
+exception of kind MyException and not doing so will be a compile error.
+
+The above class definition will affect the code that uses Process class as well.
+
+The call new Process().execute() is a valid invocation where as the call of form new 
+Process().process() gives a compile error. This is because the client code should take steps to
+handle MyException (say call to process() can be enclosed in a try/catch block).
