@@ -27,3 +27,9 @@ to the value in node i.
 **min-heap** satisfy a **min heap property**:
 For every node i other than the root, the value in the parent of node i is less than or equal to  
 the value in node i.
+
+**Question?**
+Suppose that an array a[] is a max-heap that contains the distinct integer keys 1,2,...,N with
+N >= 7. The key N must be in a[1] and the key N-1 must be in either a[2] or a[3]. Where must be
+the key N-2 be?
+---2,3,4,5,6 or 7
