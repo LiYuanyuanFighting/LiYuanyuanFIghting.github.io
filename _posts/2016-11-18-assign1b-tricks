@@ -42,3 +42,14 @@ The above class definition will affect the code that uses Process class as well.
 The call new Process().execute() is a valid invocation where as the call of form new 
 Process().process() gives a compile error. This is because the client code should take steps to
 handle MyException (say call to process() can be enclosed in a try/catch block).
+Examples of Checked Exceptions :
+ClassNotFoundException
+IllegalAccessException
+NoSuchFieldException
+IOException
+FileNotFoundException
+ParseException
+CloneNotSupportedException
+InstantiationException
+InterruptedException
+NoSuchMethodException
