@@ -35,3 +35,13 @@ the key N-2 be?
 ---2,3,4,5,6 or 7
 analysis: a[1] is the root, so it's biggest, N-1 should be the children, N-2 will also be children,
 no matter the position except not a[1]
+
+**Heapsort**
+Heapsort is optimal for both time and space, but may not use too much due to:   
+(1)Inner loop longer than quicksort's, like mergesort, more things to do: compare
+children bigger... So there are 2 compares that get done at NlgN times, then there 
+are some array index arithmetic.
+(2)Makes poor use of cache memory. it doesn't have local memory reference, it goes down
+the tree.
+(3)Not stable. It does long distance exchanges that might bring items that have equal keys
+back out of order.
