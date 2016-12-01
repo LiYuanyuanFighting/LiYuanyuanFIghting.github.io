@@ -33,3 +33,5 @@ Suppose that an array a[] is a max-heap that contains the distinct integer keys 
 N >= 7. The key N must be in a[1] and the key N-1 must be in either a[2] or a[3]. Where must be
 the key N-2 be?
 ---2,3,4,5,6 or 7
+analysis: a[1] is the root, so it's biggest, N-1 should be the children, N-2 will also be children,
+no matter the position except not a[1]
