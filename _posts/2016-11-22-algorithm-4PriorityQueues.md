@@ -34,15 +34,14 @@ N >= 7. The key N must be in a[1] and the key N-1 must be in either a[2] or a[3]
 the key N-2 be?
 ---2,3,4,5,6 or 7
 analysis: a[1] is the root, so it's biggest, N-1 should be the children, N-2 will also be children,
-no matter the position except not a[1]
-
-2. How many compares does bottom-up(sink-based) heap construction perform in the worst  
+no matter the position except not a[1]  
+2.How many compares does bottom-up(sink-based) heap construction perform in the worst  
 case when sorting an array of n keys?
 not [linearithmic](https://en.wikipedia.org/wiki/Time_complexity#Linearithmic_time):  
 Inserting n keys one-at-a-time into a binary heap would require a linearithmic  
 number of compares. The bottom-up construction has a superior worst-case running time.  
-Right answer:linear (As stated in lecture, the bottom-up version of heapsort makes ~2n compares  
-in the worst case.)  [reference](http://algs4.cs.princeton.edu/24pq/index.php#Ex2.4.20)
+Right answer:linear (As stated in lecture, the bottom-up version of heapsort makes ~2n  
+compares in the worst case.)  [reference](http://algs4.cs.princeton.edu/24pq/index.php#Ex2.4.20)
 
 **Heapsort**
 Heapsort is optimal for both time and space, but may not use too much due to:     
