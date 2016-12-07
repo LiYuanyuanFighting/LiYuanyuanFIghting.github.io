@@ -53,3 +53,39 @@ the tree.
 (3)Not stable. It does long distance exchanges that might bring items that have equal keys
 back out of order.
 
+**Loitering Object**
+As we know, Java has the advantage to create an environment that eliminated the memory management
+problems(such as buffer overruns, de-referencing invalid pointers, and memory leaks). however, the  
+responsibility of managing a finite memory resource has not been eliminated. Ill-designed Java  
+applications can exhibit the same macro-level symptoms (that of a continually growing process size)  
+as traditional memory leaks. This undesirable memory growth is a consequence of unintentionally  
+retaining references to objects that have outlived their usefulness to the application.    
+Object loitering: a form of memory leak. 
+For example:    
+Class that exhibits “object loitering”   
+    // BAD CODE - DO NOT EMULATE
+    public class LeakyChecksum {
+        private byte[] byteArray;
+        
+        public synchronized int getFileChecksum(String fileName) {
+            int len = getFileSize(fileName);
+            if (byteArray == null || byteArray.length < len)
+                byteArray = new byte[len];
+            readFileContents(fileName, byteArray);
+            // calculate checksum and return it
+        }
+    }
+The decision to cache the buffer most likely followed from the assumption that it would be called  
+many times within a program and that it would therefore be more efficient to reuse the buffer rather  
+than reallocate it. But as a result, the buffer is never released because it is always reachable by  
+the program (unless the LeakyChecksum object is garbage collected). Worse, while it can grow, it   
+cannot shrink, so LeakyChecksum permanently retains a buffer as large as the largest file processed.  
+At the very least, this puts pressure on the garbage collector and requires more frequent collections;  
+keeping a large buffer around for the purpose of computing future checksums may not be the most efficient  
+use of available memory.
+The cause of the problem in LeakyChecksum is that the buffer is logically local to the getFileChecksum()  
+operation, but its lifecycle has been artificially prolonged by promoting it to an instance field. As a   
+result, the class has to manage the lifecycle of the buffer itself rather than letting the JVM do it.
+
+[reference1](http://www.ibm.com/developerworks/library/j-jtp01246/ "reference1")
+[reference2](https://adtmag.com/articles/2001/02/05/loitering-objects-and-java-framework-design.aspx)
