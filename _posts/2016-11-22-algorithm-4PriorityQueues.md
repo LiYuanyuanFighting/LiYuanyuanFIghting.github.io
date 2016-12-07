@@ -94,5 +94,7 @@ Garbage collection is intended to remove the cause for classic memory leaks: unr
 objects in memory. However, this works only for memory leaks in the original sense. It’s possible to have  
 unused objects that are still reachable by an application because the developer simply forgot to dereference  
 them. Such objects cannot be garbage-collected. Even worse, such a logical memory leak cannot be detected by  
-any software
+any software.
+When doing very large data structures, simply set the reference to null to allow the garbage collector  
+to potentially reclaim this object before the method completes.
 [how does garbage collection work?](https://www.dynatrace.com/resources/ebooks/javabook/how-garbage-collection-works/)
