@@ -89,3 +89,10 @@ result, the class has to manage the lifecycle of the buffer itself rather than l
 
 [reference1](http://www.ibm.com/developerworks/library/j-jtp01246/ "reference1")
 [reference2](https://adtmag.com/articles/2001/02/05/loitering-objects-and-java-framework-design.aspx)
+
+Garbage collection is intended to remove the cause for classic memory leaks: unreachable-but-not-deleted   
+objects in memory. However, this works only for memory leaks in the original sense. It’s possible to have  
+unused objects that are still reachable by an application because the developer simply forgot to dereference  
+them. Such objects cannot be garbage-collected. Even worse, such a logical memory leak cannot be detected by  
+any software
+[how does garbage collection work?](https://www.dynatrace.com/resources/ebooks/javabook/how-garbage-collection-works/)
