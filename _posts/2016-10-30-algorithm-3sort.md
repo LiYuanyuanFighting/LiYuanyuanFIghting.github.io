@@ -40,10 +40,11 @@ You continue partitioning each partition until the array is sorted. The runtime 
 
 **linearithmic**
 
-(computer science, of a procedure) Taking up to time proportional to n log(n) to run on inputs of size n.
+(computer science, of a procedure) Taking up to time proportional to n log(n) to run on inputs of size n. e.g. nlogn, logn!.
 
 **logarithm**
-In mathematics, the logarithm is the inverse operation to exponentiation. That means the logarithm of a number is the exponent to which another fixed number, the base, must be raised to produce that number. In simple cases the logarithm counts repeated multiplication. For example, the base 10 logarithm of 1000 is 3, as 10 to the power 3 is 1000 (1000 = 10 × 10 × 10 = 103);
+In mathematics, the logarithm is the inverse operation to exponentiation. That means the logarithm of a number is the exponent to which another fixed number, the base, must be raised to produce that number. In simple cases the logarithm counts repeated multiplication. For example, the base 10 logarithm of 1000 is 3, as 10 to the power 3 is 1000 (1000 = 10 × 10 × 10 = 103); e.g. log n, log n(2)
+[More to see in wiki](https://en.wikipedia.org/wiki/Time_complexity)
 
 
 **Shuffling a linkedlist** 
