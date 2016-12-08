@@ -42,3 +42,5 @@ Compare the algorithms: Dijkstra’s Algorithm calculates the distance from the 
 Best-First Search estimates the distance to the goal point. A* is using the sum of those two distances.  
 
 [reference1](http://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html)
+#### Notes  
+(1)To calculate Manhattan priority is to calculate the sum of the distance in vertical and horizontal.
