@@ -45,3 +45,17 @@ Best-First Search estimates the distance to the goal point. A* is using the sum 
 #### Notes  
 (1)To calculate Manhattan priority is to calculate the sum of the distance in vertical and horizontal.
 (2)Unsolvable case: if the initial board can become into global board by swapping any pair of blocks.(prove!)
+(3)The length of 2 dimension array:   
+     public static void main(String[] args) {
+    
+        int[][] foo = new int[][] {
+            new int[] { 1, 2, 3 },
+            new int[] { 1, 2, 3, 4},
+        };
+    
+        System.out.println(foo.length); //2
+        System.out.println(foo[0].length); //3
+        System.out.println(foo[1].length); //4
+    }
+
+
