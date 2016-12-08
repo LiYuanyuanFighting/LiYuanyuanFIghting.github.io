@@ -44,3 +44,4 @@ Best-First Search estimates the distance to the goal point. A* is using the sum 
 [reference1](http://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html)
 #### Notes  
 (1)To calculate Manhattan priority is to calculate the sum of the distance in vertical and horizontal.
+(2)Unsolvable case: if the initial board can become into global board by swapping any pair of blocks.(prove!)
