@@ -1,0 +1,32 @@
+---
+layout: post
+title: Algorithm---Priority Queues
+categories: [blog ]
+tags: [study,java,sort,priorityQueue ]
+description: Good algorithm is much more efficienet than spending more money and time
+---  
+
+In the assignment, it introduces an algorithm----A*, after checking it, I just realized
+how widely use it is.
+**A*(A star)** is a computer algorithm widely used in pathfinding and graph traversal.   
+The simplest (and least efficient) method of traversing a graph is the **Depth First Search**   
+(an algorithm starts at the root and explores as far as possible along each branch before    
+backtracking. In some area, the graph to be traversed is often either too large to visit  
+in its entirety or infinite, then DFS will suffer non-termination).  
+
+**backtrack**   
+In backtracking algorithms, try to build one step at a time. If at some step it become clear
+that the current path that you are on cannot lead to a solution you go back to. Common example   
+is Eight qqueens puzzle:
+    queens = [0,0...,0]
+    for i=1 to maxRows:
+        for j=1 to maxRows:
+            queens[i] = queens[i]++
+            if queensNotUnderAttack(i) then:
+                break
+            else :
+                if j == maxRows then: i--
+
+
+
+[reference1](http://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html)
