@@ -14,6 +14,9 @@ The simplest (and least efficient) method of traversing a graph is the **Depth F
 backtracking. In some area, the graph to be traversed is often either too large to visit  
 in its entirety or infinite, then DFS will suffer non-termination).  
 
+Pathfinders enable us to plan ahead rather than waiting until the last moment to discover   
+there is a problem.
+
 **backtrack**   
 In backtracking algorithms, try to build one step at a time. If at some step it become clear
 that the current path that you are on cannot lead to a solution you go back to. Common example   
@@ -27,6 +30,15 @@ is Eight qqueens puzzle:
             else :
                 if j == maxRows then: i--
 
+[![situation without using proper algorithm](http://imgur.com/VWcbNF9 "situation without using proper algorithm")](http://imgur.com/VWcbNF9 "situation without using proper algorithm")
+[![extend a movement algorithm](http://imgur.com/fWX98sa "extend a movement algorithm")](http://imgur.com/fWX98sa "extend a movement algorithm")
 
+Dijikstra's algorithm works well to find the shorted path, but it wastes time in exploring directions  
+that aren't promising. Greedy Best First Search algorithm selects the vertex closest to the goal, exploring  
+in promising directions but it may not find the shortest path. The A* algorithm uses both the actual    
+distance from the start and the estimated distance to the goal.  
+
+Compare the algorithms: Dijkstra’s Algorithm calculates the distance from the start point. Greedy   
+Best-First Search estimates the distance to the goal point. A* is using the sum of those two distances.  
 
 [reference1](http://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html)
