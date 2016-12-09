@@ -63,4 +63,4 @@ Best-First Search estimates the distance to the goal point. A* is using the sum 
 how to express this or should use not binary tree? To construct priority queue, should have the key, should
 the priority be the key? If this, how to find the right path under the condition that parent is not real parant?
 
-
+2. decide unsolvable puzzles, how to solve the "any"?
