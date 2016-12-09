@@ -70,5 +70,5 @@ the priority be the key? If this, how to find the right path under the condition
 
 Primitive types(int here) in Java cannot be null. If you want to check for 0, do a != 0.  
 int cannot be compared to null, which is a null reference to an object  
-
+Similarly, cannot invoke equals(int) on the primitive type int
 
