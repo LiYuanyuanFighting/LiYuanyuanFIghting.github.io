@@ -58,4 +58,9 @@ Best-First Search estimates the distance to the goal point. A* is using the sum 
         System.out.println(foo[1].length); //4
     }
 
+#### Problems    
+1. how to create priority queue and game tree, in this case, one board cann have more than 2 neighbors,   
+how to express this or should use not binary tree? To construct priority queue, should have the key, should
+the priority be the key? If this, how to find the right path under the condition that parent is not real parant?
+
 
