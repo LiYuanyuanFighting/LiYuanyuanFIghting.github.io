@@ -64,3 +64,11 @@ how to express this or should use not binary tree? To construct priority queue, 
 the priority be the key? If this, how to find the right path under the condition that parent is not real parant?
 
 2. decide unsolvable puzzles, how to solve the "any"?
+
+#### Mistakes
+1.  The operator == is undefined for the argument type(s) int, null:  
+
+Primitive types(int here) in Java cannot be null. If you want to check for 0, do a != 0.  
+int cannot be compared to null, which is a null reference to an object  
+
+
