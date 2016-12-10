@@ -3,8 +3,9 @@
  * goal:solve the 8-puzzle problem (and its natural generalizations) using the A* search algorithm
  */
 import java.lang.Math;
-import edu.princeton.cs.algs4.MinPQ;
+// import edu.princeton.cs.algs4.MinPQ;
 import edu.princeton.cs.algs4.StdRandom;
+import java.util.Stack;
 
 public class Board {
     
@@ -129,23 +130,10 @@ public class Board {
     // how to create an iterable object?
     public Iterable<Board> neighbors()     // all neighboring boards, take care not to change original blocks
     {
-        // Iterator<Board> boards = new Iterator<Board>();
-        MinPQ<Board> q = new MinPQ<Board>(new Comparator<Board>() {  
-            public int compare(Board o1, Board o2) {  
-                if (o1.manhattan() < o2.manhattan()) return -1;  
-               else if (o1.manhattan() == o2.manhattan()) return 0;  
-               else return 1;  
-            }  
-        });
-      /*  MinPQ<Board> q = new MinPQ<Board>(new Comparator<Board>() {
-            public int compare(Board b1, Board b2) {
-                if (b1.manhattan() < b2.manhattan()) return -1;
-                else if (b1.mahattan() == b2.manhattan()) return 0;
-                else return 1;
-            }
-        }); */
+        Stack<Board> neighbors = new Stack<Board>();
+        
         // 1st find the empth cell
-        int ii, jj;
+        int ii = 0, jj = 0;
         for (ii = 0; ii < N; ii++)
             for (jj = 0; jj < N; jj++) {
             if (blocks[ii][jj]== 0)
@@ -177,7 +165,7 @@ public class Board {
             // create the neighbor
             Board neighbor1 = new Board(blocksCopy);
             // boards.add(neighbor1);
-            q.insert(neighbor1);
+            neighbors.push(neighbor1);
         }
         // 2.check bottom
         if (row < N) {
@@ -197,7 +185,7 @@ public class Board {
             // create the neighbor
             Board neighbor2 = new Board(blocksCopy);
             // boards.add(neighbor1);
-            q.insert(neighbor2);
+            neighbors.push(neighbor2);
         }
         // 3.check left
          if (col > 0) {
@@ -217,7 +205,7 @@ public class Board {
             // create the neighbor
             Board neighbor3 = new Board(blocksCopy);
             // boards.add(neighbor1);
-            q.insert(neighbor3);
+            neighbors.push(neighbor3);
         }
          // 4.check right
          if (col > 0) {
@@ -237,9 +225,9 @@ public class Board {
             // create the neighbor
             Board neighbor4 = new Board(blocksCopy);
             // boards.add(neighbor1);
-            q.insert(neighbor4);
+            neighbors.push(neighbor4);
         }
-         return q;
+         return neighbors;
     }
     public String toString()               // string representation of this board (in the output format specified below)
     {
