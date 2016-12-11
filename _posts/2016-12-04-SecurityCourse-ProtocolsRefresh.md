@@ -25,3 +25,8 @@ There is one NCP for each higher-layer protocol supported by PPP.
 **重放攻击(Replay attack)**  
 [reference](https://cnodejs.org/topic/557c354d16839d2d539362b6 "reference")
 
+**Accounting**
+measures the resources a user consumes during access. This can include the amount of system  
+time or the amount of data a user has sent and/or received during a session. Accounting is  
+carried out by logging of session statistics and usage information and is used for authorization  
+control, billing, trend analysis, resource utilization, and capacity planning activities.
