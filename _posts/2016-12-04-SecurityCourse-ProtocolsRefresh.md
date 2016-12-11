@@ -22,4 +22,6 @@ as negotiate capabilities.One or more Network Control Protocols (NCP) used to
 negotiate optional configuration parameters and facilities for the network layer.  
 There is one NCP for each higher-layer protocol supported by PPP.  
 
-****
+**重放攻击(Replay attack)**  
+[reference](https://cnodejs.org/topic/557c354d16839d2d539362b6 "reference")
+
