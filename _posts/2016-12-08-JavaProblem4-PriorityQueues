@@ -72,3 +72,19 @@ Primitive types(int here) in Java cannot be null. If you want to check for 0, do
 int cannot be compared to null, which is a null reference to an object  
 Similarly, cannot invoke equals(int) on the primitive type int
 
+2. To exit 2 nest loops  
+in java, can use label to specify which loop to break
+    mainLoop:
+    while (goal <= 100) {
+       for (int i = 0; i < goal; i++) {
+          if (points > 50) {
+             break mainLoop;
+          }
+          points += i;
+       }
+    }
+
+
+
+
+
