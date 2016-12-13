@@ -73,6 +73,9 @@ which can guarantee smallest move, then check each of its neighbors, add them in
 step till find the node A which has board equals to the goal.  
 4th check if the attribute isTwin of node A is true, then it meets the unsolvable condition, so no solution.
 
+But still don't understand why that case(after switching any pair of initial can become into goal) is unsolvable  
+and why add the twin of initial into queue????
+
 2. decide unsolvable puzzles, how to solve the "any"?
 
 #### Mistakes
