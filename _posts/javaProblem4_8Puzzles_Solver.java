@@ -2,6 +2,7 @@ import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.MinPQ;
 import edu.princeton.cs.algs4.StdOut;
 import java.util.Stack;
+import java.util.Iterator;
 
 public class Solver {
     
@@ -21,7 +22,7 @@ public class Solver {
         this.solvable = true;
         // A* algorithm: (Board current, GameNode prev, int moves, boolean isTwin)
         MinPQ<GameNode> pq = new MinPQ<GameNode>();
-        MinPQ<GameNode> pqSearch = new MinPQ<GameNode>(); 
+       MinPQ<GameNode> pqSearch = new MinPQ<GameNode>(); 
         boolean isTwin = false;
         int move = 0;
         // check unsolvable case
@@ -31,26 +32,37 @@ public class Solver {
         GameNode gn = new GameNode(initial, null, 0, isTwin);
         // 1st: insert the initial search node
         pq.insert(gn);
-        // 2nd: delete from the priority queue the search nodes with minimu priority
-        GameNode searchNode = pq.delMin();
-        pqSearch.insert(searchNode);
-        while (!searchNode.board.equals(goal)) {
-        // And insert neighbors
-        for (Board board : searchNode.board.neighbors()) {
-            if (board.twin().equals(goal)) {
-                isTwin = false;
+        while (!pq.isEmpty()) {
+             // 2nd: delete from the priority queue the search nodes with minimu priority
+            GameNode searchNode = pq.delMin();
+            pqSearch.insert(searchNode);
+        moveTotal = searchNode.moves;
+            System.out.println("searchNode move is " + searchNode.moves);
+            if (searchNode.board.isGoal()) {
+                if (searchNode.isTwin == true)
+                    solvable = false;
+                System.out.println("I found goal!");
                 break;
             }
-            
-            GameNode searchGN = new GameNode(board, searchNode,searchNode.moves + 1, isTwin);
+            // And insert neighbors
+           int i = 0;
+            for (Board check: searchNode.board.neighbors()) {
+            StdOut.println("traverse neighbors " + check);
+            }
+            for (Board neighbor : searchNode.board.neighbors()) {
+                i++;
+                 System.out.println("I have "  + i + " neighbors.");
+            if (neighbor.twin().equals(goal)) {
+                isTwin = true;
+            }
+            if (searchNode.prev == null || !searchNode.prev.board.equals(neighbor)) {
+            GameNode searchGN = new GameNode(neighbor, searchNode,searchNode.moves + 1, isTwin);
             pq.insert(searchGN);
+            StdOut.println("checkhjhkj " + searchGN.board);
+            }
         }
-        searchNode = pq.delMin();
-        pqSearch.insert(searchNode);
         }
-        moveTotal = searchNode.moves;
-        if (searchNode.isTwin == true)
-            solvable = false;
+        this.pqSearch = pqSearch;
     }
     public boolean isSolvable()            // is the initial board solvable?
     {
