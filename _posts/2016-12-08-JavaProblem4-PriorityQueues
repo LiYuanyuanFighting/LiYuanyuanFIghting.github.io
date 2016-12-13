@@ -88,5 +88,17 @@ in java, can use label to specify which loop to break
 I added them inside the stack in order, but the content change of array in any neighbor will
 influence others, because of the same array
 
-
+4. My swap method as following is wrong:
+        private void swap(int a, int b) {
+            int temp = 0;
+            temp = a;
+            a = b;
+            b = temp;
+        }
+it won't change anything because java is passing-by-value. Instead can do like this:   
+    void swap(int[][] array, int row1, int col1, int row2, int col2) {
+        int temp = array[row1][col1];
+        array[row1][col1] = array[row2][col2];
+        array[row2][col2] = temp;
+    }
 
