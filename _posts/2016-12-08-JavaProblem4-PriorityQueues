@@ -63,6 +63,16 @@ Best-First Search estimates the distance to the goal point. A* is using the sum 
 how to express this or should use not binary tree? To construct priority queue, should have the key, should
 the priority be the key? If this, how to find the right path under the condition that parent is not real parant?
 
+Analysis:  
+Follow the steps: 1st create an inner class called gameNode to which includes current board, previous board,  
+isTwin, move num which is enough to trace the solution  
+2nd create 1 minPQ which is a binary tree implementation using class methods provided, add the   
+initial and the twin of the initial  
+3rd using minPQ.delMin() to find the node with lowest priority(sum of manhatton number and moves is smallest)  
+which can guarantee smallest move, then check each of its neighbors, add them into the queue then repeat this   
+step till find the node A which has board equals to the goal.  
+4th check if the attribute isTwin of node A is true, then it meets the unsolvable condition, so no solution.
+
 2. decide unsolvable puzzles, how to solve the "any"?
 
 #### Mistakes
