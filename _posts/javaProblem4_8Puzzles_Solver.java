@@ -26,39 +26,37 @@ public class Solver {
         boolean isTwin = false;
         int move = 0;
         // check unsolvable case
-        if (initial.twin().equals(goal)) {
-            solvable = false;
-        }
-        GameNode gn = new GameNode(initial, null, 0, isTwin);
+       // if (initial.twin().equals(goal)) {
+         //   solvable = false;
+        // }
+        GameNode gn = new GameNode(initial, null, 0, false);
         // 1st: insert the initial search node
         pq.insert(gn);
+        // insert the twin of searchNode
+        pq.insert(new GameNode(initial.twin(), null, 0, true));
+       // System.out.println("My twin is " + initial.twin());
         while (!pq.isEmpty()) {
              // 2nd: delete from the priority queue the search nodes with minimu priority
             GameNode searchNode = pq.delMin();
             pqSearch.insert(searchNode);
         moveTotal = searchNode.moves;
-            System.out.println("searchNode move is " + searchNode.moves);
+            
+           // System.out.println("searchNode move is " + searchNode.moves);
             if (searchNode.board.isGoal()) {
-                if (searchNode.isTwin == true)
+                if (searchNode.isTwin == true) {
                     solvable = false;
-                System.out.println("I found goal!");
+                   // System.out.println("not solvable!!!!");
+                }
+               // System.out.println("I found goal!"  + searchNode.board);
+               
                 break;
             }
             // And insert neighbors
-           int i = 0;
-            for (Board check: searchNode.board.neighbors()) {
-            StdOut.println("traverse neighbors " + check);
-            }
             for (Board neighbor : searchNode.board.neighbors()) {
-                i++;
-                 System.out.println("I have "  + i + " neighbors.");
-            if (neighbor.twin().equals(goal)) {
-                isTwin = true;
-            }
             if (searchNode.prev == null || !searchNode.prev.board.equals(neighbor)) {
-            GameNode searchGN = new GameNode(neighbor, searchNode,searchNode.moves + 1, isTwin);
+            GameNode searchGN = new GameNode(neighbor, searchNode,searchNode.moves + 1, searchNode.isTwin);
             pq.insert(searchGN);
-            StdOut.println("checkhjhkj " + searchGN.board);
+           // StdOut.println("checkhjhkj " + searchGN.board);
             }
         }
         }
