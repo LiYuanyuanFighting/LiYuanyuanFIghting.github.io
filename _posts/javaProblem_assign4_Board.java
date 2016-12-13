@@ -32,7 +32,7 @@ public class Board {
              // if the position is right, no need to count
             if (blocks[i][j] == 0)
                 continue;
-            currentNum = i*N + j;
+            currentNum = i*N + j + 1;
             if (blocks[i][j] != currentNum)
                 num++;
         }
@@ -104,8 +104,10 @@ public class Board {
                 col1 = col;
             }
         }
+       // System.out.println("Before swapping:" + blocksCopy[row][col]);
         // swap
-        swap(blocksCopy[row][col], blocksCopy[row1][col1]);
+        swap(blocksCopy, row, col, row1, col1);
+       // System.out.println("After swapping:" + blocksCopy[row][col]);
         return new Board(blocksCopy);
     }
     public boolean equals(Object y)        // does this board equal y?
@@ -140,17 +142,13 @@ public class Board {
         mainLoop:
        for (ii = 0; ii < N; ii++) {
             for (jj = 0; jj < N; jj++) {
-            System.out.println("blocks[ii][jj] is " + blocks[ii][jj]);
             if (blocks[ii][jj]== 0){
-                System.out.println("0");
                 break mainLoop;
             }
         }
        }
          row = ii;
          col = jj;
-        System.out.println("ii is " + ii + " jj is " + jj);
-       
        int exchange = 0;
        
        
@@ -177,7 +175,7 @@ public class Board {
             Board neighbor1 = new Board(blocksCopy1);
             // boards.add(neighbor1);
             neighbors.push(neighbor1);
-            System.out.println("I added up neighbor");
+//            System.out.println("I added up neighbor");
         }
         // 2.check bottom
         if (row < N - 1) {
@@ -199,8 +197,8 @@ public class Board {
             Board neighbor2 = new Board(blocksCopy2);
             // boards.add(neighbor1);
             neighbors.push(neighbor2);
-            System.out.println("added bottom neighbor " + neighbor2);
-             System.out.println("I added bottom neighbor");
+//            System.out.println("added bottom neighbor " + neighbor2);
+//             System.out.println("I added bottom neighbor");
         }
         // 3.check left
          if (col > 0) {
@@ -222,8 +220,8 @@ public class Board {
             Board neighbor3 = new Board(blocksCopy3);
             // boards.add(neighbor1);
             neighbors.push(neighbor3);
-            System.out.println("added left neighbor " + neighbor3);
-             System.out.println("I added left neighbor");
+//            System.out.println("added left neighbor " + neighbor3);
+//             System.out.println("I added left neighbor");
         }
          // 4.check right
          if (col < N - 1) {
@@ -245,12 +243,12 @@ public class Board {
             Board neighbor4 = new Board(blocksCopy4);
             // boards.add(neighbor1);
             neighbors.push(neighbor4);
-            System.out.println("added right neighbor " + neighbor4);
-             System.out.println("I added right neighbor");
+//            System.out.println("added right neighbor " + neighbor4);
+//             System.out.println("I added right neighbor");
         }
-         for (Board check: neighbors) {
-            System.out.println("2121212traverse neighbors " + check);
-            }
+//         for (Board check: neighbors) {
+//            System.out.println("2121212traverse neighbors " + check);
+//            }
          
          return neighbors;
     }
@@ -260,18 +258,18 @@ public class Board {
             throw new java.lang.NullPointerException();
         StringBuilder s = new StringBuilder();
         s.append(N + "\n");
-        for (int j = 0; j < N; j++) {
-        for (int i = 0; i < N; i++)
+        for (int i = 0; i < N; i++){
+         for (int j = 0; j < N; j++)
            s.append(String.format("%2d ", blocks[i][j]));
         s.append("\n");
         }
         return s.toString();
     }
-    private void swap(int a, int b) {
+    private void swap(int[][] array, int row1, int col1, int row2, int col2) {
         int temp = 0;
-        temp = a;
-        a = b;
-        b = temp;
+        temp = array[row1][col1];
+        array[row1][col1] = array[row2][col2];
+        array[row2][col2] = temp;
     }
     private int[][] copy() {
         int[][]  blocksCopy = new int[N][N];
