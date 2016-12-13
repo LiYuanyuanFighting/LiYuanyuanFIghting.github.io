@@ -84,7 +84,9 @@ in java, can use label to specify which loop to break
        }
     }
 
-
+3. To create neighbors, I used only one array for 4 cases(left, right, up, down), even though
+I added them inside the stack in order, but the content change of array in any neighbor will
+influence others, because of the same array
 
 
 
