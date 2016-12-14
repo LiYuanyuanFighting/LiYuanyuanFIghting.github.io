@@ -115,3 +115,9 @@ it won't change anything because java is passing-by-value. Instead can do like t
         array[row2][col2] = temp;
     }
 
+5.Stores a reference to an externally mutable object in the instance variable   
+[reference1](http://stackoverflow.com/questions/34109363/how-can-we-maintain-immutability-of-a-class-with-a-mutable-referrence)
+
+
+
+
