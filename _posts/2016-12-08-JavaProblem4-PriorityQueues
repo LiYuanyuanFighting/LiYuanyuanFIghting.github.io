@@ -148,5 +148,16 @@ can change like this:
             }
         }
 
-
+6.OperationCountLimitExceededException. Number of calls to methods in Board exceeds limit: 100000000   
+Analysis:   
+Originally, I used 4 double for loops to get the 4 possible neighbors which is really time consuming...   
+Solution:   
+(1) just use the index directly to get the neighbors
+(2) can use a trick:  
+    int[] dx = {0, 0, -1, 1};
+            int[] dy = {1, -1, 0, 0};
+            for (int i = 0; i < 4; i++) {
+                int x = posX + dx[i];
+                int y = posY + dy[i];
+which stores possible neighbor index
 
