@@ -74,9 +74,17 @@ Which ever architecture you choose make sure its easy for developers to access i
 [reference1](http://blog.smartbear.com/apis/understanding-soap-and-rest-basics/ "reference1")  
 [reference2](http://stackoverflow.com/questions/2131965/main-differences-between-soap-and-restful-web-services-in-java)
 
+What is java servlet?  
+A java servlet is a java program that extends the capabilities of a server. Although servlets can respond   
+to any types of requests, they most commonly implement applications hosted on web servers.
+Servlets are most often used to process or store a java class in Java EE that conforms to the java  
+Servlet API, a standard for implementing java classes that respond to requests.
 
+To deploy and run a servlet, a web container must be used. A web container (also known as a servlet container) is essentially the component of a web server that interacts with the servlets. The web container is responsible for managing the lifecycle of servlets, mapping a URL to a particular servlet and ensuring that the URL requester has the correct access rights.  
+A Servlet is an object that receives a request and generates a response based on that request.  
 
-
-
-
+What is Java EE?  
+It is a widely used computing platform for enterprise software which provides an API and runtime environment  
+for developing and running enterprise software, including network and web services, and other large-scale, multi-tired,  
+scalable, reliable, and secure netwoek applications.
 
