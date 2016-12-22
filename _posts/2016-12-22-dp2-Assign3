@@ -1,3 +1,11 @@
-1.**xjc**   
-xjc(for XML binding compiler) -d <dir>  :  generated files will go into this directory
-[reference](https://jaxb.java.net/nonav/2.1.3/docs/xjcTask.html)
+1.**xjc**     
+The jaxb-xjc.jar file contains the XJCTask.class file, which allows the XJC binding compiler  
+to be invoked from the Ant build tool.
+xjc(for XML binding compiler) -d <dir>  :  generated files will go into this directory  
+-p <pkg> : specifies the target package
+[reference](http://docs.oracle.com/javase/7/docs/technotes/tools/share/xjc.html)
+
+2.**Map**   
+keySet(): to retrieve all keys   
+entrySet(): to retrieve key-value pairs  
+values(): to retrieve all values  
