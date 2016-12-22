@@ -78,6 +78,12 @@ and why add the twin of initial into queue????
 
 2. decide unsolvable puzzles, how to solve the "any"?
 
+We can only reach the goal state from a state which has even inversion count. The idea is based  
+on the fact that the parity of inversions remains same after a set of moves, i.e. if the inversion  
+count is even, then it remains even after any sequence of moves.   
+So we just need to invert any pair in the same row(1 inversion), if the inverted one can reach the  
+goal, it will mean the puzzle is unsolvable
+
 #### Mistakes
 1.  The operator == is undefined for the argument type(s) int, null:  
 
