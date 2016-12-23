@@ -8,59 +8,39 @@ import java.util.Stack;
 
 public class Board {
     
-    private final int n;
+     private final int n;
     private char[] blocks;
-    // private int[][] blocks; // should make a new array to keep original immutable or not?
     private int hammingNum;
     private int manhattanNum;
     private int boardX, boardY;
     public Board(int[][] blo)           // construct a board from an n-by-n array of blocks
     {
-        if (blo.length == 0)
+        if (blo.length < 2)
             throw new java.lang.NullPointerException();
         this.n = blo.length;
         blocks = new char[n*n];
-        // this.blocks = blocks;
         hammingNum = 0;
         manhattanNum = 0;
-        int num = 0;
-        int num1 = 0;
         int currentNum = 0;
-        int horizontal = 0;
-        int vertical = 0;
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++) {
+            currentNum = blo[i][j];
                this.blocks[i*n + j] = (char) blo[i][j];
                // calculate hamming distance
                     // if the position is right, no need to count
                     if (blocks[i*n + j] != 0) {
-                        currentNum = i*n + j + 1;
-                        if (blocks[i*n + j] != currentNum)
-                        num++;
+                        if (blocks[i*n + j] != i*n + j + 1)
+                        hammingNum++;
                         // calculate manhattanNum
-                        // if the position is right, no need to count
-                        if (blocks[i*n + j] == (n * i + j + 1))
-                            continue;
-                        if (blocks[i*n + j] % n == 0) {
-                            vertical = blocks[i*n + j]/n - 1 - i;
-                            horizontal = n - 1 - j; 
-                        } else {
-                            vertical = blocks[i*n + j]/n - i;
-                            horizontal = blocks[i*n + j] % n -1 - j;
-                        }
-                        // get the distance in the vertical direction
-                        // vertical = (blocks[i][j]-j-1)/n - i;
-                        vertical = Math.abs(vertical);
-                        // get the distance in the horizontal direction
-                        // horizontal = (blocks[i][j]-1) % n-j;
-                        horizontal = Math.abs(horizontal);
-                        num1 += vertical + horizontal;
+                       int col = (currentNum - 1) % n;
+                      int row = (currentNum - col - 1) / n;
+                      // StdOut.println("v:"+currentValue+"r:"+row+"c:"+col);
+                      manhattanNum += (((col > j) ? (col - j) : (j - col)) +
+                      ((row > i) ? (row - i) : (i - row)));
                     } else {
                         boardX = i;
                         boardY = j;
                     }
-                this.hammingNum = num;
-                this.manhattanNum = num1;
         }
     }
                                            // (where blocks[i][j] = block in row i, column j)
@@ -78,7 +58,7 @@ public class Board {
     }
     public boolean isGoal()                // is this board the goal board?
     {
-        return hammingNum == 0;
+        return hamming() == 0;
     }
     public Board twin()                    // a board that is obtained by exchanging any pair of blocks
     {
@@ -150,9 +130,10 @@ public class Board {
             return false;
         Board that = (Board) y;
         if (that.dimension() != n) return false;
-        char[] blocksThat = that.blocks;
+       // char[] blocksThat = that.blocks;
          for (int j = 0; j < n*n; j++) {
-            if (blocksThat[j] != blocks[j])
+           // if (blocksThat[j] != blocks[j])
+             if (that.blocks[j] != this.blocks[j])
                 return false;
         }
         return true;
@@ -202,8 +183,7 @@ public class Board {
         return s.toString();
     }
     private void swap(int[][] array, int row1, int col1, int row2, int col2) {
-        int temp = 0;
-        temp = array[row1][col1];
+        int temp = array[row1][col1];
         array[row1][col1] = array[row2][col2];
         array[row2][col2] = temp;
     }
