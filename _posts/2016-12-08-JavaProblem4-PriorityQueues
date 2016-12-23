@@ -167,3 +167,14 @@ Solution:
                 int y = posY + dy[i];
 which stores possible neighbor index
 
+In fact the main reason is my mistake here: 
+public int compareTo(GameNode that) {   
+            int priority1 = this.board.manhattan() + this.moves;   
+            int priority2 = this.board.manhattan() + that.moves;  
+for priority2, it should be that.board.manhattan(), so before it was difficult to find a real GameNode  
+object in pq.delMin(), then easily operate on the wrong one.   
+This error took me one week.....
+
+
+
+
