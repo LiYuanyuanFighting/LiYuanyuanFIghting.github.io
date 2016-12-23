@@ -175,6 +175,7 @@ for priority2, it should be that.board.manhattan(), so before it was difficult t
 object in pq.delMin(), then easily operate on the wrong one.   
 This error took me one week.....
 
-
+Share one trick to delete the line number when copy codes from websites:  
+use word software: alt + mouse left click to select the line number area, then can cut it.
 
 
