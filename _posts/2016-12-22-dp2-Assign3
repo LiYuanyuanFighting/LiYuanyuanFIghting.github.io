@@ -11,4 +11,5 @@ entrySet(): to retrieve key-value pairs
 values(): to retrieve all values  
 
 3.**Update the entry in the map**  
-just use map.put(key, val) is enough, if the key exists, will overlap existing one
+just use map.put(key, val) is enough, if the key exists, will overlap existing one   
+[Reference of Response](http://docs.oracle.com/javaee/6/api/javax/ws/rs/core/Response.html)
