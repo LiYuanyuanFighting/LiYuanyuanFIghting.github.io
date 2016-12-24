@@ -9,3 +9,6 @@ xjc(for XML binding compiler) -d <dir>  :  generated files will go into this dir
 keySet(): to retrieve all keys   
 entrySet(): to retrieve key-value pairs  
 values(): to retrieve all values  
+
+3.**Update the entry in the map**  
+just use map.put(key, val) is enough, if the key exists, will overlap existing one
