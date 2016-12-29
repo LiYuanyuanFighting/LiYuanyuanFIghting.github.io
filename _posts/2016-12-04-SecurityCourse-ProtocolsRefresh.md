@@ -65,3 +65,6 @@ require the firewall/proxy to actively participate in legitimate connections aft
 established.  
 
 [![SYN monitor](http://imgur.com/Ggjugtj "SYN monitor")](http://imgur.com/Ggjugtj "SYN monitor")
+
+[![7 Different Types of Firewalls](http://securitywing.com/types-of-firewall/)
+
