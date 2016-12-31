@@ -1,0 +1,31 @@
+#include <signal.h>
+#include <sys/socket.h>
+#include <stdio.h>
+#include <unistd.h>
+
+typedef void (*sighandler_t)(int);
+sighandler_t old_handler;
+void sighandler(int sig_num)
+{
+    fprintf(stderr, "sighandler() hit\n");
+}
+
+int main(void) {
+    int i;
+
+    old_handler = signal(SIGPIPE, sighandler);
+    if (old_handler == SIG_ERR)
+        printf("We have an error\n");
+    for (i = 0; i < 20; i++) {
+        write(1, "Hello\n", 6);
+        sleep(1);
+    }
+
+    signal(SIGPIPE, old_handler);
+
+    return 0;
+}
+
+Running it and piping the output to head causes the sighandler to fire because head only  
+reads 10 lines and the program outputs 20. Note that I needed to put the sleep() call,  
+otherwise the program terminated before the signal was handled.
