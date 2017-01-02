@@ -68,3 +68,16 @@ established.
 
 [![7 Different Types of Firewalls](http://securitywing.com/types-of-firewall/)
 
+
+**Cipher suite**  
+A concept used in TLS / SSL network protocol. Before TLS version 1.3, a cipher suite is a named  
+combination of authentication, encryption, message authentication code (MAC) and key exchange  
+algorithms used to negotiate the security settings. In the current TLS 1.3 draft document, cipher  
+suites are only used to negotiate encryption and HMAC algorithms.   
+Use: when a TLS connection is established, a handshaking, known as the TLS Handshake protocol, occurs.  
+Within this handshake, a client hello and a server hello message are passed. First, the client sends  
+a list of the cipher suites that it supports, in order of preference. Then the server replies with  
+the cipher suite that it has selected from the client's list.  To test which TLS ciphers a server  
+supports, an SSL?TLS Scanner may be used.  
+(from wike/Cipher_suite)  
+
