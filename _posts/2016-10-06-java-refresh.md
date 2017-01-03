@@ -6,6 +6,20 @@ tags: [study,programing,merge,read,calendar, ]
 description: These exercises are about the use of files, collections and dates/times in Java.
 --- 
 
+**Initialization in Java**  
+`List<Node> nodes = null;`   
+This is not an empty list, this is a list reference which is iniitalized to null;  
+Use this instead:  
+`List<Node> nodes = new LinkedList<Node>();`  
+Everything in a valid Java program not explicitly set to something by the programmer, is initialized to a zero value.    
+
+For references (anything that holds an object) that is null.   
+For int/short/byte/long that is a 0.   
+For float/double that is a 0.0   
+For booleans that is a false.   
+For char that is the null character '\u0000' (whose decimal equivalent is 0).    
+
+
 **Exercise 1**
 Write a Java program that:
 a) loads the rows of a text file called dictionary.txt, using a Collection (you are free to
