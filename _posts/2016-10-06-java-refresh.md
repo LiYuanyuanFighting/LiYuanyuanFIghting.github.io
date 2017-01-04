@@ -11,7 +11,34 @@ description: These exercises are about the use of files, collections and dates/t
 This is not an empty list, this is a list reference which is iniitalized to null;  
 Use this instead:  
 `List<Node> nodes = new LinkedList<Node>();`  
-Everything in a valid Java program not explicitly set to something by the programmer, is initialized to a zero value.    
+Everything in a valid Java program not explicitly set to something by the programmer, is initialized to a zero value.  
+
+**Reverse**  
+`String s = "sample";
+String result = new StringBuffer(s).reverse().toString();`  
+
+**Floor**   
+The method floor gives the largest integer that is less than or equal to the argument.  
+e.g.   
+    public class Test { 
+    
+       public static void main(String args[]) {
+          double d = -100.675;
+          float f = -90;
+    
+          System.out.println(Math.floor(d));
+          System.out.println(Math.floor(f)); 
+    
+          System.out.println(Math.ceil(d));
+          System.out.println(Math.ceil(f));
+       }
+    }
+output   
+-101.0
+-90.0
+-100.0
+-90.0
+
 
 For references (anything that holds an object) that is null.   
 For int/short/byte/long that is a 0.   
