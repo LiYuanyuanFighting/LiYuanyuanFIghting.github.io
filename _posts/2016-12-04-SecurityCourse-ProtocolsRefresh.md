@@ -81,3 +81,5 @@ the cipher suite that it has selected from the client's list.  To test which TLS
 supports, an SSL?TLS Scanner may be used.  
 (from wike/Cipher_suite)  
 
+**The AUTH command of SMTP**   
+http://www.samlogic.net/articles/smtp-commands-reference-auth.htm
