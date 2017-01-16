@@ -39,8 +39,23 @@ output
 -100.0
 -90.0
 
+**Java Static Variables**
 
-For references (anything that holds an object) that is null.   
+Java instance variables are given separate memory for storage. If there is a need for a variable to be common to all the   objects of a single java class, then the static modifier should be used in the variable declaration.  
+Any java object that belongs to that class can modify its static variables.   
+Also, an instance is not a must to modify the static variable and it can be accessed using the java class directly.   
+Static variables can be accessed by java instance methods also.   
+When the value of a constant is known at compile time it is declared ‘final’ using the ‘static’ keyword.   
+
+**Java Static Methods**   
+
+Similar to static variables, java static methods are also common to classes and not tied to a java instance.    
+Good practice in java is that, static methods should be invoked with using the class name though it can be invoked using    an object. ClassName.methodName(arguments) or objectName.methodName(arguments)   
+General use for java static methods is to access static fields.   
+Static methods can be accessed by java instance methods.   
+
+
+For references (anything that holds an object) that is null  .   
 For int/short/byte/long that is a 0.   
 For float/double that is a 0.0   
 For booleans that is a false.   
