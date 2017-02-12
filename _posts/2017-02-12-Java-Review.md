@@ -1,7 +1,8 @@
 **Goal?**   
 Have you ever wondered how map overlays for Google Maps are created? In the project 
 for this course you will build your own interactive visualization of a large dataset 
-tagged by geospatial information.
+tagged by geospatial information.  
+Build large scale projects using existing libraries
 
 Learning outcomes:
 
