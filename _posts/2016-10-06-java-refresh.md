@@ -337,3 +337,6 @@ Parameters behave like local variables, which can be used inside the main method
 Member variables are declared outside any method, which means their scope is actually the entire  
 class itself.
 [![Member variables](http://imgur.com/0kIQzda "Member variables")](http://imgur.com/0kIQzda "Member variables")
+
+An array is not a primitive type, but it's an object type
+[![array object](http://imgur.com/BSHHZ6P "array object")](http://imgur.com/BSHHZ6P "array object")
