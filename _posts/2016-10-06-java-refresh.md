@@ -300,3 +300,30 @@ data member is associated with the class.
 Practicing reasoning about the code.
 
 Parameters in java are always passed by value.
+
+
+    public class SimpleLocation
+    {
+        public double lat;
+        public double lon;
+    
+        public SimpleLocation(double latIn, double lonIn)
+        {
+            this.lat = latIn;
+            this.lon = lonIn;
+        }
+    }
+    public class LocationTester
+    {
+        public static void main(String[] args)
+        {
+            SimpleLocation loc1 = new SimpleLocation(39.9, 116.4);
+            SimpleLocation loc2 = new SimpleLocation(55.8, 37.6);
+            loc1 = loc2;
+            loc1.lat = -8.3;
+            System.out.println(loc2.lat + ", " + loc2.lon);
+        }
+    }
+The result should be -8.3, 37.6. Because loc2's lat value changes via the change we make  
+through loc1 because loc1 and loc2 now refer to the same object(the one that was created  
+second)
