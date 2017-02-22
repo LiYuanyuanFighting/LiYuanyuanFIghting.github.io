@@ -330,7 +330,10 @@ second)
 
 
 **Variable Scope**  
-Parameters behave like local variables  
+local variables are declared inside a method, which can be used inside the method only.
+[![local variable](http://imgur.com/0RKLG6i "local variable")](http://imgur.com/0RKLG6i "local variable")
+Parameters behave like local variables, which can be used inside the main method only  
 [![parameters](http://imgur.com/eg8cIk2 "parameters")](http://imgur.com/eg8cIk2 "parameters")  
-Member variables are declared outside any method
+Member variables are declared outside any method, which means their scope is actually the entire  
+class itself.
 [![Member variables](http://imgur.com/0kIQzda "Member variables")](http://imgur.com/0kIQzda "Member variables")
