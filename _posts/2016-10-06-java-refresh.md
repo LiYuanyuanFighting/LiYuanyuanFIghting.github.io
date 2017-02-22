@@ -346,3 +346,5 @@ An array is not a primitive type, but it's an object type
 
 When constructor done, all variables in this scope go away.
 [![Constructor done](http://imgur.com/JWAlMJh "Constructor done")](http://imgur.com/JWAlMJh "Constructor done")
+Can change the value in the main method:  
+[![array_output](http://imgur.com/VZVwvZc "array_output")](http://imgur.com/VZVwvZc "array_output")
