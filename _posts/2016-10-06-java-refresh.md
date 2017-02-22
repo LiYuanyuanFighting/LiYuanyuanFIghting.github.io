@@ -296,3 +296,5 @@ wouldn't make sense anymore.
 In Java, when you declare something as static, you are saying that it is a member of the class, not the object  
 (hence why there is only one). Therefore it doesn't make sense to access it on the object, because that particular  
 data member is associated with the class.
+
+Practicing reasoning about the code.
