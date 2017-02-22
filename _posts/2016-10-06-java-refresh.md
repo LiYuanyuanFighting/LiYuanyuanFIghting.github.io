@@ -340,3 +340,9 @@ class itself.
 
 An array is not a primitive type, but it's an object type
 [![array object](http://imgur.com/BSHHZ6P "array object")](http://imgur.com/BSHHZ6P "array object")
+
+
+[![Array_cons](http://imgur.com/COajr1E "Array_cons")](http://imgur.com/COajr1E "Array_cons")
+
+When constructor done, all variables in this scope go away.
+[![Constructor done](http://imgur.com/JWAlMJh "Constructor done")](http://imgur.com/JWAlMJh "Constructor done")
