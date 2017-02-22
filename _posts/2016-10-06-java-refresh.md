@@ -327,3 +327,8 @@ Parameters in java are always passed by value.
 The result should be -8.3, 37.6. Because loc2's lat value changes via the change we make  
 through loc1 because loc1 and loc2 now refer to the same object(the one that was created  
 second)
+
+
+**Variable Scope**  
+Parameters behave like local variables  
+[![parameters](http://imgur.com/eg8cIk2 "parameters")](http://imgur.com/eg8cIk2 "parameters")
