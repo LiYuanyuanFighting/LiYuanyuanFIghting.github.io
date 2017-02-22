@@ -332,7 +332,7 @@ second)
 **Variable Scope**  
 local variables are declared inside a method, which can be used inside the method only.
 [![local variable](http://imgur.com/0RKLG6i "local variable")](http://imgur.com/0RKLG6i "local variable")
-Parameters behave like local variables, which can be used inside the main method only  
+Parameters behave like local variables, which can be used inside the method only  
 [![parameters](http://imgur.com/eg8cIk2 "parameters")](http://imgur.com/eg8cIk2 "parameters")  
 Member variables are declared outside any method, which means their scope is actually the entire  
 class itself.
@@ -348,3 +348,45 @@ When constructor done, all variables in this scope go away.
 [![Constructor done](http://imgur.com/JWAlMJh "Constructor done")](http://imgur.com/JWAlMJh "Constructor done")
 Can change the value in the main method:  
 [![array_output](http://imgur.com/VZVwvZc "array_output")](http://imgur.com/VZVwvZc "array_output")
+
+    public class MyClass
+    {
+      private int a;
+      public double b;
+      
+      public MyClass(int first, double second)
+      {
+        this.a = first;
+        this.b = second;
+      }
+      
+      public static void incrementBoth(MyClass c1) {
+        c1.a = c1.a + 1;
+        c1.b = c1.b + 1.0;
+      }
+      
+      // new method
+      public static void incrementA(int first)
+      {
+        first = first + 1;
+      }
+      
+      // new method
+      public static void incrementB(double second)
+      {
+        second = second + 1.0;
+      }
+      
+      public static void main(String[] args)
+      {
+        MyClass c1 = new MyClass(10, 20.5);
+        MyClass c2 = new MyClass(10, 31.5);
+        // different code below
+        incrementA(c2.a);
+        incrementB(c2.b);
+        System.out.println(c2.a + ", "+ c2.b);
+      }
+    }   
+ The result is 10, 31.5. Notice the scope of the variables. The functions  
+ incrementA and incrementB only change parameter variables first and second
+ which are in the method, it doesn't change the 2 object value
