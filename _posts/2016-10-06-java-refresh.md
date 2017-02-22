@@ -331,4 +331,6 @@ second)
 
 **Variable Scope**  
 Parameters behave like local variables  
-[![parameters](http://imgur.com/eg8cIk2 "parameters")](http://imgur.com/eg8cIk2 "parameters")
+[![parameters](http://imgur.com/eg8cIk2 "parameters")](http://imgur.com/eg8cIk2 "parameters")  
+Member variables are declared outside any method
+[![Member variables](http://imgur.com/0kIQzda "Member variables")](http://imgur.com/0kIQzda "Member variables")
