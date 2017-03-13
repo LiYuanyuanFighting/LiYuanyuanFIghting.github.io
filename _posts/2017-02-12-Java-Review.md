@@ -48,3 +48,17 @@ y - The y position of this map.
 width - The width of this map.
 height - The height of this map.   
 
+Constructor:
+Map<String, Float> lifeExpMap = new HashMap<String, Float>();   
+Reference type                  Object type   
+Abstract data type: List  
+List<Feature> countries = new ArrayList<Feature> ();
+List is abstract data type, i.e. java "interface" which specifies behaviors, not implementation.   
+ArrayList implements all behaviors that specified by the list interface. This class can be instantiated.  
+
+ArrayLists are like Arrays  
+Array version:  
+int len = countryArray.length;
+ArrayList:   
+int len = countries.size();  
+Java will automatically resize the ArrayList for you.  
