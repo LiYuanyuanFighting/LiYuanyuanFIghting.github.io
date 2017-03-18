@@ -76,7 +76,45 @@ They are initialized starting at Object and working their way down through the i
 hierarchy to your subclass. The subclass constructor calls constructor up the hierarchy until  
 it reaches Object, then initializes variables starting with Object all the way back down to  
 your subclass.
+Consider the following class definition:  
+    public class Person {
+        private String name;
+     
+        public Person( String n ) {
+            super();
+            this.name = n;
+        }
+        public void setName( String n ) {
+            this.name = n;
+        }
+    }
+  
+     public class Student extends Person {
+        public Student () {
+            this.setName("Student"); 
+        }
+    }
+    
+    Suppose that in a main method you call  
+    ``Student s = new Student()``  
+    What will be the value of the name variable for this object?  
+    There is a compile error:  
+    It is because the Person class has no default(no-argument) constructor. Since the student  
+    constructor doesn't explicitly call the super with an argument, java will attempt to call  
+    the Person's non-existent no-argument constructor automatically.
+    
+    
+    
+    
+    
+    
+    
 
 
+
+
+**Overloading vs. Overriding**  
+Overloading: Same class has same method name with different parameters.  
+Overriding: Subclass has same method name with the same parameters as the super class
 
 
