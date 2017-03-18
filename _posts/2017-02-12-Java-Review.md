@@ -101,7 +101,8 @@ Consider the following class definition:
     There is a compile error:  
     It is because the Person class has no default(no-argument) constructor. Since the student  
     constructor doesn't explicitly call the super with an argument, java will attempt to call  
-    the Person's non-existent no-argument constructor automatically.
+    the Person's non-existent no-argument constructor automatically(like add super() in student  
+    constructor).
     
     
     
