@@ -70,7 +70,12 @@ What we put in the angle brackets is the type of object that we want java to sto
 the container that we're creating.  
 
 
-
+**Object creator**  
+When constructing objects, in which order are instance variables initialized?  
+They are initialized starting at Object and working their way down through the inheritance  
+hierarchy to your subclass. The subclass constructor calls constructor up the hierarchy until  
+it reaches Object, then initializes variables starting with Object all the way back down to  
+your subclass.
 
 
 
