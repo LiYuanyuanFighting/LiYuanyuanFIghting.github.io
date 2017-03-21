@@ -119,3 +119,31 @@ Overloading: Same class has same method name with different parameters.
 Overriding: Subclass has same method name with the same parameters as the super class
 
 
+**Abstract**  
+Abstraction is a process of hiding the implementation details and showing only functionality to the user.
+
+Another way, it shows only important things to the user and hides the internal details for example sending sms, you just type the text and send the message. You don't know the internal processing about the message delivery.
+
+Abstraction lets you focus on what the object does instead of how it does it.
+
+Ways to achieve Abstaction
+
+There are two ways to achieve abstraction in java
+
+Abstract class (0 to 100%)
+Interface (100%)
+
+e.g. Person - Campus Accounts
+Add method "monthlyStatement"  
+"Person" objects no longer make sense  
+How do we:  
+1. Force subclasses to have this method  
+2. Stop having actual Person objects  
+3. Keep having Person references  
+4. Retain common Person code  
+---Define abstract class(is - a)  which provides both inheritance of interface and inheritance of implementation  
+[reference](http://www.javatpoint.com/abstract-class-in-java)
+
+If have don't need to have 4  
+---Use interface(like - a)
+
