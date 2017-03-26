@@ -151,3 +151,8 @@ If have don't need to have 4
 In java, the built in method sort uses merge sort which avoids programmers to implement the method. But for the object  
 which includes attributes age, height, grade, to sort the object, what should be the criteria?  So we need to implemnt  
 compareTo() method.  
+
+
+**List to array**  
+java.util.ArrayList.toArray(T[])  
+If the list fits in the specified array with room to spare (i.e., the array has more elements than the list), the element in the array immediately following the end of the collection is set to null
