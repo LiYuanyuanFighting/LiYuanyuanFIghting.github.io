@@ -147,3 +147,7 @@ How do we:
 If have don't need to have 4  
 ---Use interface(like - a)
 
+**Built-in sort**  
+In java, the built in method sort uses merge sort which avoids programmers to implement the method. But for the object  
+which includes attributes age, height, grade, to sort the object, what should be the criteria?  So we need to implemnt  
+compareTo() method.  
