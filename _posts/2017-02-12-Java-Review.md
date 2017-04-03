@@ -159,5 +159,8 @@ If the list fits in the specified array with room to spare (i.e., the array has 
 
 
 **Autoboxing**  
-[reference](http://docs.oracle.com/javase/7/docs/technotes/guides/language/autoboxing.html)  
+[reference1](http://docs.oracle.com/javase/7/docs/technotes/guides/language/autoboxing.html)  
 As any Java programmer knows, you can't put an int (or other primitive value) into a collection. Collections can only hold object references, so you have to box primitive values into the appropriate wrapper class (which is Integer in the case of int). When you take the object out of the collection, you get the Integer that you put in; if you need an int, you must unbox the Integer using the intValue method. All of this boxing and unboxing is a pain, and clutters up your code. The autoboxing and unboxing feature automates the process, eliminating the pain and the clutter.
+
+Do not mix primitives and objects while doing comparisons. You might get unpredictable results for such comparisons. Better thing to do is: compare object with objects (using equals() method) and compare primitive with primitives(using logical operators such as “==”, “<” etc).  
+[reference2](http://beginnersbook.com/2014/09/java-autoboxing-and-unboxing-with-examples/) 
