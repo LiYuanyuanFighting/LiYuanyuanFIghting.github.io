@@ -156,3 +156,8 @@ compareTo() method.
 **List to array**  
 java.util.ArrayList.toArray(T[])  
 If the list fits in the specified array with room to spare (i.e., the array has more elements than the list), the element in the array immediately following the end of the collection is set to null
+
+
+**Autoboxing**  
+[reference](http://docs.oracle.com/javase/7/docs/technotes/guides/language/autoboxing.html)  
+As any Java programmer knows, you can't put an int (or other primitive value) into a collection. Collections can only hold object references, so you have to box primitive values into the appropriate wrapper class (which is Integer in the case of int). When you take the object out of the collection, you get the Integer that you put in; if you need an int, you must unbox the Integer using the intValue method. All of this boxing and unboxing is a pain, and clutters up your code. The autoboxing and unboxing feature automates the process, eliminating the pain and the clutter.
