@@ -25,3 +25,7 @@ AJAX Response:
 Facebook uses a lot of asynchronous requests so that the page almost never needs to refresh for users  
 to see new content. For instance, when a user scrolls down in a business' page, new stories get inserted  
 into the page which never needs to refresh to show new content.
+
+Necessary components for AJAX request:  
+url (type: String standing for the URL to which the request is sent   
+settings are optional, which are a set of key/value pairs that configure the Ajax request.
