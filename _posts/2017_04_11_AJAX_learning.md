@@ -29,3 +29,28 @@ into the page which never needs to refresh to show new content.
 Necessary components for AJAX request:  
 url (type: String standing for the URL to which the request is sent   
 settings are optional, which are a set of key/value pairs that configure the Ajax request.
+
+**Practices**:
+1.  
+2. Loading Wikipedia Articles:  
+   --1.Fire off JSON-P request to Wikipedia for articles about a city  
+      --include dataType and success parameters
+   --2.Iterate through response  
+   --3.Present articles on the page inside <ul id="wikipedia-links"></ul>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
