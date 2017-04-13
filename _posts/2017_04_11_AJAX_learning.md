@@ -37,7 +37,29 @@ settings are optional, which are a set of key/value pairs that configure the Aja
       --include dataType and success parameters
    --2.Iterate through response  
    --3.Present articles on the page inside <ul id="wikipedia-links"></ul>
+3. Error handling:  
+   error handling isn't actually built into JSONP, but can use timeout like this:   
    
+       var wikiRequestTimeout = setTimeout(function(){
+    	$wikiElem.text("failed to get wikipedia resources");
+    }, 8000);  // after 8s, change the text to it
+    
+    $.ajax({
+    	url: wikiUrl,
+    	dataType: "jsonp",
+    	// jsonp: "callback",
+    	success: function(response) {
+    		var articleList = response[1];
+    
+    		for (var i = 0; i < articleList.length; i++) {
+    			articleStr = articleList[i];
+    			var url = 'http://en.wikipedia.org/wiki/' + articleStr;
+    			$wikiElem.append('<li><a href="' + url + '">' + articleStr + '</a></li>');
+            };
+    	   clearTimeout(wikiRequestTimeout);
+    }
+    });
+
    
    
    
