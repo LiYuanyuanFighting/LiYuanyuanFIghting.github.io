@@ -60,9 +60,21 @@ settings are optional, which are a set of key/value pairs that configure the Aja
     }
     });
 
+**CORS（Cross Origin Resource Sharing）**
+CORS 采用同源策略。同源策略由 Web 浏览器实施，以防止来自不受信任域的恶意脚本在网站上运行。换句话说，它可确保一个网站的脚本无法自行插入另一个网站。
+[reference](https://classroom.udacity.com/courses/ud110/lessons/3310298553/concepts/31914985390923)
+
+**Render the page quickily*
+ 
+常规 HTML：是指可用于任何用户的 HTML 和 CSS。例如，所有用户都会需要“最喜爱的谷物”、“最喜爱的意大利面食”的 HTML，以及描述如何设置用户图片样式的 CSS。
+
+唯一 HTML：是指特定于某个用户的 HTML 内容。例如，“脆谷乐”、“通心粉”、“早餐”和我的图片就是唯一 HTML  
    
-   
-   
+To get the page:  
+1st, request the generic HTML, after getting the generic page, then request unique HTML,  
+then render generic HTML, finally render unique HTML  
+We can find this technique used in google search(https://classroom.udacity.com/courses/ud884/lessons/1464158642/concepts/15290985500923) and facebook
+
    
    
    
