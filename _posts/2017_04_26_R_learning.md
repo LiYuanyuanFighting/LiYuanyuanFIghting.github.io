@@ -1,4 +1,5 @@
-/*Note: learned from datacamp*/
+/*Note: learned from datacamp*/   
+
 **Arithmetic with R**   
 In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
 
@@ -28,3 +29,9 @@ example:
     
     # Modulo
     
+**To Assign Variable**  
+my_var <- 4   
+
+**Check the Data Type**  
+my_numeric <- 42  
+class(my_numeric)
