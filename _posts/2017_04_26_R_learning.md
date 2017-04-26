@@ -59,3 +59,5 @@ total_poker <- sum(poker_vector)
 c(2, 3, 4) can be abbreviated to 2:4  
 e.g. poker_vector[2:4]
 The first element in a vector has index 1, not 0  
+
+for the average: mean()
