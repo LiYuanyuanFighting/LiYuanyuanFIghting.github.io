@@ -49,3 +49,13 @@ names(some_vector) <- c("Name", "Profession")
 Then have:  
     Name    Profession  
  "John Doe" "poker player"
+
+**Calculate the sum of all elements of a vector**  
+with the sum() function:  
+example:  
+total_poker <- sum(poker_vector)  
+
+**Vector selection**  
+c(2, 3, 4) can be abbreviated to 2:4  
+e.g. poker_vector[2:4]
+The first element in a vector has index 1, not 0  
