@@ -35,3 +35,8 @@ my_var <- 4
 **Check the Data Type**  
 my_numeric <- 42  
 class(my_numeric)
+
+**Create a vector**  
+To create a vector, use the combine function c(), for example:  
+numeric_vector <- c(1, 2, 3)  
+character_vector <- c("a", "b", "c")
