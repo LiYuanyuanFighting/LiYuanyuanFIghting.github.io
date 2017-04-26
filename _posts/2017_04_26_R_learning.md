@@ -40,3 +40,12 @@ class(my_numeric)
 To create a vector, use the combine function c(), for example:  
 numeric_vector <- c(1, 2, 3)  
 character_vector <- c("a", "b", "c")
+
+**Naming a vector**  
+with the names() function:  
+example:  
+some_vector <- c("John Doe", "poker player")  
+names(some_vector) <- c("Name", "Profession")  
+Then have:  
+    Name    Profession  
+ "John Doe" "poker player"
