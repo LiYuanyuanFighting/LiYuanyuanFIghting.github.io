@@ -66,3 +66,4 @@ for the average: mean()
 
 **Rengine**  
 Rengine class is the interface between an instance of R and the Java VM. Due to the fact that R has no threading support, you can run only one instance of R withing a multi-threaded application. There are two ways to use R from Java: individual call and full event loop. See the Rengine constructor for details.
+eval(java.lang.String s)  Parses and evaluates an R expression and returns the result.
