@@ -63,3 +63,6 @@ The first element in a vector has index 1, not 0
 for the average: mean()
 
 **Sel**
+
+**Rengine**  
+Rengine class is the interface between an instance of R and the Java VM. Due to the fact that R has no threading support, you can run only one instance of R withing a multi-threaded application. There are two ways to use R from Java: individual call and full event loop. See the Rengine constructor for details.
