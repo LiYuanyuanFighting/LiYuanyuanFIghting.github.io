@@ -61,3 +61,5 @@ e.g. poker_vector[2:4]
 The first element in a vector has index 1, not 0  
 
 for the average: mean()
+
+**Sel**
