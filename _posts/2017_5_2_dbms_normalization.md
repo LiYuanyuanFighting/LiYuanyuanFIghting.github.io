@@ -15,14 +15,14 @@ All attributes (Non key Columns) dependent on the key
 
 [![2nd Normal Form](http://i.imgur.com/0LeGgzw.png)
 
-Problem? 
+Problem?    
 [![Problem](http://i.imgur.com/fFQiZIw.png)
 
 [![2nd Normal ](http://i.imgur.com/A4sMDhc.png)
 
-[![2nd Normal with junction table](http://i.imgur.com/FverJJT.png)
+[![2nd Normal with junction table](http://i.imgur.com/FverJJT.png)   
 
-Problem? 
+Problem?   
 Supplier and Supplier phone  
 they 2 can be repeated many times in the table. If one phone number is changed, need to change many places  
 Lots of redundancy.
