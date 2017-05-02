@@ -36,4 +36,4 @@ One customer with same shipping Address can have many newsletters
 
 **4th Normal Form**  
 -No muti-valued dependencies  (One column can have different values at different)
-[![2nd Normal ](http://imgur.com/4pFS1lP "2nd Normal ")](http://imgur.com/4pFS1lP1 "2nd Normal ") 
+[![2nd Normal ]([Imgur](http://i.imgur.com/4pFS1lP.png))
