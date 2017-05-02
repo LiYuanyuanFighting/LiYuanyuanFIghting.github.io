@@ -8,21 +8,21 @@
 -Rows uniquely identified. Add Unique ID, or Add more columns to make unique  
 (Note: the order of the rows and the order of the columns are irrelevant)
 
-[![1st Normal Form](http://imgur.com/0LeGgzw "1st Normal Form")](http://imgur.com/0LeGgzw "1st Normal Form")  
+[![1st Normal Form](http://i.imgur.com/0LeGgzw.png)
 
 **2nd Normal Form**  
 All attributes (Non key Columns) dependent on the key  
 
 [![2nd Normal Form](http://i.imgur.com/0LeGgzw.png)
 
-Problem?  
-[![Problem](http://i.imgur.com/fFQiZIw.png) 
+Problem? 
+[![Problem](http://i.imgur.com/fFQiZIw.png)
 
-[![2nd Normal ](http://i.imgur.com/A4sMDhc.png) 
+[![2nd Normal ](http://i.imgur.com/A4sMDhc.png)
 
-[![2nd Normal with junction table](http://i.imgur.com/FverJJT.png) 
+[![2nd Normal with junction table](http://i.imgur.com/FverJJT.png)
 
-Problem?  
+Problem? 
 Supplier and Supplier phone  
 they 2 can be repeated many times in the table. If one phone number is changed, need to change many places  
 Lots of redundancy.
