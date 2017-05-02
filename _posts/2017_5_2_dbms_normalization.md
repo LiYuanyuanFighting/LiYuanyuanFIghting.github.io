@@ -1,6 +1,6 @@
 **Normalization - 1NF, 2NF, 3NF and 4NF**  
 
-[![example1](http://imgur.com/5dd31H0 "example1")](http://imgur.com/5dd31H0 "example1")
+[Imgur](http://i.imgur.com/5dd31H0.png)
 
 **1st Normal Form**  
 -Each cell to be single valued
@@ -13,14 +13,14 @@
 **2nd Normal Form**  
 All attributes (Non key Columns) dependent on the key  
 
-[![2nd Normal Form](http://imgur.com/fFQiZIw "2nd Normal Form")](http://imgur.com/fFQiZIw "2nd Normal Form")
+[![2nd Normal Form](http://i.imgur.com/0LeGgzw.png)
 
 Problem?  
-[![Problem](http://imgur.com/fFQiZIw "Problem")](http://imgur.com/fFQiZIw "Problem")  
+[![Problem](http://i.imgur.com/fFQiZIw.png) 
 
-[![2nd Normal ](http://imgur.com/A4sMDhc "2nd Normal ")](http://imgur.com/A4sMDhc "2nd Normal ")  
+[![2nd Normal ](http://i.imgur.com/A4sMDhc.png) 
 
-[![2nd Normal with junction table](http://imgur.com/FverJJT "2nd Normal ")](http://imgur.com/A4sMDhc "2nd Normal ") 
+[![2nd Normal with junction table](http://i.imgur.com/FverJJT.png) 
 
 Problem?  
 Supplier and Supplier phone  
@@ -29,11 +29,11 @@ Lots of redundancy.
 
 **3rd Normal Form**  
 -All Fields{column} can be determined Only by the Key in the table and no other column  
-[![2nd Normal ](http://imgur.com/TBm2Yc1 "2nd Normal ")](http://imgur.com/TBm2Yc1 "2nd Normal ")    
+[Imgur](http://i.imgur.com/TBm2Yc1.png)  
 
 Problem?  
 One customer with same shipping Address can have many newsletters
 
 **4th Normal Form**  
--No muti-valued dependencies  (One column can have different values at different)
+-No muti-valued dependencies  (One column can have different values at different)   
 [Imgur](http://i.imgur.com/4pFS1lP.png)
