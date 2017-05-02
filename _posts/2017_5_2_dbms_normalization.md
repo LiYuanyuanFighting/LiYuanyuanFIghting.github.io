@@ -10,13 +10,12 @@
 
 [![1st Normal Form](http://i.imgur.com/0LeGgzw.png)
 
-**2nd Normal Form**  
-All attributes (Non key Columns) dependent on the key  
-
-[![2nd Normal Form](http://i.imgur.com/0LeGgzw.png)
-
 Problem?    
 [![Problem](http://i.imgur.com/fFQiZIw.png)
+
+
+**2nd Normal Form**  
+All attributes (Non key Columns) dependent on the key  
 
 [![2nd Normal ](http://i.imgur.com/A4sMDhc.png)
 
