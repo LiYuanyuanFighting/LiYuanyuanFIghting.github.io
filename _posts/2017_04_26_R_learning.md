@@ -12,22 +12,22 @@ Modulo: %%
 The ^ operator raises the number to its left to the power of the number to its right: for example 3^2 is 9.
 The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or 5 %% 3 is 2.
 example:
-    # An addition
+    /# An addition
     5 + 5 
     
-    # A subtraction
+    /# A subtraction
     5 - 5 
     
-    # A multiplication
+    /# A multiplication
     3 * 5
     
-     # A division
+     /# A division
     (5 + 5) / 2 
     
-    # Exponentiation
+    /# Exponentiation
     5^2
     
-    # Modulo
+    /# Modulo
     
 **To Assign Variable**  
 my_var <- 4   
@@ -112,7 +112,7 @@ vectors together by column. e.g.
 big_matrix <- cbind(matrix1, matrix2, vector1 ...)
 
 **Adding a row**  
-Your R workspace, where all variables you defined 'live' (check out what a workspace is), has already been initialized and contains two matrices:
+Your R workspace, where all variables you defined 'live' ([check out what a workspace is](http://www.statmethods.net/interface/workspace.html) ), has already been initialized and contains two matrices:
 
 star_wars_matrix that we have used all along, with data on the first trilogy,
 star_wars_matrix2, with similar data for the second trilogy.
