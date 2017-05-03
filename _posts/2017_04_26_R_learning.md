@@ -110,3 +110,10 @@ rowSums(my_matrix)
 You can add a column or multiple columns to a matrix with the cbind() function, which merges matrices and/or  
 vectors together by column. e.g.
 big_matrix <- cbind(matrix1, matrix2, vector1 ...)
+
+**Adding a row**  
+Your R workspace, where all variables you defined 'live' (check out what a workspace is), has already been initialized and contains two matrices:
+
+star_wars_matrix that we have used all along, with data on the first trilogy,
+star_wars_matrix2, with similar data for the second trilogy.
+Type the name of these matrices in the console and hit Enter if you want to have a closer look. If you want to check out the contents of the workspace, you can type ls() in the console.
