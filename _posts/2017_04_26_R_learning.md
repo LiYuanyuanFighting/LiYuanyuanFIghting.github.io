@@ -101,3 +101,12 @@ rownames(star_wars_matrix) <- titles
 
 # Print out star_wars_matrix
 star_wars_matrix
+
+**To calculate the totals of rows**  
+rowSums() conveniently calculates the totals for each row of a matrix. This function creates a new vector.  
+rowSums(my_matrix)  
+
+**Adding a column to a matrix**  
+You can add a column or multiple columns to a matrix with the cbind() function, which merges matrices and/or  
+vectors together by column. e.g.
+big_matrix <- cbind(matrix1, matrix2, vector1 ...)
