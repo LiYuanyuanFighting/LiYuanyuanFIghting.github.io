@@ -25,3 +25,12 @@
 [The Standard Deviation](http://www.mathsisfun.com/data/standard-deviation.html) is a measure of how spread out numbers are.
 The formula is easy: it is the square root of the Variance.   
 Its symbol is σ (the greek letter sigma)   
+
+**Gamma Distribution**   
+\Gamma \,函数，也叫做伽瑪函數（Gamma函数），是階乘函數在實數與複數上的擴展。對於實數部份為正的複數 {\displaystyle z} z，伽瑪函數定義為：
+{\displaystyle \Gamma (z)=\int _{0}^{\infty }{\frac {t^{z-1}}{\mathrm {e} ^{t}}}\,{\rm {d}}t}  \Gamma(z) = \int_{0}^{\infty} \frac{t^{z-1}}{\mathrm{e}^t} \,{\rm{d}}t
+此定義可以用解析開拓原理拓展到整個複數域上，非正整數除外。
+如果 {\displaystyle n} n為正整數，則伽瑪函數定義為：
+{\displaystyle \Gamma (n)=(n-1)!}  \Gamma(n) = (n-1)!，
+這顯示了它與階乘函數的聯繫。可見，伽瑪函數將 {\displaystyle n!} n!拓展到了實數與複數域上。
+在概率論中常見此函數，在組合數學中也常見。
