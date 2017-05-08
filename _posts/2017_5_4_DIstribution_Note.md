@@ -34,3 +34,8 @@ Its symbol is σ (the greek letter sigma)
 {\displaystyle \Gamma (n)=(n-1)!}  \Gamma(n) = (n-1)!，
 這顯示了它與階乘函數的聯繫。可見，伽瑪函數將 {\displaystyle n!} n!拓展到了實數與複數域上。
 在概率論中常見此函數，在組合數學中也常見。
+
+**Bimodal Distribution**  
+Data distributions in statistics can have one peak, or they can have several peaks. The type of distribution you might be familiar with seeing is the normal distribution, or bell curve, which has one peak. The bimodal distribution has two peaks.  
+[graph](http://www.statisticshowto.com/wp-content/uploads/2013/07/Bimodal.png)  
+The “bi” in [bimodal distribution](http://www.statisticshowto.com/what-is-a-bimodal-distribution/) refers to “two” and modal refers to the peaks. It can seem a little confusing because in statistics, the term “mode” refers to the most common number. However, if you think about it, the peaks in any distribution are the most common number(s). The two peaks in a bimodal distribution also represent two local maximums; these are points where the data points stop increasing and start decreasing.  
