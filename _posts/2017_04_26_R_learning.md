@@ -12,22 +12,22 @@ Modulo: %%
 The ^ operator raises the number to its left to the power of the number to its right: for example 3^2 is 9.
 The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or 5 %% 3 is 2.
 example:
-    /# An addition
+    // An addition
     5 + 5 
     
-    /# A subtraction
+    // A subtraction
     5 - 5 
     
-    /# A multiplication
+    // A multiplication
     3 * 5
     
-     /# A division
+     // A division
     (5 + 5) / 2 
     
-    /# Exponentiation
+    // Exponentiation
     5^2
     
-    /# Modulo
+    // Modulo
     
 **To Assign Variable**  
 my_var <- 4   
@@ -117,3 +117,8 @@ Your R workspace, where all variables you defined 'live' ([check out what a work
 star_wars_matrix that we have used all along, with data on the first trilogy,
 star_wars_matrix2, with similar data for the second trilogy.
 Type the name of these matrices in the console and hit Enter if you want to have a closer look. If you want to check out the contents of the workspace, you can type ls() in the console.
+
+**Categorical Variable**  
+There are two types of categorical variables: a nominal categorical variable and an ordinal categorical variable.  
+A nominal variable is a categorical variable without an implied order. This means that it is impossible to say that 'one is worth more than the other'. For example, think of the categorical variable animals_vector with the categories "Elephant", "Giraffe", "Donkey" and "Horse". Here, it is impossible to say that one stands above or below the other.  
+In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable temperature_vector with the categories: "Low", "Medium" and "High". Here it is obvious that "Medium" stands above "Low", and "High" stands above "Medium".  
