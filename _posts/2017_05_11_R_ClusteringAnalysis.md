@@ -36,3 +36,5 @@ logical or integer number, currently only used in the default method ("Hartigan-
 not use
 
 [Detailed Example](https://www.r-bloggers.com/k-means-clustering-in-r/)
+(note the last command in the article is wrong, it should be:  
+ggplot(iris, aes(Petal.Length, Petal.Width, color = irisCluster$cluster)) + geom_point())
