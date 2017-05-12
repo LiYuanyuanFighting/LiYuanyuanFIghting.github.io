@@ -12,13 +12,13 @@ Compute an empirical cumulative distribution function, with several methods for 
 with such an “ecdf” object.
 
 **density distribution**  
-> d <- density(rs$timeDeviation)
-> plot(d)  
-> max(d$x)
-[1] 32.66455
-> max(d$y)
-[1] 0.09265631  
-[plot]((http://i.imgur.com/n55xe9L.png))
+> d <- density(rs$timeDeviation)  
+> plot(d)    
+> max(d$x)   
+[1] 32.66455  
+> max(d$y)  
+[1] 0.09265631    
+[plot]((http://i.imgur.com/n55xe9L.png))   
 
 note: rs is a result set returned by RMySQL, timeDeviation is a column name  
 using max(d$x) can get the maximum value in x axis  
