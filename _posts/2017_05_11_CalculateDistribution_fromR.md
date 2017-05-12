@@ -18,7 +18,7 @@ with such an “ecdf” object.
 [1] 32.66455  
 > max(d$y)  
 [1] 0.09265631    
-[plot]((http://i.imgur.com/n55xe9L.png))   
+[plot](http://i.imgur.com/n55xe9L.png)     
 
 note: rs is a result set returned by RMySQL, timeDeviation is a column name  
 using max(d$x) can get the maximum value in x axis  
