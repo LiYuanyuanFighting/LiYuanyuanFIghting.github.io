@@ -17,11 +17,41 @@ Procedures to connect mySQL database with R
 > query = 'select timeDeviation from history_time_deviations where PID in(select PID from planned_links where LID in (select LID from links where transportMode="FERRY" ))'   
 > rs = dbGetQuery(mydb, query)
 // calculate distribution 
-> library(fitdistrplus)
-Loading required package: MASS
-Loading required package: survival  
+> library(fitdistrplus)   
+Loading required package: MASS  
+Loading required package: survival     
 > fit.norm <- fitdist(rs$timeDeviation, "norm")
-> plot(fit.norm)
+> plot(fit.norm)    
+
+**Compare Distributions**
+```r
+> data1 <- rs$timeDeviation
+> data2 <- bimodalData
+> ks.test(data1, data2)
+
+        Two-sample Kolmogorov-Smirnov test
+
+data:  data1 and data2
+D = 0.54902, p-value = 2.873e-09
+alternative hypothesis: two-sided
+
+Warning message:
+In ks.test(data1, data2) : cannot compute exact p-value with ties
+> t.test(data1, data2)
+
+        Welch Two Sample t-test
+
+data:  data1 and data2
+t = 6.4887, df = 51.494, p-value = 3.361e-08
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  7.470706 14.162296
+sample estimates:
+mean of x mean of y 
+14.372549  3.556048 
+
+
+```
 
 
 in eclipse:  
