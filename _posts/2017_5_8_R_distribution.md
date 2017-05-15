@@ -16,6 +16,26 @@ bimodalDistFunc <- function (n,cpct, mu1, mu2, sig1, sig2) {
 bimodalData <- bimodalDistFunc(n=100,cpct,mu1,mu2, sig1,sig2)
 hist(log(bimodalData), breaks=100)
 
+```r
+> n = 100
+> cpct = 0.6
+> shape = 20
+> scale = 1.2
+> mu1 = 3
+> sig1 = log(3)
+> bimodalDistFunc <- function (n,cpct, mu1, shape, sig1, scale) {
++   y0 <- rnorm(n,mean=mu1, sd = sig1)
++   y1 <- rgamma(n,shape=mu2, scale = scale)
++ 
++   flag <- rbinom(n,size=1,prob=cpct)
++   y <- y0*(1 - flag) + y1*flag 
++ }
+> bimodalData= bimodalDistFunc(n, cpct, mu1, shape, scale, sig1)
+>
+
+```
+
+
 **Plot gamma distribution**  
 - seq(0,20, .1)
 > plot(x, dgamma(x, scale=2, shape=1), type="l", ylim=c(0,.5), ylab="y")
