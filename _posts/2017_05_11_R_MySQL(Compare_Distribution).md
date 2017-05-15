@@ -1,4 +1,5 @@
 Procedures to connect mySQL database with R  
+```r
 > library(RMySQL)   
 >  mydb= dbConnect(MySQL(), user = 'root', password='root', dbname='synchronet', host = 'localhost')
 > rs.table= dbSendQuery(mydb, 'select departure, arrival, transportMode from links')  
@@ -9,9 +10,11 @@ Procedures to connect mySQL database with R
 > rs.d = dist(rs.c)  
 > rs.d
 > View(rs.c)
+```
 [reference](http://mizunolab.sist.ac.jp/2016/03/)
 
 **Dealing with complex queries**  
+```r
 > library(RMySQL)  
 >  mydb= dbConnect(MySQL(), user = 'root', password='root', dbname='synchronet', host = 'localhost')  
 > query = 'select timeDeviation from history_time_deviations where PID in(select PID from planned_links where LID in (select LID from links where transportMode="FERRY" ))'   
@@ -22,6 +25,7 @@ Loading required package: MASS
 Loading required package: survival     
 > fit.norm <- fitdist(rs$timeDeviation, "norm")
 > plot(fit.norm)    
+```
 
 **Compare Distributions**
 ```r
