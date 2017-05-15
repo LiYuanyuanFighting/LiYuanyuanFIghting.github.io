@@ -35,6 +35,11 @@ hist(log(bimodalData), breaks=100)
 
 ```
 
+**To draw 2 density distributions in one figure**  
+```r
+> plot(density(rs$timeDeviation), ylim=c(0, 1))
+> lines(density(bimodalData), col="red")
+```
 
 **Plot gamma distribution**  
 - seq(0,20, .1)
