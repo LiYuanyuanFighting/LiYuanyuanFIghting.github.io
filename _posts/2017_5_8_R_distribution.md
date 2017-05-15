@@ -43,3 +43,9 @@ hist(log(bimodalData), breaks=100)
 [196] 19.5 19.6 19.7 19.8 19.9 20.0
 > 2:8
 [1] 2 3 4 5 6 7 8   
+
+
+**Compare 2 distributions**  
+[Kolmogorov-Smirnov test](http://bbs.bioguider.com/home-space-uid-2-do-blog-id-1079.html) 
+KS test checks if two independent distributions are similar or different, by generating cumulative probability plots for two distributions and finding the distance along the y-axis for a given x values between the two curves. From all the distances calculated for each x value, the maximum distance is searched.  
+
