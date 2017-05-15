@@ -99,10 +99,11 @@ he difference between dbGetQuery and dbSendQuery is that the former submits the 
 The first fetch statement below gets all records. The second requests only the first 10 rows (n=10).
 
 ** failed cluster methods**  
+```r
 > rail1.cluster <- ifelse(identical(rs.c$transportMode, "RAIL"), 2, 0)
 > bus.cluster <- ifelse(identical(rs.c$transportMode, "BUS"), 2, 0)
 > segmentCombined <- cbind(ship1.cluster, rail1.cluster, bus.cluster)
 > View(segmentCombined)
-
+```
 It seems identical compare the whole set with the string.
 
