@@ -56,7 +56,16 @@ mean of x mean of y
 
 
 ```
+**To calculate ∫ f(x)−g(x) dx**
+```r
+data1 <- rsBUS$timeDeviation  
+new_func <- ecdf(data1) 
+f <- function(x, mean=20, sd=40) {
+	new_func(x) - pnorm(x, mean, sd)
+}
 
+integerate(f, lower=0, upper=100)
+```
 
 in eclipse:  
 		public static void testDBConnection() {
