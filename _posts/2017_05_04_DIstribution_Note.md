@@ -47,3 +47,4 @@ One image I have used in classes asks students to imagine the kernel as a bucket
 
 
 [Empirical Cumulative Distribution Functio and CDF](https://stats.stackexchange.com/questions/239937/empirical-cdf-vs-cdf)
+[What are i.i.d. random variables?](https://stats.stackexchange.com/questions/17391/what-are-i-i-d-random-variables)
