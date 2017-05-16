@@ -1,4 +1,5 @@
 **Simulate Bimodal Distribution in R**  
+```r
 mu1 <- log(1)   
 mu2 <- log(50)
 sig1 <- log(3)
@@ -15,6 +16,7 @@ bimodalDistFunc <- function (n,cpct, mu1, mu2, sig1, sig2) {
 
 bimodalData <- bimodalDistFunc(n=100,cpct,mu1,mu2, sig1,sig2)
 hist(log(bimodalData), breaks=100)
+```
 
 ```r
 > n = 100
@@ -42,6 +44,7 @@ hist(log(bimodalData), breaks=100)
 ```
 
 **Plot gamma distribution**  
+```r
 - seq(0,20, .1)
 > plot(x, dgamma(x, scale=2, shape=1), type="l", ylim=c(0,.5), ylab="y")
 > for(shape in 2:8){
@@ -68,7 +71,7 @@ hist(log(bimodalData), breaks=100)
 [196] 19.5 19.6 19.7 19.8 19.9 20.0
 > 2:8
 [1] 2 3 4 5 6 7 8   
-
+```
 
 **Compare 2 distributions**  
 [Kolmogorov-Smirnov test](http://bbs.bioguider.com/home-space-uid-2-do-blog-id-1079.html) 
