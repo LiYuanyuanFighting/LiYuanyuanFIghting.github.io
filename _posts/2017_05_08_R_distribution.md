@@ -80,4 +80,8 @@ KS test checks if two independent distributions are similar or different, by gen
 
 **pnorm**  
 The function pnorm returns the integral from −∞−∞ to qq of the pdf of the normal distribution where qq is a Z-score. Try to guess the value of  pnorm(0). (pnorm has the same default mean and sd arguments as dnorm).  
+It is comulative distribution function
 [reference](http://seankross.com/notes/dpqr/)
+
+**dnorm**  
+probability distriution function
