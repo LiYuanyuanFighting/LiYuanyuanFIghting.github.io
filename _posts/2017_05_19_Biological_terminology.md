@@ -8,13 +8,13 @@ The chromosomes contain genes made up of DNA, which code for proteins for the me
 Broadly speaking, living organisms are made of cells, which is the smallest structural and functional unit of an organism.  
 Some organisms have several cells, like human beings. Some have only one, like bacteria. Cells generally have a nucleus, in  
 particular in humans. And in the case where the nucleus are also organelles is separated from the rest of the cell membranes,   
-they are called <span style="color:blue"><em>*eukaryotes*</em></span>. Otherwise they are called prokaryotes. For example, bacteria prokaryotes, because their components rest directly in the cytoplasm, without membrane separation and without separate nucleus.   
+they are called <span style="color:blue">*eukaryotes*</span>. Otherwise they are called prokaryotes. For example, bacteria prokaryotes, because their components rest directly in the cytoplasm, without membrane separation and without separate nucleus.   
 
 So what exactly is DNA?   
 A little bit of biochemistry. Well DNA stands for deoxyribonucleic acid. DNA stores the genetic material in chromosomes  
 in each cell nucleus in humans. In viruses for example, the DNA or RNA reside within the organism envelope made of proteins  
 without nucleus. There is also some DNA in mitochondria called mitochondrial DNA. DNA is transcribed into RNA out of the nucleus,  
-process called <span style="color:blue"><em>*transcription*</em></span>. RNA stands for ribonucleic acid. RNA is translated into proteins in a cytoplasm organelle called a  ribosome, process called <span style="color:blue"><em>*translation*</em></span>.   
+process called <span style="color:blue">*transcription*</span>. RNA stands for ribonucleic acid. RNA is translated into proteins in a cytoplasm organelle called a  ribosome, process called <span style="color:blue">*translation*</span>.   
 In summary, DNA generates RNA, which in turn generates proteins.   
 
 DNA and RNA are composed of nucleotides which are molecules of nucleic acid. A nucleotide is made of a nitrogen base,  
