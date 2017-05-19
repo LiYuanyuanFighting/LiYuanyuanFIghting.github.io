@@ -1,4 +1,4 @@
-#DNA and Genes  
+# DNA and Genes  
 
 Biomedical data can be complex and diverse, because they represent what we know about the state of a human organism,  
 which is a complex system. It comprises cells with a nucleus containing chromosomes.   
