@@ -4,7 +4,10 @@ Biomedical data can be complex and diverse, because they represent what we know 
 which is a complex system. It comprises cells with a nucleus containing chromosomes.   
 
 [DNA and genes](http://i.imgur.com/bh0QB62.png)  
-The chromosomes contain genes made up of DNA, which code for proteins for the mediation of RNA. ```diff + Proteins ```are responsible for many cellular functions, and so have a vital role to play in the health of cells, tissues, systems, and organisms.   
+The chromosomes contain genes made up of DNA, which code for proteins for the mediation of RNA. ```diff 
++ Proteins 
+```
+are responsible for many cellular functions, and so have a vital role to play in the health of cells, tissues, systems, and organisms.   
 Broadly speaking, living organisms are made of cells, which is the smallest structural and functional unit of an organism.  
 Some organisms have several cells, like human beings. Some have only one, like bacteria. Cells generally have a nucleus, in  
 particular in humans. And in the case where the nucleus are also organelles is separated from the rest of the cell membranes,   
