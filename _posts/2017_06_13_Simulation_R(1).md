@@ -43,7 +43,7 @@ To subset vectors, the selection is made using the [] operator, which can be don
 ° Positive: A vector of positive integers that specifies the position of the desired elements  
 ° Negative: A vector of nwgative integers indicating the position of the non-required elements  
 ° Logical: A logic vector in which the elements are to be the selected(TRUE), along with those that are not selected(FALSE)  
-'''  
+```python
 > data(Cars93, package = "MASS")
 > hp <- Cars93[1:10, "Horsepower"]
 > hp
@@ -59,4 +59,4 @@ To subset vectors, the selection is made using the [] operator, which can be don
 > #a logical expression can be written directly in []
 > hp[hp<150]
 [1] 140 110
-'''  
+ 
