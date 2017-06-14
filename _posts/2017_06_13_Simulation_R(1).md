@@ -59,4 +59,18 @@ To subset vectors, the selection is made using the [] operator, which can be don
 > #a logical expression can be written directly in []
 > hp[hp<150]
 [1] 140 110
- 
+``` 
+**Factors**  
+They are used to represent nominal(unreordered factor) or ordinal(ordered factor) data.  
+**list**  
+ordered collection of objects whereas each object is part of the list and where the data types of the  
+individual list elements can be different(vectors, matrices, data.frames, lists, and so on).  
+**data.frame**  
+Data fraomes are the most important data type. They correspond to the rectangle data format that is well-known from other software   
+packages, with rows corresponding to observation units and columns to variables.  
+```python
+## extract cars with small number of cylinders and small power
+> w <- Cars93$Cylinders %in% c("3", "4") & Cars93$Horsepower <80
+> str(Cars93[w, ])
+```
+head(), the first(default 6) rows of a data frame, and colnames(), the columns/variable names  
