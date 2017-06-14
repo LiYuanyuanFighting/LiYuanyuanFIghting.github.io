@@ -1,4 +1,4 @@
-**Chapter2-R and High-Performance Computing**  
+**Chapter2  R and High-Performance Computing**  
 Tasks done:
 (1)install an add-on package [dplyr9](http://genomicsclass.github.io/book/pages/dplyr_tutorial.html)
 (dplyr is a powerful R-package to transform and summarize tabular data with rows and columns.)  
@@ -74,3 +74,73 @@ packages, with rows corresponding to observation units and columns to variables.
 > str(Cars93[w, ])
 ```
 head(), the first(default 6) rows of a data frame, and colnames(), the columns/variable names  
+**array**  
+An array in R can have multiple dimensions. A vector is one-dimensional array, a matrix is a two-dimensional array,  
+having rows and columns.  
+```python
+> library("vcd")
+Loading required package: grid
+> data(PreSex)
+> PreSex
+, , PremaritalSex = Yes, Gender = Women
+
+             ExtramaritalSex
+MaritalStatus Yes  No
+     Divorced  17  54
+     Married    4  25
+
+, , PremaritalSex = No, Gender = Women
+
+             ExtramaritalSex
+MaritalStatus Yes  No
+     Divorced  36 214
+     Married    4 322
+
+, , PremaritalSex = Yes, Gender = Men
+
+             ExtramaritalSex
+MaritalStatus Yes  No
+     Divorced  28  60
+     Married   11  42
+
+, , PremaritalSex = No, Gender = Men
+
+             ExtramaritalSex
+MaritalStatus Yes  No
+     Divorced  17  68
+     Married    4 130
+
+> 
+```
+We see that the 1st dimension is MaritalStatus, the second is ExtramaritalSex, the third is PremaritalSex,  
+and the fourth is Gender.  
+We can access the elements of the array by indexing using [].e.g, extract the data where PremaritalSex is Yes, Gender is Men:  
+```python
+> PreSex[, , 1, 2]
+             ExtramaritalSex
+MaritalStatus Yes No
+     Divorced  28 60
+     Married   11 42
+## or by name:
+> PreSex[, , "Yes", "Men"]
+             ExtramaritalSex
+MaritalStatus Yes No
+     Divorced  28 60
+     Married   11 42
+```
+
+**Missing values**  
+To check if data values are missing: is.na  
+it returns a logical vector or data.frame depending on whether the input is a vector or data.frame.  
+To calculate the number of missing values, we could sum the TRUE's(interpreted as 1 while FALSE is interpreted as 0):   
+```python
+> sum(is.na(Cars93))
+[1] 13  
+```  
+To analyze the structure of any missing values, the R package VIM can be used. matrixplot show all the values of the whole data  
+frame. The darker the higher the values. Missing values are in red.  
+```python  
+> require("VIM")
+> matrixplot(Cars93, sortby = "Weight", cex.axis=0.6)  
+
+****
