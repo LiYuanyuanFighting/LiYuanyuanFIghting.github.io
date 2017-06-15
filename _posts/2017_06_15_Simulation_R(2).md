@@ -35,4 +35,36 @@ The apply call is basically the same as the foor loop.
 +  na_for[i] <- func(Cars93[, i])
 + }
 > identical(as.numeric(na), na_for)
-[1] TRUE
+[1] TRUE  
+
+lapply accesses the length of each list element:  
+> lapply(na[na>0], length)
+$Rear.seat.room
+[1] 1
+
+$Luggage.room
+[1] 1  
+
+
+**dplyr**  
+-Creating a local data frame tbl_df  
+```r  
+> library("dplyr")  
+> Cars93<-tbl_df(Cars93)
+> class(Cars93)
+[1] "tbl_df"     "tbl"        "data.frame"
+> print(Cars93)
+```  
+-Selecting lines slice() which can select rows according to their line number  
+```r
+> slice(Cars93, 1)
+```  
+c() creates a vector from input numbers, n() returns the number of observation. We will select the 1, 4, 10, 15  
+and the last line of the data.  
+```r
+> slice(Cars93, c(1, 4, 10, 15, n()))
+```  
+filter() can select rows that satisfy a condition  
+```r
+> filter(Cars93, Manufacturer=="Audi" & Min.Price>25)  
+```  
