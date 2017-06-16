@@ -138,3 +138,25 @@ Grouping and aggregates
 > by_type <- group_by (Cars93, Type)
 > summarize (by_type, count=n(), min_es = min(EngineSize), max_es = max(EngineSize))
 ``` 
+
+Window functions  
+> Cars93 %>%
++  group_by(Type) %>% 
++  arrange(Type) %>%
++  select (Manufacturer:Price) %>%
++  mutate(cmean=cummean(Price), csum=cumsum(Price))
+# A tibble: 93 x 7
+# Groups:   Type [6]
+   Manufacturer    Model    Type Min.Price Price    cmean  csum
+         <fctr>   <fctr>  <fctr>     <dbl> <dbl>    <dbl> <dbl>
+ 1        Mazda      626 Compact      14.3  16.5 16.50000  16.5
+ 2    Chevrolet  Corsica Compact      11.4  11.4 13.95000  27.9
+ 3    Chevrolet Cavalier Compact       8.5  13.4 13.76667  41.3
+ 4   Oldsmobile  Achieva Compact      13.0  13.5 13.70000  54.8
+ 5       Nissan   Altima Compact      13.0  15.7 14.10000  70.5
+ 6        Honda   Accord Compact      13.8  17.5 14.66667  88.0
+ 7      Pontiac  Sunbird Compact       9.4  11.1 14.15714  99.1
+ 8     Chrysler  LeBaron Compact      14.5  15.8 14.36250 114.9
+ 9       Subaru   Legacy Compact      16.3  19.5 14.93333 134.4
+10         Ford    Tempo Compact      10.4  11.3 14.57000 145.7
+# ... with 83 more rows
