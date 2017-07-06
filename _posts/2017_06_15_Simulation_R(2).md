@@ -145,8 +145,8 @@ Window functions
 +  arrange(Type) %>%
 +  select (Manufacturer:Price) %>%
 +  mutate(cmean=cummean(Price), csum=cumsum(Price))
-# A tibble: 93 x 7
-# Groups:   Type [6]
+#A tibble: 93 x 7
+#Groups:   Type [6]
    Manufacturer    Model    Type Min.Price Price    cmean  csum
          <fctr>   <fctr>  <fctr>     <dbl> <dbl>    <dbl> <dbl>
  1        Mazda      626 Compact      14.3  16.5 16.50000  16.5
@@ -159,4 +159,13 @@ Window functions
  8     Chrysler  LeBaron Compact      14.5  15.8 14.36250 114.9
  9       Subaru   Legacy Compact      16.3  19.5 14.93333 134.4
 10         Ford    Tempo Compact      10.4  11.3 14.57000 145.7
-# ... with 83 more rows
+#... with 83 more rows
+
+**High performance computing**  
+To measure which lines of code take the most computation time:  
+system.time  
+the user time is the CPU time for the call and evaluation of the code. The elabsed time  
+is the sum of the user time and the system time.  
+proc.time  
+
+**Calculate groupwise**
