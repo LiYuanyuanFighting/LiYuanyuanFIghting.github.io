@@ -169,3 +169,12 @@ is the sum of the user time and the system time.
 proc.time  
 
 **Calculate groupwise**
+After loading these packages:  
+```r
+library(microbenchmark); library(plyr); library(dplyr); library(data.table); library(Hmisc);
+```  
+The task is to calculate the groupwise(Type, Origin) means of Horsepower.
+```r
+> data(Cars93, package="MASS")
+> Cars93 %>% group_by(Type, Origin) %>% summarise(mean = mean(Horsepower))
+```
