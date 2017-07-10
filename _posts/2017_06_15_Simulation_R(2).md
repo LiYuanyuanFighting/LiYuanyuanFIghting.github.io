@@ -178,3 +178,8 @@ The task is to calculate the groupwise(Type, Origin) means of Horsepower.
 > data(Cars93, package="MASS")
 > Cars93 %>% group_by(Type, Origin) %>% summarise(mean = mean(Horsepower))
 ```
+
+**Parallel Computing**  
+makeCluster  
+clusterCall(cl = NULL, fun, ...) calls a function fun with identical arguments ... on each node.  
+clusterEvalQ evaluates a literal expression on each cluster node. It is a parallel version of evalq, and is a convenience function invoking clusterCall.  
