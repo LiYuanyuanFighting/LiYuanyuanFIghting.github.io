@@ -1,3 +1,8 @@
+**Low, mid, high level language, what's the difference?**  
+https://stackoverflow.com/questions/3468068/low-mid-high-level-language-whats-the-difference  
+low level = long development time + very fast executable file
+high level = shorter development time + slower executable file
+mid level is between the tow
 **Low Level Language**
 Low-level languages can convert to machine code without a compiler or interpreter— second-generation   
 programming languages use a simpler processor called an assembler— and the resulting code runs directly on the processor.
