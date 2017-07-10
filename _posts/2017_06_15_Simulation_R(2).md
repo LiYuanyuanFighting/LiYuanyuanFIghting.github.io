@@ -183,3 +183,30 @@ The task is to calculate the groupwise(Type, Origin) means of Horsepower.
 makeCluster  
 clusterCall(cl = NULL, fun, ...) calls a function fun with identical arguments ... on each node.  
 clusterEvalQ evaluates a literal expression on each cluster node. It is a parallel version of evalq, and is a convenience function invoking clusterCall.  
+
+**The graphics system in R**  
+The graphics package  
+High-level graphics functions: open a device and create a plot  
+for example, plot()  
+Low-level: Add output to existing graphics  
+points()  
+Interactive: Allow interaction with graphical output  
+identify()  
+```r
+> x <- 1:20 / 2 
+> x
+ [1]  0.5  1.0  1.5  2.0  2.5  3.0  3.5  4.0  4.5  5.0  5.5  6.0  6.5  7.0  7.5
+[16]  8.0  8.5  9.0  9.5 10.0
+> y <- sin(x)
+> y
+ [1]  0.47942554  0.84147098  0.99749499  0.90929743  0.59847214  0.14112001
+ [7] -0.35078323 -0.75680250 -0.97753012 -0.95892427 -0.70554033 -0.27941550
+[13]  0.21511999  0.65698660  0.93799998  0.98935825  0.79848711  0.41211849
+[19] -0.07515112 -0.54402111
+> plot(x, y, pch=16, cex=10*abs(y), col= grey(x/14))
+> text(x, y, 1:20, col="yellow")
+> curve(sin, -2*pi, 4*pi, add=TRUE, col="red")
+> abline(h=0, lty=2, col="grey")
+
+```
+[result](http://i.imgur.com/OifiTei.png)
