@@ -210,3 +210,33 @@ identify()
 
 ```
 [result](http://i.imgur.com/OifiTei.png)
+
+**ggplot2**  
+In ggplot2, the parts of a plot are defined independently. The anatomy of a plot consists of:  
+(1)data, must be a data frame(objects of class data.frame);
+(2)aesthetic mapping, which describes how variables in the data are mapped to visual propertities(aesthetics)  
+of geometric objects.---> done within the function aes();
+assignment, where values are mapped to visual propertities. It must also be done outside  
+the function aes(). geometric objects(geom's, aesthetic will be mapped to geometric objects), e.g,  
+geom_point() - statistical transformations, e.g, function stat_boxplot(), scales, coordinate system, position  
+adjustments, and faceting, e.g, function facet_wrap.  
+
+aes(): aesthetic mapping to geometric objects.  
+```r
+> library("ggplot2")
+> ggplot(Cars93, aes(x=Horsepower, y=MPG.city)) + geom_point(aes(colour=Cylinders))
+> gq <- ggplot(Cars93, aes(x=Horsepower, y=MPG.city))
+> g2 <- gq+geom_point(aes(color=Weight))
+> g2 + geom_smooth()
+`geom_smooth()` using method = 'loess'
+
+> g1 <- gq+geom_text(aes(label=substr(Manufacturer, 1, 3)), size=3.5)
+> g1 + geom_smooth()
+`geom_smooth()` using method = 'loess'
+
+> gg <- ggplot(Cars93, aes(x=Horsepower, y=MPG.city))
+> gg <- gg+geom_point(aes(shape=Origin, colour=Price))
+> gg <- gg+facet_wrap(~ Cylinders) + theme_bw()
+> gg
+```
+
