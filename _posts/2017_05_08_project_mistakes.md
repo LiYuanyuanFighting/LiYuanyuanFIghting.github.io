@@ -13,3 +13,5 @@ pay attention that should use comma to set multiple values instead of using AND
 3.stmt.executeUpdate(query);  
 when use 'PreparedStatement stmt = con.prepareStatement(query);'  
 no need to put query inside again!!!!!!!
+
+4. rename, if there's same existing name, rename will fail. So remember to delete old one first  
