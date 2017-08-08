@@ -408,10 +408,16 @@ public class HelloWorld{
         }
         };
         for (int i : list2) {
-            System.out.println(" check2"+i);
+            System.out.println(" check2 "+i);
         }
         for (int i : list) {
-            System.out.println(" check"+i);
+            System.out.println(" check "+list);
+            list = list2;
+        }
+        
+        list = test.list;
+        for (int i=0; i<list.size(); i++) {
+            System.out.println(" check3 "+list.get(i));
             list = list2;
         }
      }
@@ -426,4 +432,4 @@ public class HelloWorld{
         };
      }
 }
-
+If want to modify the content of the structure, use last for loop
