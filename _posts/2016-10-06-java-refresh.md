@@ -399,9 +399,20 @@ public class HelloWorld{
 
      public static void main(String []args){
          ArrayList<Integer> list = test.list;
+         ArrayList<Integer> list2 = new ArrayList<Integer>() {
+        {
+            add(1);
+            add(2);
+            add(3);
+            add(4);
+        }
+        };
+        for (int i : list2) {
+            System.out.println(" check2"+i);
+        }
         for (int i : list) {
-            System.out.println("check"+i);
-            list = test.list;
+            System.out.println(" check"+i);
+            list = list2;
         }
      }
      
@@ -415,3 +426,4 @@ public class HelloWorld{
         };
      }
 }
+
