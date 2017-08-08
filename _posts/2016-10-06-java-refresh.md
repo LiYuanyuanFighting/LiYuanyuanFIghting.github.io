@@ -432,4 +432,6 @@ public class HelloWorld{
         };
      }
 }
-If want to modify the content of the structure, use last for loop
+If want to modify the content of the structure, use last for loop instead of the  
+enhanced for loop.  
+
