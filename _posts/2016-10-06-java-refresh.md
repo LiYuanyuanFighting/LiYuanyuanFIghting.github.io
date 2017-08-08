@@ -390,3 +390,28 @@ Can change the value in the main method:
  The result is 10, 31.5. Notice the scope of the variables. The functions  
  incrementA and incrementB only change parameter variables first and second
  which are in the method, it doesn't change the 2 object value
+
+
+**nested class**  
+import java.util.ArrayList;
+
+public class HelloWorld{
+
+     public static void main(String []args){
+         ArrayList<Integer> list = test.list;
+        for (int i : list) {
+            System.out.println("check"+i);
+            list = test.list;
+        }
+     }
+     
+     static class test{
+         static ArrayList<Integer> list = new ArrayList<Integer>() {
+        {
+            add(1);
+            add(2);
+            add(3);
+        }
+        };
+     }
+}
