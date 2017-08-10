@@ -1,3 +1,7 @@
+**Distribution fitting**  
+https://www.spcforexcel.com/knowledge/basic-statistics/distribution-fitting
+
+
 **mean and variance**  
 http://staff.argyll.epsb.ca/jreed/math30p/statistics/standardDeviation.htm  
 mean: the average obtained by dividing the sum of the data by the number of data in the set. Given a set of data, {x1, x2, x3, ..., xn}, you can find the mean, , using the following formula:See the link above  
