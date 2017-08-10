@@ -28,6 +28,8 @@ ggplot(data = dat, aes(x = x, y = y)) +
   geom_point(size = 3) +
   theme_classic()
 ```
+The y axis is the probability of the value x locates, totally 1, the random number generated should be from the x axis, most  
+generated one should be the ones with the highest probability.  
 
 **From experimental results to a prediction**  
 ```r
