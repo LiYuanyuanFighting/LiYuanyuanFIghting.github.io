@@ -10,6 +10,10 @@ standard deviation: the extent to which data differs from the mean. The standard
 **Plot**  
 **gamma distribution**  
 The Gamma distribution is widely used in engineering, science, and business, to model continuous variables that are always positive and have skewed distributions. In Swedge, the Gamma distribution can be useful for any variable which is always positive, such as cohesion or shear strength for example.  
+The scale parameter of a distribution determines how much spread there is in the distribution.  The larger the scale parameter, the more spread there is in the distribution.   
+The shape parameter of a distribution allows the distribution to take different shapes.  
+ The larger the shape parameter, the more the distribution tends to be skewed to the left.   
+ 
 ```r
 library(ggplot2)
 library(MASS)
