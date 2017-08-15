@@ -27,6 +27,23 @@ Loading required package: survival
 > plot(fit.norm)    
 ```
 
+**Dealing with complex queries**  
+```r
+> query = 'select * from user_experience where departure="Bari" and arrival="Rome" and transportation="bus"'
+> rs = dbGetQuery(mydb, query)
+Warning message:
+In .local(conn, statement, ...) :
+  unrecognized MySQL field type 245 in column 3 imported as character
+> query = 'select dateTime, incidentPlace, agency, reason from user_experience where departure="Bari" and arrival="Rome" and transportation="bus"'
+> rs = dbGetQuery(mydb, query)
+> rs
+             dateTime incidentPlace         agency reason
+1 2017-08-08 02:03:00      starting DemoSynchronet     da
+```  
+The error is due to a field named type, which is a keyword, could use backticks for the type, here I choose to   
+select just the attributes  that I need.
+
+
 **Compare Distributions**
 ```r
 > data1 <- rs$timeDeviation
