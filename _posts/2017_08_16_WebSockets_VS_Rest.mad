@@ -1,0 +1,30 @@
+Today I suddenly realized a question:  
+### What is the difference between WebSockets and REST?  
+
+Searched some materials online, now make a summary here:  
+https://stackoverflow.com/questions/25024685/difference-between-a-web-service-and-web-socket  
+https://www.pubnub.com/blog/2015-01-05-websockets-vs-rest-api-understanding-the-difference/  
+https://www.quora.com/What-is-the-difference-between-a-socket-and-a-web-service  
+https://www.gamesparks.com/blog/why-the-rest-dont-use-websockets/  
+
+**Web service**  
+short introduction: an HTTP server that responds to client SOAP/REST/JSON requests  
+REST Representational State Transfer, organize requests in predictable ways, using HTTP operation types,  
+or verbs, to construct appropriate responsed.Requests originate from the client, and the common HTTP verbs  
+include GET, POST, PUT, DELETE but there are several others. They correspond to expected operations, retrieving  
+data, submitting data, updating data, and deleting data. REST dictates what data should be sent in the HTTP request    
+headers and body.  
+
+**web socket**  
+short introduction: a client-side API that allows a web browser to create a bidirectional communication  
+link with a server without having to change/reload the current page. 
+long intro: an extension of the socket idea(it is a "port" through which data goes in and out of. Protocols used  
+determine how to interpret the data going to and from the socket and the machines that are communicating with each  
+other) In 2011, the websocket was standardized, unlike HTTP, the socket that is connected to the server stays "open"  
+for communication, which means data can be "pushed" to the browser in realtime on demand.  
+
+**Comparison**  
+Using REST, the server resources could be wasted to answer to many clients when there's nothing new. And there's a time  
+delay especially between the last client and the first client  
+Using WebSockets, sockets are being connected like each client having a radio, all clients can receive the server's order at   
+the same time. 
