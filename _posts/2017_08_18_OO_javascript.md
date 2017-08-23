@@ -49,7 +49,7 @@ reference for the “antecedent object”—the invoking object.
 on the window object. Therefore, when we use this in a global function, it refers to (and has the value of) the   
 global window object (not in strict mode though, as noted earlier) that is the main container of the entire JavaScript  
 application or web page.  
-
+`
 
     var firstName = "Peter",
         lastName = "Ally";
@@ -75,5 +75,5 @@ application or web page.
         window.showFullName (); // Peter Ally​
     ​
         // "this" inside the showFullName () method that is defined inside the person object still refers to the person object, hence:​
-        person.showFullName (); // Penelope Barrymore
+        person.showFullName (); // Penelope Barrymore`
 
