@@ -39,10 +39,16 @@ not contain useful information, which is the case here):
 ```r
 > docs <- tm_map(docs, content_transformer(tolower))
 > docs <- tm_map(docs, removePunctuation)
-> docs <- tm_map(docs, stripWhitespace)
+#> docs <- tm_map(docs, stripWhitespace)
 #check again
 writeLines(as.character(docs[[1]]))
 dtm <- DocumentTermMatrix(docs) # final processing:  create a document-term matrix (DTM) – a matrix that lists all occurrences of words in the corpus.
 > dtm
 ```  
 4. Hierarchical clustering  
+```r
+#convert dtm to matrix
+m <- as.matrix(dtm)
+#run hierarchical clustering using Ward’s method
+groups <- hclust(d,method=”ward.D”) #failed here cz I only have one doc, which means only one object.
+```
