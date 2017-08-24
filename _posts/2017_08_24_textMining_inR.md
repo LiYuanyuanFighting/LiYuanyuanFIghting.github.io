@@ -50,7 +50,7 @@ dtm <- DocumentTermMatrix(docs) # final processing:  create a document-term matr
 #convert dtm to matrix
 m <- as.matrix(dtm)
 #run hierarchical clustering using Ward’s method
-groups <- hclust(d,method=”ward.D”) #failed here cz I only have one doc, which means only one object.
+groups <- hclust(d,method=”ward.D”) #failed here cz I only have one doc, only one cluster, so could not do it
 ```
 A document-term matrix or term-document matrix is a mathematical matrix that describes the frequency of terms that occur   
 in a collection of documents. In a document-term matrix, rows correspond to documents in the collection and columns   
