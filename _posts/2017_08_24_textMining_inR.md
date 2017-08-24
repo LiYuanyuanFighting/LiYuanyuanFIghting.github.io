@@ -1,3 +1,4 @@
+Mostly follow the [article](https://eight2late.wordpress.com/2015/07/22/a-gentle-introduction-to-cluster-analysis-using-r/) 
 1. install tm(text mining library)  
 ```r
 install.packages("tm")
@@ -25,3 +26,23 @@ INSERT INTO history_time_deviation(PID, timeDeviation)
  enclosed by '"'
  lines terminated by '\n';
 ```
+
+3. load documents into an object that can be manipulated by functions in the tm package.  
+```r
+docs <- Corpus(DirSource("D:/docs/thesis/dataFile"))
+#check what is inside(the index starts from 1)
+writeLines(as.character(docs[[1]]))
+```
+The next step is to clean up the corpus. This includes things such as transforming to a consistent   
+case, removing non-standard symbols &  punctuation, and removing numbers (assuming that numbers do   
+not contain useful information, which is the case here):  
+```r
+> docs <- tm_map(docs, content_transformer(tolower))
+> docs <- tm_map(docs, removePunctuation)
+> docs <- tm_map(docs, stripWhitespace)
+#check again
+writeLines(as.character(docs[[1]]))
+dtm <- DocumentTermMatrix(docs) # final processing:  create a document-term matrix (DTM) – a matrix that lists all occurrences of words in the corpus.
+> dtm
+```  
+4. Hierarchical clustering  
