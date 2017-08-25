@@ -26,6 +26,23 @@ INSERT INTO history_time_deviation(PID, timeDeviation)
  enclosed by '"'
  lines terminated by '\n';
 ```
+Detailed version:  
+```sql
+ SELECT link.departure as departure, link.arrival as arrival, link.agency as agency, link.transportMode as transportMode, 
+ HOUR(planned_link.StartTime) as startHour, HOUR(planned_link.ArrivalTime) as endHour, 
+	CASE WHEN MONTH(planned_link.StartTime) IN (12, 1, 2) THEN 'Winter'
+	  WHEN MONTH(planned_link.StartTime) IN (3, 4, 5) THEN 'Spring'
+      WHEN MONTH(planned_link.StartTime) IN (6, 7, 8) THEN 'Summer'
+	ELSE 'Fall' END AS Season,
+ timestampdiff(minute, planned_link.ArrivalTime, executed_link.arrivalTime )
+ FROM planned_link, executed_link, link
+ WHERE planned_link.PID = executed_link.PID and link.LID=planned_link.LID
+ #into outfile 'D:/docs/database/historyTimeDeviation.csv'
+ into outfile 'C:/ProgramData/MySQL/MySQL Server 5.7/Uploads/historyTimeDeviationDetail1.csv'
+ fields terminated by ','
+ enclosed by '"'
+ lines terminated by '\n';
+ ```
 
 3. load documents into an object that can be manipulated by functions in the tm package.  
 ```r
