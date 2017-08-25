@@ -6,3 +6,19 @@ Data-> Filter, then appear dropdown menu
 3. Used rapidMiner:  
 [Decision Tree Analysis](http://i.imgur.com/QrYPDLk.png)    
 [Decision Tree Result](http://i.imgur.com/42tOnNy.png)  
+Then realized, just doing feature selection is enough. Now check how to do it in R:  
+Following the [article](https://www.analyticsvidhya.com/blog/2016/03/select-important-variables-boruta-package/)  
+
+
+
+
+  
+[FACTOR VARIABLES | R LEARNING MODULES](https://stats.idre.ucla.edu/r/modules/factor-variables/): There are a number  
+of advantages to converting categorical variables to factor variables. For example,   
+ses <- c("low", "middle", "low", "low", "low", "low", "middle", "low", "middle",
+    "middle", "middle", "middle", "middle", "high", "high", "low", "middle",
+    "middle", "low", "high")    
+levels(ses.f.bad.order)  
+##[1] "high"   "low"    "middle"  
+The result is ordered in alphabetic order, so we should create a new factor variable called ses.f with the correct   
+order of categories.  
