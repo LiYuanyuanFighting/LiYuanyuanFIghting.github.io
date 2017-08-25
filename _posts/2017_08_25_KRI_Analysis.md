@@ -30,3 +30,5 @@ order of categories.
 > traindata[,convert] <- data.frame(apply(traindata[convert], 2, as.factor))
 ´´´  
 This should mean apply the 2 columns as factor  
+
+traindata[1:36, 4:5] #the header is not taken into account  
