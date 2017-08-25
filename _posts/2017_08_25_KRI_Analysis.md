@@ -15,23 +15,24 @@ Following the [article](https://www.analyticsvidhya.com/blog/2016/03/select-impo
   
 [FACTOR VARIABLES | R LEARNING MODULES](https://stats.idre.ucla.edu/r/modules/factor-variables/): There are a number  
 of advantages to converting categorical variables to factor variables. For example,  
-´´´r
+```r
 ses <- c("low", "middle", "low", "low", "low", "low", "middle", "low", "middle",
     "middle", "middle", "middle", "middle", "high", "high", "low", "middle",
     "middle", "low", "high")    
 levels(ses.f.bad.order)  
 ##[1] "high"   "low"    "middle"
-´´´
+```
+
 The result is ordered in alphabetic order, so we should create a new factor variable called ses.f with the correct   
 order of categories.  
 
-´´´r 
+```r
 > convert <- c(2:6, 11:13)
 > traindata[,convert] <- data.frame(apply(traindata[convert], 2, as.factor))
-´´´  
+```
 This should mean apply the 2 columns as factor  
-´´´r 
+```r
 > dim(traindata)
 [1] 36  7
 traindata[1:36, 4:5] #the header is not taken into account  
-´´´  
+```  
