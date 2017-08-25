@@ -35,4 +35,10 @@ This should mean apply the 2 columns as factor
 > dim(traindata)
 [1] 36  7
 traindata[1:36, 4:5] #the header is not taken into account  
-```  
+> cols <- c("season", "class")
+> traindata[,convert] <- data.frame(apply(traindata[cols], 2, as.factor))
+Error in `[<-.data.frame`(`*tmp*`, , convert, value = list(season = c(1L,  : 
+  duplicate subscripts for columns
+```    
+Problems met, needed to be solved  
+https://machinelearningmastery.com/feature-selection-with-the-caret-r-package/
