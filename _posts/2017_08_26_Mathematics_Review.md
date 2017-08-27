@@ -24,3 +24,8 @@ variable belongs to binary(1/0, True/False, Yes/No) variables, we should use log
 **Polynomial Regression**  
 if the exponent of an independent var is greater than 1, then it will be polynomial regression.  
 e.g. y = a+b*x^2  
+**column vector**  
+In linear algebra, a column vector or column matrix is an m × 1 matrix, that is, a matrix consisting of a single  
+column of m elements,  
+**row vector**  
+a row vector or row matrix is a 1 × m matrix, that is, a matrix consisting of a single row of m elements  
