@@ -6,13 +6,10 @@ Data-> Filter, then appear dropdown menu
 3. Used rapidMiner:  
 [Decision Tree Analysis](http://i.imgur.com/QrYPDLk.png)    
 [Decision Tree Result](http://i.imgur.com/42tOnNy.png)  
+
 Then realized, just doing feature selection is enough. Now check how to do it in R:  
 Following the [article](https://www.analyticsvidhya.com/blog/2016/03/select-important-variables-boruta-package/)  
 
-
-
-
-  
 [FACTOR VARIABLES | R LEARNING MODULES](https://stats.idre.ucla.edu/r/modules/factor-variables/): There are a number  
 of advantages to converting categorical variables to factor variables. For example,  
 ```r
