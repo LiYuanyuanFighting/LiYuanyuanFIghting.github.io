@@ -106,3 +106,18 @@ Then I modified the csv file, to make season relevant:
 class ~ season
 <environment: 0x000000000acff790>  
 ```  
+
+After that, I test with more precise action(select data only for a certain leg):  
+1.select data satisfied a certain condition from the full csv file:  
+```r
+> library(sqldf)
+> traindataFull <- read.csv("D:/docs/database/historyTimeDeviationDetail.csv", header=T, stringsAsFactors=F)
+> write.csv(traindataFull, "tempFull.csv", quote=FALSE, row.names=FALSE) #a temporary file will be created  
+> traindataFull2 <- read.csv.sql("tempFull.csv", sql="select * from file where departure='Milan' and arrival='Bari'", eol="\n")
+> traindataFull2
+  departure arrival          agency mode startHour endHour season timeDeviation   class
+1     Milan    Bari Demo Synchronet  BUS         0      11 Summer            49 minor\r
+2     Milan    Bari Demo Synchronet  BUS        17       4 Summer            57 minor\r
+3     Milan    Bari Demo Synchronet  BUS        21       8 Summer            45 minor\r
+> 
+```
