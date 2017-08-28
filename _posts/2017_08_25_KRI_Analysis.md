@@ -137,3 +137,24 @@ Repeate the full steps:
 Because the method I used couldn't detect the most important feature for a link as I thought, I decide to  
 try another method, i.e. traditional feature selection algorithm.  
 [explanation of each parameter](https://www.rdocumentation.org/packages/caret/versions/6.0-76/topics/rfe)  
+not working version:  
+```r
+> traindataFull <- read.csv("D:/docs/database/historyTimeDeviationDetailFake.csv", header=T, stringsAsFactors=F)
+> write.csv(traindataFull, "tempFull.csv", quote=FALSE, row.names=FALSE)
+> traindataFull2 <- read.csv.sql("tempFull.csv", sql="select * from file where departure='Paris' and arrival='Milan'")
+> traindataFull2
+> convert <- c(1:4, 7, 9)
+> traindataFull2[,convert] <- data.frame(apply(traindataFull2[convert], 2, as.factor))
+> rfe.train <- rfe(traindataFull2[,1:7], traindataFull2[,9], sizes=1:7, rfeControl=control)
+Error in { : task 2 failed - "Can't have empty classes in y."
+In addition: Warning messages:
+1: In UseMethod("levels") : closing unused connection 8 (tempFull.csv)
+2: In UseMethod("levels") : closing unused connection 7 (tempFull.csv)
+3: In UseMethod("levels") : closing unused connection 6 (tempFull.csv)
+4: In UseMethod("levels") : closing unused connection 5 (tempFull.csv)
+5: In UseMethod("levels") : closing unused connection 4 (tempFull.csv)
+6: In UseMethod("levels") : closing unused connection 3 (tempFull.csv)
+> rfe.train <- rfe(traindataFull2[,3:7], traindataFull2[,9], sizes=1:7, rfeControl=control)
+Error in { : task 2 failed - "Can't have empty classes in y."
+
+```
