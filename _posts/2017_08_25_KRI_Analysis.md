@@ -41,4 +41,10 @@ Error in `[<-.data.frame`(`*tmp*`, , convert, value = list(season = c(1L,  :
   duplicate subscripts for columns
 ```    
 Problems met, needed to be solved  
-https://machinelearningmastery.com/feature-selection-with-the-caret-r-package/
+https://machinelearningmastery.com/feature-selection-with-the-caret-r-package/  
+
+Solved  
+> traindata[,cols] <- data.frame(apply(traindata[cols], 2, as.factor))
+> class(traindata$season)
+[1] "factor"  
+
