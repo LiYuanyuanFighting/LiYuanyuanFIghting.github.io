@@ -121,3 +121,8 @@ After that, I test with more precise action(select data only for a certain leg):
 3     Milan    Bari Demo Synchronet  BUS        21       8 Summer            45 minor\r
 > 
 ```
+2.do the feature selection  
+```r
+> traindataFull2[,cols] <- data.frame(apply(traindataFull2[cols], 2, as.factor))
+> boruta.train <- Boruta(class~.-timeDeviation, data=traindataFull2, doTrace=2)
+```
