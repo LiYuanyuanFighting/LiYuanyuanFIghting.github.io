@@ -93,4 +93,10 @@ After 20 iterations, +0.47 secs:
 After 26 iterations, +0.55 secs: 
  rejected 1 attribute: endHour;
  no more attributes left.
+ 
+ > print (boruta.train)
+Boruta performed 57 iterations in 0.7313249 secs.
+ No attributes deemed important.
+ 6 attributes confirmed unimportant: agency, arrival, departure, endHour, season and 1
+more;
 ```
