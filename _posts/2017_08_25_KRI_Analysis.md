@@ -100,3 +100,9 @@ Boruta performed 57 iterations in 0.7313249 secs.
  6 attributes confirmed unimportant: agency, arrival, departure, endHour, season and 1
 more;
 ```
+Then I modified the csv file, to make season relevant:    
+```r
+> getConfirmedFormula(boruta.train)
+class ~ season
+<environment: 0x000000000acff790>  
+```  
