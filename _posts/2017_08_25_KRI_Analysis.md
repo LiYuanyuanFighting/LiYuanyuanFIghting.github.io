@@ -134,3 +134,5 @@ Repeate the full steps:
 > traindataFull[,cols] <- data.frame(apply(traindataFull[cols], 2, as.factor))
 > boruta.train <- Boruta(class~.-timeDeviation, data=traindataFull, doTrace=2)
 ```
+Because the method I used couldn't detect the most important feature for a link as I thought, I decide to  
+try another method, i.e. traditional feature selection algorithm.  
