@@ -45,3 +45,6 @@ Solved
 > class(traindata$season)
 [1] "factor"  
 
+Interesting website found:  
+https://datahack.analyticsvidhya.com/contest/practice-problem-loan-prediction/#solution_checker     
+
