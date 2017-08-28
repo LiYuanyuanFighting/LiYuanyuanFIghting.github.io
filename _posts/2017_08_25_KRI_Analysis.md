@@ -130,7 +130,7 @@ Repeate the full steps:
 ```r
 > traindataFull <- read.csv("D:/docs/database/historyTimeDeviationDetailFake.csv", header=T, stringsAsFactors=F)
 > write.csv(traindataFull, "tempFull.csv", quote=FALSE, row.names=FALSE)
->  traindataFull <- read.csv.sql("tempFull.csv", sql="select * from file where departure='Milan' and arrival='Bari'", eol="\n")
+>  traindataFull <- read.csv.sql("tempFull.csv", sql="select * from file where departure='Milan' and arrival='Bari'")#, eol="\n")
 > traindataFull[,cols] <- data.frame(apply(traindataFull[cols], 2, as.factor))
 > boruta.train <- Boruta(class~.-timeDeviation, data=traindataFull, doTrace=2)
 ```
