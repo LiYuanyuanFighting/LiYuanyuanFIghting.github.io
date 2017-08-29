@@ -158,3 +158,25 @@ In addition: Warning messages:
 Error in { : task 2 failed - "Can't have empty classes in y."
 
 ```
+Then added the last season: winter, test with Boruta again:  
+```r
+>  boruta.train <- Boruta(class~.-timeDeviation, data=traindataFull2, doTrace=1)
+After 10 iterations, +0.12 secs: 
+ rejected 5 attributes: agency, arrival, departure, mode, startHour;
+ still have 2 attributes left.
+
+After 14 iterations, +0.16 secs: 
+ rejected 1 attribute: endHour;
+ still have 1 attribute left.
+ 
+ > final.boruta <- TentativeRoughFix(boruta.train)
+> print(final.boruta)
+Boruta performed 99 iterations in 1.160307 secs.
+Tentatives roughfixed over the last 99 iterations.
+ 1 attributes confirmed important: season;
+ 6 attributes confirmed unimportant: agency, arrival, departure, endHour, mode and 1 more;
+ 
+ > getSelectedAttributes(final.boruta, withTentative = T)
+[1] "season"
+```  
+
