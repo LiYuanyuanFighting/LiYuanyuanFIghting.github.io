@@ -29,3 +29,10 @@ In linear algebra, a column vector or column matrix is an m × 1 matrix, that is
 column of m elements,  
 **row vector**  
 a row vector or row matrix is a 1 × m matrix, that is, a matrix consisting of a single row of m elements  
+**e-Euler's number**   
+The number e is a famous irrational number, and is one of the most important numbers in mathematics.  
+The first few digits are:  
+2.7182818284590452353602874713527 (and more ...)  
+**Another e**  
+E or e to mean "exponent of 10."   
+9.0122222900391E-5 means 9.0122222900391×10−59.0122222900391×10−5. This is known as "scientific notation".  
