@@ -15,7 +15,8 @@ line, 3.Type of dependent variable.
 In linear regression, the model specification is that the dependent variable, yi is a linear combination of   
 the parameters (but need not be linear in the independent variables).   
 Use a function to stand for it:  
-Y=a+b*X+e.  
+Y=a+b*X+e.    
+method of data mining — regression — which allows you to predict a numerical value for a given set of input values.  
 **Logistic Regression**  
 In statistics, logistic regression, or logit regression, or logit model[1] is a regression model where the  
 dependent variable (DV) is categorical.  
