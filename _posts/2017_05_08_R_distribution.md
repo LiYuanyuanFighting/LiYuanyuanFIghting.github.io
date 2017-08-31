@@ -92,3 +92,28 @@ It is comulative distribution function
 
 **dnorm**  
 probability distriution function
+
+**Generate random number**  
+sample() works fine if you have a sample to start from.  If you really 
+need to start from an ecdf, you could generate x and prob args to 
+sample() by looking inside the ecdf object.  For example:
+```r
+x <- rbinom(100, 100, 0.2)
+e <- ecdf(x)
+```
+Now either of these should give you what you want.
+```r
+size <- 1000
+sample(x, size, replace=TRUE)
+```
+or
+```r
+vals <- get("x", environment(e)) #Search by name for an object 
+#environment(f) returns the closure environment for a function f (where it will look for functions and global variables).
+probs <- diff(c(0, get("y", environment(e))))
+#the c() function returns a vector (a one dimensional array).
+#The function calculates the differences between all consecutive values of a vector.
+sample(vals, size, replace=TRUE, prob=probs)  
+#replace=TRUE, make sures that no element occurs twice
+#a vector of probability weights for obtaining the elements of the vector being sampled.
+```
