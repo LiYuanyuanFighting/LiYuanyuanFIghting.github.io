@@ -114,6 +114,7 @@ probs <- diff(c(0, get("y", environment(e))))
 #the c() function returns a vector (a one dimensional array).
 #The function calculates the differences between all consecutive values of a vector.
 sample(vals, size, replace=TRUE, prob=probs)  
+#takes a sample of the specified size from the elements of x using either with or without replacement.
 #replace=TRUE, make sures that no element occurs twice
 #a vector of probability weights for obtaining the elements of the vector being sampled.
 ```
