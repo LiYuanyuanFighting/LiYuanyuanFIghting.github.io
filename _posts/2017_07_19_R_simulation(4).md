@@ -47,3 +47,7 @@ for(i in 2:n){
  [7]  2.6829163  3.1438325  1.8787713  1.1919184
 ´´´
 We can see that the next state(value) only depends on the previous state(value).  
+**Deterministic** means here: follow strict rules to achieve the maxima without any randomness  
+included. While the numerical deterministic solution of the problem depends on the analytical  
+properties of the objective function h(for example, convexity and smoothness), the stochastic  
+approach is of more general use.  
