@@ -34,5 +34,10 @@ Warning message:
 In grad.desc(f2, c(-2, -2, 2, 2), c(-1, 0.5), gamma = 0.3, tol = 1e-04) :
   Maximum number of iterations reached!
 ´´´  
+Then it talked about using stochastic optimization one can find a different  
+solution with the same starting values, which should allow us to trap not(always)  
+to a local optima.  
+It talked about simplified procedures(Star Trek, Spaceballs and Spaceballs princes)  
+
 
 
