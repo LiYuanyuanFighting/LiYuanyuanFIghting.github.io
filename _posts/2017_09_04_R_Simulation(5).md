@@ -12,4 +12,27 @@ Note: D means deriavative
 The length of the gradient measures the maximum possible rate of change rate. So in  
 the opposite direction you just get the opposite value negative root 6, we can't go  
 down any faster than that and so we won't be able to do it.  
+The steepest descent search is an extension that goes in the direction of the line of   
+the gradient in each step, basically an optimum step is down, also referred to as a steepest  
+step. The aim is to locate the maximum/minimum of a function.   
+Successful Example:  
+[SuccessfulGraph](https://i.imgur.com/cgWL2VS.png)
+´´´r
+library("animation")
+grad.desc()
+´´´  
+Unsuccessful Example:  
+[UnsuccessfulGraph](https://i.imgur.com/IsX91td.png)
+´´´r
+> ani.options(nmax = 70)
+animation option 'nmax' changed: 50 --> 70
+> par(mar = c(4, 4, 2, 0.1))
+> f2 = function(x, y) sin(1/2 * x^2 - 1/4 * y^2 + 3) * cos(2 * x + 1 -
++  exp(y))
+> grad.desc(f2, c(-2, -2, 2, 2), c(-1, 0.5), gamma = 0.3, tol = 1e-04)
+Warning message:
+In grad.desc(f2, c(-2, -2, 2, 2), c(-1, 0.5), gamma = 0.3, tol = 1e-04) :
+  Maximum number of iterations reached!
+´´´  
+
 
