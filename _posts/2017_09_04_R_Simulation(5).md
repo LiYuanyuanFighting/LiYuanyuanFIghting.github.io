@@ -1,4 +1,9 @@
 ### Monte Carlo Methods for Optimization Problems  
+**Gradient ascent/descent**  
+Gradient descent is a first-order iterative optimization algorithm for finding the minimum of a function. To find a local minimum of a function using gradient descent, one takes steps proportional to the negative of the gradient (or of the approximate gradient) of the function at the current point. If instead one takes steps proportional to the positive of the gradient, one approaches a local maximum of that function; the procedure is then known as gradient ascent.
+
+Gradient descent is also known as steepest descent. However, gradient descent should not be confused with the method of steepest descent for approximating integrals.  
+
 [Steepest Ascent](https://i.imgur.com/sM5a0hy.png)  
 Steepest descent would just be in the opposite direction to the steepest ascent.  
 [Steepest Example](https://i.imgur.com/Hpou35y.png)  
