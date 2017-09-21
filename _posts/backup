@@ -97,8 +97,8 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
        /* var r = ["bb", "8c", "ff", "FF"];
         var g = ["e0", "c4", "b2", "FF"];
         var b = ["70", "ff", "b2", "00"];*/
-        var colors = [3, 30, 60, 90];
-      //  var colors = ["#bbe070", "#bbc4ff", "#bbb2b2", "#bbFF00"]; // T S F C
+        var colors = ["#bbe070", "#8cc4ff", "#ffb2b2", "#FFFF00"]; // T S F C
+        //var colors = ["#bbe070", "#bbc470", "#bbb270", "#bbFF70"]; // T S F C
       /*  var labelT = r.text(height/4, height/4, quickSym);
         labelT.attr({fill:quickFill2, "font-size":labelSize, "font-weight":"bold"});	
 
@@ -111,18 +111,15 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
         var labelC = r.text(height/2, height/2, costSym);
         labelC.attr({fill:costFill2, "font-size":labelSize, "font-weight":"bold"}); */
         
-        r.customAttributes.segment = function (x, y, r, a1, a2, color) {
-            var flag = (a2 - a1) > 180;
-             //   clr = (a2 - a1) / 360;
+        r.customAttributes.segment = function (x, y, r, a1, a2, index) {
+            var flag = (a2 - a1) > 180, clr = (a2 - a1) / 360;
             a1 = (a1 % 360) * Math.PI / 180; 
             a2 = (a2 % 360) * Math.PI / 180;
             return {
                 path: [["M", x, y], ["l", r * Math.cos(a1), r * Math.sin(a1)], ["A", r, r, 0, +flag, 1, x + r * Math.cos(a2), y + r * Math.sin(a2)], ["z"]],
-                if (color=="#fff")
-                	fill: color
-                else
-                	fill: "hsb(" + color + ", .75, .8)"
-                //fill: color
+              //  fill: "hsb(" + clr + ", .75, .8)"
+               // fill: color
+                fill: colors[index]
             };
         };
        // var labels = ["T", "F", "S", "C"]; 
@@ -135,7 +132,7 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
           //  var preX=height, preY=height/2, xTemp, yTemp;
             for (i = 0; i < ii; i++) {
                 val = 360 / total * data[i];
-                paths[i].animate({segment: [height/2, height/2, 0.5*height, start, start += val, colors[i]]}, ms || 1500, "bounce");
+                paths[i].animate({segment: [height/2, height/2, 0.5*height, start, start += val, i]}, ms || 1500, "bounce");
                 paths[i].angle = start - val / 2;
                // console.log(paths[i].angle);
                // console.log(val); // the value will be used to calculate the percent
@@ -185,7 +182,7 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
         for (i = 0; i < ii; i++) {
             var val = 360 / total * data[i];
             (function (i, val) {
-                paths.push(r.path().attr({segment: [height/2, height/2, 1, start, start + val, "#fff"], stroke: "#fff"}).click(function () {
+                paths.push(r.path().attr({segment: [height/2, height/2, 1, start, start + val, 0], stroke: "#fff"}).click(function () {
                     total += data[i];
                     data[i] *= 2;
                     animate();
