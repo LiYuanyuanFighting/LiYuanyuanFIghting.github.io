@@ -1,0 +1,252 @@
+/* This program is free software: you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public License
+   as published by the Free Software Foundation, either version 3 of
+   the License, or (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>. 
+*/
+
+otp.namespace("otp.widgets");
+
+otp.widgets.RiskTrianglePanel = new otp.Class({
+
+    div         : null,
+    cursor_size : 19,
+    barWidth    : 0,
+    tri_size    : 0,
+
+    /*trianglequickFactor:    null,
+    triangleflatFactor:   null,
+    trianglesafeFactor:  null,*/
+
+	triangleTimeFactor:    null,
+    triangleSafetyFactor:   null,
+    triangleFlexibilityFactor:  null,
+    // default is even mixture 
+    /*quickFactor : 0.333,
+    flatFactor  : 0.333,
+    safeFactor  : 0.334,*/
+
+	TimeFactor : 0.333,
+    SafetyFactor  : 0.333,
+    FlexibilityFactor  : 0.334,
+
+    onChanged   : null,
+    
+    quickBar    : null,
+    flatBar     : null,
+    safeBar     : null,
+
+    quickLabel  : null,
+    flatLabel   : null,
+    safeLabel   : null,
+    
+    cursorVert  : null,
+    cursorHoriz : null,
+    cursor      : null,
+    
+    //TRANSLATORS: Optimization for bicycle shown in bike triangle. Optimized
+    //for speed
+    quickName   : _tr("Time"),
+    //TRANSLATORS: Optimization for bicycle shown in bike triangle. Optimized
+    //for flat terrain
+    flatName    : _tr("Flexibility"),
+    //TRANSLATORS: Optimization for bicycle shown in bike triangle. Optimized
+    //for bike friendly infrastructure. Cycle roads etc...
+    safeName    : _tr("Safety"),
+    
+    initialize : function(divID) {
+        this.div = document.getElementById(divID);
+        this.render();
+    },
+    
+    render : function() {
+    
+        var this_ = this;
+   
+        var width = $(this.div).width(), height = 100/*$(this.div).height()*/;
+        //console.log()
+
+        var r = Raphael($(this.div).attr('id'), width, height);
+        var labelSize = "18px";
+        var safeFill = "#bbe070"; 
+        var safeFill2 = "#77b300"; 
+        //TRANSLATORS: for safety
+        var safeSym  = _tr("S"); 
+
+        var flatFill = "#8cc4ff"; 
+        var flatFill2 = "#61a7f2"; 
+        //TRANSLATORS: For feasibility
+        var flatSym  = _tr("F"); //locale.bikeTriangle.flatSym;
+        
+        var quickFill = "#ffb2b2";
+        var quickFill2 = "#f27979";
+        //TRANSLATORS: For Time
+        var quickSym  = _tr("T"); //locale.riskTriangle.quickSym;
+        
+        var costFill = "#FFFF00"; 
+        var costFill2 = "#FFA500"; 
+        //TRANSLATORS: for safety
+        var costSym  = _tr("C"); 
+       /* var r = ["bb", "8c", "ff", "FF"];
+        var g = ["e0", "c4", "b2", "FF"];
+        var b = ["70", "ff", "b2", "00"];*/
+        var colors = [3, 30, 60, 90];
+      //  var colors = ["#bbe070", "#bbc4ff", "#bbb2b2", "#bbFF00"]; // T S F C
+      /*  var labelT = r.text(height/4, height/4, quickSym);
+        labelT.attr({fill:quickFill2, "font-size":labelSize, "font-weight":"bold"});	
+
+        var labelH = r.text(height/2, height/4, flatSym);
+        labelH.attr({fill:flatFill2, "font-size":labelSize, "font-weight":"bold"});	
+
+        var labelS = r.text(height/4, height/2, safeSym);
+        labelS.attr({fill:safeFill2, "font-size":labelSize, "font-weight":"bold"});
+        
+        var labelC = r.text(height/2, height/2, costSym);
+        labelC.attr({fill:costFill2, "font-size":labelSize, "font-weight":"bold"}); */
+        
+        r.customAttributes.segment = function (x, y, r, a1, a2, color) {
+            var flag = (a2 - a1) > 180;
+             //   clr = (a2 - a1) / 360;
+            a1 = (a1 % 360) * Math.PI / 180; 
+            a2 = (a2 % 360) * Math.PI / 180;
+            return {
+                path: [["M", x, y], ["l", r * Math.cos(a1), r * Math.sin(a1)], ["A", r, r, 0, +flag, 1, x + r * Math.cos(a2), y + r * Math.sin(a2)], ["z"]],
+                if (color=="#fff")
+                	fill: color
+                else
+                	fill: "hsb(" + color + ", .75, .8)"
+                //fill: color
+            };
+        };
+       // var labels = ["T", "F", "S", "C"]; 
+       
+        //var texts = [t1, t2, t3, t4];
+        //console.log(texts);
+        function animate(ms) {
+            var start = 0,
+                val;
+          //  var preX=height, preY=height/2, xTemp, yTemp;
+            for (i = 0; i < ii; i++) {
+                val = 360 / total * data[i];
+                paths[i].animate({segment: [height/2, height/2, 0.5*height, start, start += val, colors[i]]}, ms || 1500, "bounce");
+                paths[i].angle = start - val / 2;
+               // console.log(paths[i].angle);
+               // console.log(val); // the value will be used to calculate the percent
+                
+               // console.log(x1);
+               // console.log(y1);
+            /*	xTemp = height/2 + 0.5*height * Math.cos(start);
+            	yTemp = height/2 + 0.5*height * Math.sin(start);
+            	x1 = (xTemp-preX)/2;
+            	y1 = (yTemp - preY)/2;
+            	preX = xTemp;
+            	preY = yTemp;
+                	// x1 = height/2+ 0.5*height/2*Math.cos(paths[i].angle);
+                    // y1 = height/2- 0.5*height/2*Math.sin(paths[i].angle);
+                if (i==0) {
+                	t1.animate({x:x1, y:y1}, ms);
+            	}
+                if (i==1) {
+                	//x1 = height/2- 0.5*height/2*Math.cos(paths[i].angle);
+                    //y1 = height/2- 0.5*height/2*Math.sin(paths[i].angle);
+                	t2.animate({x:x1, y:y1}, ms);
+                }
+                if (i==2) {
+                	//x1 = height/2- 0.5*height/2*Math.cos(paths[i].angle);
+                    //y1 = height/2+ 0.5*height/2*Math.sin(paths[i].angle);
+                	t3.animate({x:x1, y:y1}, ms);
+                }
+                if (i==3) {
+                	//x1 = height/2+ 0.5*height/2*Math.cos(paths[i].angle);
+                    //y1 = height/2+ 0.5*height/2*Math.sin(paths[i].angle);
+                	t4.animate({x:x1, y:y1}, ms);
+                } */
+            }
+        }
+        var data = [25, 25, 25, 25],
+            paths = r.set(),
+            total,
+            start,
+            bg = r.circle(height/2, height/2, 0).attr({stroke: "#fff", "stroke-width": 4});
+        data = data.sort(function (a, b) { return b - a;});
+
+        total = 0;
+        for (var i = 0, ii = data.length; i < ii; i++) {
+            total += data[i];
+        }
+        start = 0;
+        for (i = 0; i < ii; i++) {
+            var val = 360 / total * data[i];
+            (function (i, val) {
+                paths.push(r.path().attr({segment: [height/2, height/2, 1, start, start + val, "#fff"], stroke: "#fff"}).click(function () {
+                    total += data[i];
+                    data[i] *= 2;
+                    animate();
+                }));
+            })(i, val);
+            start += val;
+        }
+        
+     /*   var t1 = r.text(75, 75, "T").attr({font: '100 15px "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif', fill: "#000"});
+        var t2 = r.text(75, 25, "F").attr({font: '100 15px "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif', fill: "#000"});
+        var t3 = r.text(25, 75, "S").attr({font: '100 15px "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif', fill: "#000"});
+        var t4 = r.text(25, 25, "C").attr({font: '100 15px "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif', fill: "#000"}); */
+        bg.animate({r: 151}, 1000, "bounce");
+        animate(1000);
+        // var t = r.text(height/2, 20, "Click on segments to make them bigger.").attr({font: '100 15px "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif', fill: "#000"});
+        
+    },
+    
+
+
+    setValues : function(quick, flat, safe) {
+        this.TimeFactor = quick;
+        this.SafetyFactor = safe;
+        this.FlexibilityFactor = flat;
+        
+        this.quickBar.attr({width: this.barWidth*quick});
+        this.flatBar.attr({width: this.barWidth*flat});
+        this.safeBar.attr({width: this.barWidth*safe});
+        this.quickLabel.attr("text",   this.quickName + ": "+Math.round(quick*100)+"%");
+        this.flatLabel.attr("text",   this.flatName + ": " +Math.round(flat*100)+"%");
+        this.safeLabel.attr("text", this.safeName + ": " +Math.round(safe*100)+"%");
+
+        var margin = this.cursor_size/2;
+        
+        var x = margin + this.tri_side/2;
+        var y = margin + this.tri_side / Math.sqrt(3);
+        
+        var qx = 0, qy = -this.tri_side / Math.sqrt(3);
+        var fx = -this.tri_side/2, fy = (this.tri_side/2) / Math.sqrt(3);
+        var sx = this.tri_side/2, sy = (this.tri_side/2) / Math.sqrt(3);
+        
+        x  = x + quick*qx + flat*fx + safe*sx;
+        y  = y + quick*qy + flat*fy + safe*sy;
+        
+        this.moveCursor(x, y);
+
+    },
+
+    /** NOTE: don't rename this stuff, as OTP api depends on these values */
+    getFormData : function() {
+        return {
+                time_w				   : this.TimeFactor,
+                safety_w			   : this.SafetyFactor,
+                flexibility_w		   : this.FlexibilityFactor
+                /*co2_w				   : this.TimeFactor,
+            time_w			       : this.SafetyFactor,
+            distance_w			   : this.FlexibilityFactor*/
+        }
+    },
+    
+    CLASS_NAME: "otp.widgets.RiskTrianglePanel"
+
+});
+
