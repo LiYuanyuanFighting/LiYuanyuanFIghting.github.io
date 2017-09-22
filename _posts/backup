@@ -33,19 +33,22 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
     flatFactor  : 0.333,
     safeFactor  : 0.334,*/
 
-	TimeFactor : 0.333,
-    SafetyFactor  : 0.333,
-    FlexibilityFactor  : 0.334,
+	TimeFactor : 0.25,
+    SafetyFactor  : 0.25,
+    FlexibilityFactor  : 0.25,
+    CostFactor  : 0.25,
 
     onChanged   : null,
     
     quickBar    : null,
     flatBar     : null,
     safeBar     : null,
+    costBar     : null,
 
     quickLabel  : null,
     flatLabel   : null,
     safeLabel   : null,
+    costLabel   : null,
     
     cursorVert  : null,
     cursorHoriz : null,
@@ -60,6 +63,7 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
     //TRANSLATORS: Optimization for bicycle shown in bike triangle. Optimized
     //for bike friendly infrastructure. Cycle roads etc...
     safeName    : _tr("Safety"),
+    costName    : _tr("Cost"),
     
     initialize : function(divID) {
         this.div = document.getElementById(divID);
@@ -71,6 +75,7 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
         var this_ = this;
    
         var width = $(this.div).width(), height = 100/*$(this.div).height()*/;
+        var margin = 10;
         //console.log()
 
         var r = Raphael($(this.div).attr('id'), width, height);
@@ -97,7 +102,7 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
        /* var r = ["bb", "8c", "ff", "FF"];
         var g = ["e0", "c4", "b2", "FF"];
         var b = ["70", "ff", "b2", "00"];*/
-        var colors = ["#bbe070", "#8cc4ff", "#ffb2b2", "#FFFF00"]; // T S F C
+        var colors = ["#ffb2b2", "#8cc4ff", "#bbe070", "#FFFF00"]; // T S F C
         //var colors = ["#bbe070", "#bbc470", "#bbb270", "#bbFF70"]; // T S F C
       /*  var labelT = r.text(height/4, height/4, quickSym);
         labelT.attr({fill:quickFill2, "font-size":labelSize, "font-weight":"bold"});	
@@ -111,6 +116,35 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
         var labelC = r.text(height/2, height/2, costSym);
         labelC.attr({fill:costFill2, "font-size":labelSize, "font-weight":"bold"}); */
         
+        var barLeft = margin*2 + height; 
+        this.barWidth = width - 1.3*height;
+        var barWidth = this.barWidth;
+        var barHeight = (height-margin*4)/4;
+        
+        this.quickBar = r.rect(barLeft, margin, barWidth*.25, barHeight);
+        this.quickBar.attr({fill:quickFill, stroke:"none"});
+
+        this.flatBar = r.rect(barLeft, margin*2+barHeight, barWidth*.25, barHeight);
+        this.flatBar.attr({fill:flatFill, stroke:"none"});
+
+        this.safeBar = r.rect(barLeft, margin*3 + barHeight*2, barWidth*.25, barHeight);
+        this.safeBar.attr({fill:safeFill, stroke:"none"});
+        
+        this.costBar = r.rect(barLeft, margin*4 + barHeight*3, barWidth*.25, barHeight);
+        this.costBar.attr({fill:costFill, stroke:"none"});
+
+        this.quickLabel = r.text(barLeft + barWidth/4, margin+barHeight/2, this.quickName + ": 25%");
+        this.quickLabel.attr({"font-size":"13px", opacity:1});
+
+        this.flatLabel = r.text(barLeft + barWidth/4, margin*2+barHeight+barHeight/2,  this.flatName + ": 25%");
+        this.flatLabel.attr({"font-size":"13px", opacity:1});
+
+        this.safeLabel = r.text(barLeft + barWidth/4, margin*3+barHeight*2+barHeight/2, this.safeName + ": 25%");
+        this.safeLabel.attr({"font-size":"13px", opacity:1});
+        
+        this.costLabel = r.text(barLeft + barWidth/4, margin*4+barHeight*3+barHeight/2, this.costName + ": 25%");
+        this.costLabel.attr({"font-size":"13px", opacity:1});
+
         r.customAttributes.segment = function (x, y, r, a1, a2, index) {
             var flag = (a2 - a1) > 180, clr = (a2 - a1) / 360;
             a1 = (a1 % 360) * Math.PI / 180; 
@@ -126,6 +160,7 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
        
         //var texts = [t1, t2, t3, t4];
         //console.log(texts);
+        var this_ = this;
         function animate(ms) {
             var start = 0,
                 val;
@@ -136,6 +171,28 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
                 paths[i].angle = start - val / 2;
                // console.log(paths[i].angle);
                 console.log(val); // the value will be used to calculate the percent
+                percent = data[i]/total;
+                if (i==0) {
+                	this_.quickBar.attr({width: barWidth*percent}); // time
+                	this_.quickLabel.attr("text", this_.quickName + ": "+Math.round(percent*100)+"%");
+                } else {
+                	if (i==1) {
+                		this_.flatBar.attr({width: barWidth*percent}); // flexibility
+                		this_.flatLabel.attr("text", this_.flatName + ": " +Math.round(percent*100)+"%");
+                	} else {
+                		if (i==2) {
+                			this_.safeBar.attr({width: barWidth*percent}); // safety
+                			this_.safeLabel.attr("text", this_.safeName + ": " +Math.round(percent*100)+"%");
+                		} else {
+                			this_.costBar.attr({width: barWidth*percent}); // cost
+                			this_.costLabel.attr("text", this_.costName + ": " +Math.round(percent*100)+"%");
+                		}
+                	}
+                }
+                	
+               
+                
+                
                 
                // console.log(x1);
                // console.log(y1);
@@ -197,6 +254,11 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
         var t4 = r.text(25, 25, "C").attr({font: '100 15px "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif', fill: "#000"}); */
         bg.animate({r: 151}, 1000, "bounce");
         animate(1000);
+        var opacityAnimation = Raphael.animation({opacity: .25}, 1000);
+        this_.quickBar.animate(opacityAnimation);
+        this_.flatBar.animateWith(this_.quickBar, opacityAnimation, opacityAnimation);
+        this_.safeBar.animateWith(this_.quickBar, opacityAnimation, opacityAnimation);
+        this_.costBar.animateWith(this_.quickBar, opacityAnimation, opacityAnimation);
         // var t = r.text(height/2, 20, "Click on segments to make them bigger.").attr({font: '100 15px "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif', fill: "#000"});
         
     },
@@ -204,16 +266,19 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
 
 
     setValues : function(quick, flat, safe) {
-        this.TimeFactor = quick;
+    	this.TimeFactor = quick;
         this.SafetyFactor = safe;
         this.FlexibilityFactor = flat;
+        this.CostFactor = cost;
         
         this.quickBar.attr({width: this.barWidth*quick});
         this.flatBar.attr({width: this.barWidth*flat});
         this.safeBar.attr({width: this.barWidth*safe});
+        this.costBar.attr({width: this.barWidth*cost});
         this.quickLabel.attr("text",   this.quickName + ": "+Math.round(quick*100)+"%");
         this.flatLabel.attr("text",   this.flatName + ": " +Math.round(flat*100)+"%");
         this.safeLabel.attr("text", this.safeName + ": " +Math.round(safe*100)+"%");
+        this.costLabel.attr("text", this.costName + ": " +Math.round(cost*100)+"%");
 
         var margin = this.cursor_size/2;
         
@@ -227,8 +292,7 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
         x  = x + quick*qx + flat*fx + safe*sx;
         y  = y + quick*qy + flat*fy + safe*sy;
         
-        this.moveCursor(x, y);
-
+       // this.moveCursor(x, y);
     },
 
     /** NOTE: don't rename this stuff, as OTP api depends on these values */
