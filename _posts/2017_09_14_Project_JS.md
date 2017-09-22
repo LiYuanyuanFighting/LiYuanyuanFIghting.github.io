@@ -1,4 +1,5 @@
 ### To change triangle into rectangle  
+0. [rapheal introduction](https://blog.thebrickfactory.com/2013/03/how-to-create-dynamic-svgs-with-raphael/)
 1. studying Raphael.path to convert triangle into rectangle  
 https://www.packtpub.com/books/content/paths-and-curves-raphael-js-vector-graphics  
 var d = "M 10,30 L 60,30 L 10,80 L 60,80";
