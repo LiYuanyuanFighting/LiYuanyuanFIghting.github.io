@@ -175,25 +175,30 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
                 if (i==0) {
                 	this_.quickBar.attr({width: barWidth*percent}); // time
                 	this_.quickLabel.attr("text", this_.quickName + ": "+Math.round(percent*100)+"%");
+                	this_.TimeFactor = percent;
                 } else {
                 	if (i==1) {
                 		this_.flatBar.attr({width: barWidth*percent}); // flexibility
                 		this_.flatLabel.attr("text", this_.flatName + ": " +Math.round(percent*100)+"%");
+                		this_.FlexibilityFactor = percent;
                 	} else {
                 		if (i==2) {
                 			this_.safeBar.attr({width: barWidth*percent}); // safety
                 			this_.safeLabel.attr("text", this_.safeName + ": " +Math.round(percent*100)+"%");
+                			this_.SafetyFactor = percent;
                 		} else {
                 			this_.costBar.attr({width: barWidth*percent}); // cost
                 			this_.costLabel.attr("text", this_.costName + ": " +Math.round(percent*100)+"%");
+                			this_.CostFactor = percent;
                 		}
                 	}
                 }
-                	
-               
                 
                 
-                
+                if(this_.onChanged && typeof(this_.onChanged) === "function") {
+                	// console.log(this_.onChanged);
+                    this_.onChanged();
+                }
                // console.log(x1);
                // console.log(y1);
             /*	xTemp = height/2 + 0.5*height * Math.cos(start);
@@ -254,7 +259,7 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
         var t4 = r.text(25, 25, "C").attr({font: '100 15px "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif', fill: "#000"}); */
         bg.animate({r: 151}, 1000, "bounce");
         animate(1000);
-        var opacityAnimation = Raphael.animation({opacity: .25}, 1000);
+        var opacityAnimation = Raphael.animation({opacity: .65}, 1000);
         this_.quickBar.animate(opacityAnimation);
         this_.flatBar.animateWith(this_.quickBar, opacityAnimation, opacityAnimation);
         this_.safeBar.animateWith(this_.quickBar, opacityAnimation, opacityAnimation);
@@ -265,7 +270,7 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
     
 
 
-    setValues : function(quick, flat, safe) {
+    setValues : function(quick, flat, safe, cost) {
     	this.TimeFactor = quick;
         this.SafetyFactor = safe;
         this.FlexibilityFactor = flat;
@@ -300,7 +305,8 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
         return {
                 time_w				   : this.TimeFactor,
                 safety_w			   : this.SafetyFactor,
-                flexibility_w		   : this.FlexibilityFactor
+                flexibility_w		   : this.FlexibilityFactor,
+                co_w		           : this.CostFactor
                 /*co2_w				   : this.TimeFactor,
             time_w			       : this.SafetyFactor,
             distance_w			   : this.FlexibilityFactor*/
