@@ -135,7 +135,7 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
                 paths[i].animate({segment: [height/2, height/2, 0.5*height, start, start += val, i]}, ms || 1500, "bounce");
                 paths[i].angle = start - val / 2;
                // console.log(paths[i].angle);
-               // console.log(val); // the value will be used to calculate the percent
+                console.log(val); // the value will be used to calculate the percent
                 
                // console.log(x1);
                // console.log(y1);
