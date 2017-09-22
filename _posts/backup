@@ -19,6 +19,8 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
     div         : null,
     barWidth    : 0,
     paths		: null,
+    total		: 0,
+    data 		: [25, 25, 25, 25],
     /*trianglequickFactor:    null,
     triangleflatFactor:   null,
     trianglesafeFactor:  null,*/
@@ -114,7 +116,7 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
         labelC.attr({fill:costFill2, "font-size":labelSize, "font-weight":"bold"}); */
         
         var barLeft = margin*2 + this_.height; 
-        this.barWidth = width - 1.3*this_.height;
+        this.barWidth = width - this_.height;
         var barWidth = this.barWidth;
         var barHeight = (this_.height-margin*4)/4;
         
@@ -130,16 +132,16 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
         this.costBar = r.rect(barLeft, margin*4 + barHeight*3, barWidth*.25, barHeight);
         this.costBar.attr({fill:costFill, stroke:"none"});
 
-        this.quickLabel = r.text(barLeft + barWidth/3.7, margin+barHeight/2, this.quickName + ": 25%");
+        this.quickLabel = r.text(barLeft + barWidth/4, margin+barHeight/2, this.quickName + ": 25%");
         this.quickLabel.attr({"font-size":"13px", opacity:1});
 
-        this.flatLabel = r.text(barLeft + barWidth/3.7, margin*2+barHeight+barHeight/2,  this.flatName + ": 25%");
+        this.flatLabel = r.text(barLeft + barWidth/4, margin*2+barHeight+barHeight/2,  this.flatName + ": 25%");
         this.flatLabel.attr({"font-size":"13px", opacity:1});
 
-        this.safeLabel = r.text(barLeft + barWidth/3.7, margin*3+barHeight*2+barHeight/2, this.safeName + ": 25%");
+        this.safeLabel = r.text(barLeft + barWidth/4, margin*3+barHeight*2+barHeight/2, this.safeName + ": 25%");
         this.safeLabel.attr({"font-size":"13px", opacity:1});
         
-        this.costLabel = r.text(barLeft + barWidth/3.7, margin*4+barHeight*3+barHeight/2, this.costName + ": 25%");
+        this.costLabel = r.text(barLeft + barWidth/4, margin*4+barHeight*3+barHeight/2, this.costName + ": 25%");
         this.costLabel.attr({"font-size":"13px", opacity:1});
 
         r.customAttributes.segment = function (x, y, r, a1, a2, index) {
@@ -164,14 +166,15 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
                 val;
           //  var preX=height, preY=height/2, xTemp, yTemp;
             for (i = 0; i < ii; i++) {
-                val = 360 / total * data[i];
+                val = 360 / this_.total * this_.data[i];
                 paths[i].animate({segment: [this_.height/2, this_.height/2, 0.5*this_.height, start, start += val, i]}, ms || 1500, "bounce");
                 paths[i].angle = start - val / 2;
                // console.log(paths[i].angle);
-              //  console.log(val); // the value will be used to calculate the percent
-                var percent = 100*data[i]/total;
+                console.log(this_.total); // the value will be used to calculate the percent
+                console.log(this_.data[i]);
+                var percent = 100*this_.data[i]/this_.total;
                 percent = Math.round(percent);
-                var p = data[i]/total;
+                var p = this_.data[i]/this_.total;
                 percentStore[i] = percent;
                 if (i==0) {
                 	this_.quickBar.attr({width: barWidth*p}); // time
@@ -190,7 +193,7 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
                 		} else {
                 			// to make the sum equal to 100 always
                 			var sum = percentStore[0]+percentStore[1]+percentStore[2]+percentStore[3];
-                			console.log(sum);
+                			// console.log(sum);
                 			if (sum>100)
                 				percentStore[3] -= sum-100;
                 			if (sum < 100)
@@ -237,24 +240,23 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
                 } */
             }
         }
-        var data = [25, 25, 25, 25],
+       // var data = [25, 25, 25, 25],
          //   paths = r.set(),
-            total,
-            start,
+        var   start,
             bg = r.circle(this_.height/2, this_.height/2, 0).attr({stroke: "#fff", "stroke-width": 4});
-        data = data.sort(function (a, b) { return b - a;});
+        this_.data = this_.data.sort(function (a, b) { return b - a;});
 
-        total = 0;
-        for (var i = 0, ii = data.length; i < ii; i++) {
-            total += data[i];
+        // total = 0;
+        for (var i = 0, ii = this_.data.length; i < ii; i++) {
+        	this_.total += this_.data[i];
         }
         start = 0;
         for (i = 0; i < ii; i++) {
-            var val = 360 / total * data[i];
+            var val = 360 / this_.total * this_.data[i];
             (function (i, val) {
                 paths.push(r.path().attr({segment: [this_.height/2, this_.height/2, 1, start, start + val, 0], stroke: "#fff"}).click(function () {
-                    total += data[i];
-                    data[i] *= 2;
+                	this_.total += this_.data[i];
+                	this_.data[i] *= 2;
                     animate();
                 }));
             })(i, val);
@@ -293,28 +295,16 @@ otp.widgets.RiskTrianglePanel = new otp.Class({
         this.safeLabel.attr("text", this.safeName + ": " +Math.round(safe*100)+"%");
         this.costLabel.attr("text", this.costName + ": " +Math.round(cost*100)+"%");
 
-        var margin = this.cursor_size/2;
-        
-        var x = margin + this.tri_side/2;
-        var y = margin + this.tri_side / Math.sqrt(3);
-        
-        var qx = 0, qy = -this.tri_side / Math.sqrt(3);
-        var fx = -this.tri_side/2, fy = (this.tri_side/2) / Math.sqrt(3);
-        var sx = this.tri_side/2, sy = (this.tri_side/2) / Math.sqrt(3);
-        
-        x  = x + quick*qx + flat*fx + safe*sx;
-        y  = y + quick*qy + flat*fy + safe*sy;
-        
         // reset the pie chart
-        var data = [25, 25, 25, 25];
+        this.data = [25, 25, 25, 25];
         var start = 0;
-        var total = 0;
+        this.total = 0;
         var h = this.height;
-        for (var i = 0, ii = data.length; i < ii; i++) {
-            total += data[i];
+        for (var i = 0, ii = this.data.length; i < ii; i++) {
+        	this.total += this.data[i];
         }
         for (i = 0; i < ii; i++) {
-        	var val = 360 / total * data[i];
+        	var val = 360 / this.total * this.data[i];
         	// console.log(val);
             paths[i].animate({segment: [h/2, h/2, 0.5*h, start, start += val, i]}, 1000 || 1500, "bounce");
             // console.log(start);
