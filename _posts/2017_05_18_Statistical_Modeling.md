@@ -8,6 +8,9 @@ mean: the average obtained by dividing the sum of the data by the number of data
 standard deviation: the extent to which data differs from the mean. The standard deviation is a measure of how the data is clustered about the mean. For large sets of data, approximately 68.3% of the data lies within one standard deviation of the mean and approximately 95.4% of the data lies within two standard deviations of the mean.  
 
 **Plot**  
+**normal distribution**  
+https://www.r-bloggers.com/normal-distribution-functions/  
+
 **gamma distribution**  
 The Gamma distribution is widely used in engineering, science, and business, to model continuous variables that are always positive and have skewed distributions. In Swedge, the Gamma distribution can be useful for any variable which is always positive, such as cohesion or shear strength for example.  
 The scale parameter of a distribution determines how much spread there is in the distribution.  The larger the scale parameter, the more spread there is in the distribution.   
