@@ -9,8 +9,12 @@ standard deviation: the extent to which data differs from the mean. The standard
 
 **Plot**  
 **normal distribution**  
-https://www.r-bloggers.com/normal-distribution-functions/  
-
+https://www.r-bloggers.com/normal-distribution-functions/    
+What I used in the thesis:  
+```r
+r <- rnorm(1000, 20, 20)
+hist(r, main="Random draws from Std Normal", cex.axis=.8, xlim=c(0,100))
+```
 **gamma distribution**  
 The Gamma distribution is widely used in engineering, science, and business, to model continuous variables that are always positive and have skewed distributions. In Swedge, the Gamma distribution can be useful for any variable which is always positive, such as cohesion or shear strength for example.  
 The scale parameter of a distribution determines how much spread there is in the distribution.  The larger the scale parameter, the more spread there is in the distribution.   
