@@ -45,7 +45,7 @@ hist(log(bimodalData), breaks=100)
 
 **Plot gamma distribution**  
 ```r
-- seq(0,20, .1)
+> x <- seq(0,20, .1)
 > plot(x, dgamma(x, scale=2, shape=1), type="l", ylim=c(0,.5), ylab="y")
 > for(shape in 2:8){
 +   lines(x, dgamma(x, scale=2, shape=shape), col=shape)
