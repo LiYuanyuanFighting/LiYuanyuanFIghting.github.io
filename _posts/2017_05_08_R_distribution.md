@@ -1,4 +1,14 @@
-**Simulate Bimodal Distribution in R**  
+**Simulate Bimodal Distribution in R**
+New version(same configuration as in the project)
+```r
+> bimodalDistFunc=function(n, cpct, mu1, shape, scale, sig1){
++ y0=rnorm(100, mean=1, sd=3)
++ y1=rgamma(100, shape=50, scale=1.2)
++ flag=rbinom(100, size=1, prob=0.4)
++ y=y0*(1-flag)+y1*flag}
+> bimodalData <- bimodalDistFunc(n=100, cpct, mu1=3, shape=50, scale=1.2, sig1=3)
+> hist(bimodalData, xlab="Time deviation", ylab="Frequency")
+```
 ```r
 mu1 <- log(1)   
 mu2 <- log(50)
