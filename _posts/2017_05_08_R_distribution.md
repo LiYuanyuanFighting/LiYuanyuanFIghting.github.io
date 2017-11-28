@@ -1,3 +1,8 @@
+**Simulate Gamma Distribution in R**   
+```r
+> gamma<-rgamma(100, shape=7.5, scale=1)
+> hist(gamma, xlab="TIme deviation", ylab="Frequency") .  
+```
 **Simulate Bimodal Distribution in R**
 New version(same configuration as in the project)
 ```r
